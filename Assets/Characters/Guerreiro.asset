@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
+  m_Name: Guerreiro
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
+  charName: 
+  animatorOverride: {fileID: 0}
+  baseVida: 0
+  baseMana: 0
+  baseForca: 0
+  baseInteligencia: 0
+  baseAgilidade: 0
+  baseResiliencia: 0
+  baseSorte: 0
+  perLevelUpgradeVida: 0
+  perLevelUpgradeMana: 0
+  perLevelUpgradeForca: 0
+  perLevelUpgradeInteligencia: 0
+  perLevelUpgradeAgilidade: 0
+  perLevelUpgradeResiliencia: 0
+  perLevelUpgradeSorte: 0

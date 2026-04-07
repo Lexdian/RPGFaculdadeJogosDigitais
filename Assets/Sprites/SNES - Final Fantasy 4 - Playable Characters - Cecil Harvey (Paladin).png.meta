@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 457bd1923de4b3448bfa720d411dfaf8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3495343697079484691
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_0
+  - first:
+      213: 120090798011105737
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_1
+  - first:
+      213: -5523131746599354828
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_2
+  - first:
+      213: -6595839990942265574
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_3
+  - first:
+      213: 3016353779619818385
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_4
+  - first:
+      213: -2791407190586040332
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_5
+  - first:
+      213: 4508903362866621807
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_6
+  - first:
+      213: 3418712921015984437
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_7
+  - first:
+      213: -8038072065421098459
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_8
+  - first:
+      213: -2397398657710187388
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_9
+  - first:
+      213: 1466479693725512809
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_10
+  - first:
+      213: 5703640372903283593
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_11
+  - first:
+      213: 4974442217989312063
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_12
+  - first:
+      213: -7009851444968648641
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_13
+  - first:
+      213: 1265832512204337144
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_14
+  - first:
+      213: -7210993223365853114
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_15
+  - first:
+      213: 577176785256984823
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_16
+  - first:
+      213: 8872287413241268573
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_17
+  - first:
+      213: -4965649309173393800
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_18
+  - first:
+      213: 3096278877114236754
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_19
+  - first:
+      213: -3079893776661607665
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_20
+  - first:
+      213: 5142981455446808332
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_21
+  - first:
+      213: 7518366554295007337
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_22
+  - first:
+      213: 8286455101770892545
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_23
+  - first:
+      213: -6564193769768425154
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_24
+  - first:
+      213: -4444162455590342204
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_25
+  - first:
+      213: -7252564904933135996
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_26
+  - first:
+      213: -2136292866889556129
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_27
+  - first:
+      213: -6176427205907501322
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_28
+  - first:
+      213: 6481288146468006698
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_29
+  - first:
+      213: 8886848530782156325
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_30
+  - first:
+      213: -4877961462315295456
+    second: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311c258c294f18030800000000000000
+      internalID: 3495343697079484691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 161
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1ce3cc1f5aaa100800000000000000
+      internalID: 120090798011105737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e334470f4e953b0800000000000000
+      internalID: -5523131746599354828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 161
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f0298797ed674a0800000000000000
+      internalID: -6595839990942265574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b652ff7cd3cd920800000000000000
+      internalID: 3016353779619818385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_5
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 161
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffd5ad13fde249d0800000000000000
+      internalID: -2791407190586040332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 179
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6daa3628b7d29e30800000000000000
+      internalID: 4508903362866621807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531223ed945b17f20800000000000000
+      internalID: 3418712921015984437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 161
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522c5954b08037090800000000000000
+      internalID: -8038072065421098459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_9
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c9f2e6f9ababed0800000000000000
+      internalID: -2397398657710187388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 179
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96435def28bf95410800000000000000
+      internalID: 1466479693725512809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 161
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b0a7133b6672f40800000000000000
+      internalID: 5703640372903283593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_12
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 161
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e85fe67d4c80540800000000000000
+      internalID: 4974442217989312063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_13
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 128
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f309266204108be90800000000000000
+      internalID: -7009851444968648641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_14
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 128
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff641396f3219110800000000000000
+      internalID: 1265832512204337144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_15
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 141
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640878b6ed76deb90800000000000000
+      internalID: -7210993223365853114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_16
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 141
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f038d96a3b820800800000000000000
+      internalID: 577176785256984823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 141
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d594a6b1562b02b70800000000000000
+      internalID: 8872287413241268573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_18
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 141
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8765e8f2348761bb0800000000000000
+      internalID: -4965649309173393800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_19
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 101
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f70f3eb3138fa20800000000000000
+      internalID: 3096278877114236754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_20
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 101
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b06289de40245d0800000000000000
+      internalID: -3079893776661607665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_21
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 101
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c071452926a8f5740800000000000000
+      internalID: 5142981455446808332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 101
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9687eef0c8a965860800000000000000
+      internalID: 7518366554295007337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_23
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 101
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1050744f2076ff270800000000000000
+      internalID: 8286455101770892545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 72
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e39ee148b8c47e4a0800000000000000
+      internalID: -6564193769768425154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_25
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 72
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1f866fac92352c0800000000000000
+      internalID: -4444162455590342204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_26
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 72
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489eefa05a6b95b90800000000000000
+      internalID: -7252564904933135996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_27
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 72
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fd8d4c4fc5a52e0800000000000000
+      internalID: -2136292866889556129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_28
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 72
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe23da2e2ce84aa0800000000000000
+      internalID: -6176427205907501322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_29
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 72
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2bec29da3922f950800000000000000
+      internalID: 6481288146468006698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_30
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 72
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526f8f977ad645b70800000000000000
+      internalID: 8886848530782156325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_31
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 72
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02dd6a205effd4cb0800000000000000
+      internalID: -4877961462315295456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_0: 3495343697079484691
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_1: 120090798011105737
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_10: 1466479693725512809
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_11: 5703640372903283593
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_12: 4974442217989312063
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_13: -7009851444968648641
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_14: 1265832512204337144
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_15: -7210993223365853114
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_16: 577176785256984823
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_17: 8872287413241268573
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_18: -4965649309173393800
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_19: 3096278877114236754
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_2: -5523131746599354828
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_20: -3079893776661607665
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_21: 5142981455446808332
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_22: 7518366554295007337
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_23: 8286455101770892545
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_24: -6564193769768425154
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_25: -4444162455590342204
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_26: -7252564904933135996
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_27: -2136292866889556129
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_28: -6176427205907501322
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_29: 6481288146468006698
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_3: -6595839990942265574
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_30: 8886848530782156325
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_31: -4877961462315295456
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_4: 3016353779619818385
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_5: -2791407190586040332
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_6: 4508903362866621807
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_7: 3418712921015984437
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_8: -8038072065421098459
+      SNES - Final Fantasy 4 - Playable Characters - Cecil Harvey (Paladin)_9: -2397398657710187388
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

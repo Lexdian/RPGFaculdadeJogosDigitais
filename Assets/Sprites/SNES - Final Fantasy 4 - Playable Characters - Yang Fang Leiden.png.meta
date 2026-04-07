@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: c4e1bd177146bb044891178fcb1a2857
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6715423120752758588
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_0
+  - first:
+      213: -8953365455938024995
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_1
+  - first:
+      213: 4006354730580598160
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_2
+  - first:
+      213: 7358689099559861718
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_3
+  - first:
+      213: 8831133358766192142
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_4
+  - first:
+      213: -9092590250475511910
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_5
+  - first:
+      213: 1421551469527266853
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_6
+  - first:
+      213: 2118905584996726821
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_7
+  - first:
+      213: -7428036906231947465
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_8
+  - first:
+      213: -7985113509829946981
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_9
+  - first:
+      213: 5205959171475288923
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_10
+  - first:
+      213: -1474803997917829326
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_11
+  - first:
+      213: 5813414491406816116
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_12
+  - first:
+      213: -8105162561480639565
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_13
+  - first:
+      213: 7789817281087551199
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_14
+  - first:
+      213: -68879015058648709
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_15
+  - first:
+      213: 1459113584298737089
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_16
+  - first:
+      213: -4510990197362329571
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_17
+  - first:
+      213: 4454759754875625120
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_18
+  - first:
+      213: -8564564948330334447
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_19
+  - first:
+      213: 6641248019227455846
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_20
+  - first:
+      213: 8056478612878662928
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_21
+  - first:
+      213: 3976273504646462366
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_22
+  - first:
+      213: 8409276664082697599
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_23
+  - first:
+      213: -7273293687946424447
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_24
+  - first:
+      213: -4577792794997440656
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_25
+  - first:
+      213: -1836604631199593122
+    second: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 154
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fc9ec9fb9f13d50800000000000000
+      internalID: 6715423120752758588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd98f860e814fb380800000000000000
+      internalID: -8953365455938024995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d5670a66e699730800000000000000
+      internalID: 4006354730580598160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddfdcf7fb05f1660800000000000000
+      internalID: 7358689099559861718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 172
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e067c5d100d7e8a70800000000000000
+      internalID: 8831133358766192142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_5
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 172
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f1a308751a0d180800000000000000
+      internalID: -9092590250475511910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5267b13a78d5ab310800000000000000
+      internalID: 1421551469527266853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_7
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 152
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5283252376dd76d10800000000000000
+      internalID: 2118905584996726821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 152
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f9d890acf4ae890800000000000000
+      internalID: -7428036906231947465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 152
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91d96bd19d2f2190800000000000000
+      internalID: -7985113509829946981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_10
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 152
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53b8fab8484f3840800000000000000
+      internalID: 5205959171475288923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_11
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 152
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23728c6e391788be0800000000000000
+      internalID: -1474803997917829326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 152
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473596cdda56da050800000000000000
+      internalID: 5813414491406816116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_13
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 121
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbb624e79da48f80800000000000000
+      internalID: -8105162561480639565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_14
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 121
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd63c608b8dfa1c60800000000000000
+      internalID: 7789817281087551199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 93
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7153f696ea4b0ff0800000000000000
+      internalID: -68879015058648709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 93
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cdb21ff210df3410800000000000000
+      internalID: 1459113584298737089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 93
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18f2f4d05eb561c0800000000000000
+      internalID: -4510990197362329571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_18
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 93
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae511d056c72dd30800000000000000
+      internalID: 4454759754875625120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_19
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 93
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11732077e8d842980800000000000000
+      internalID: -8564564948330334447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 65
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661b15bf2e37a2c50800000000000000
+      internalID: 6641248019227455846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 67
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d1a250d9c5ecf60800000000000000
+      internalID: 8056478612878662928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 65
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9bff3e6faf8e2730800000000000000
+      internalID: 3976273504646462366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_23
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 65
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d81ac5290c3b470800000000000000
+      internalID: 8409276664082697599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_24
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 65
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fccd62de1101b90800000000000000
+      internalID: -7273293687946424447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_25
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 65
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07fb5d605b96870c0800000000000000
+      internalID: -4577792794997440656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_26
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 65
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dc28491d11386e0800000000000000
+      internalID: -1836604631199593122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_0: 6715423120752758588
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_1: -8953365455938024995
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_10: 5205959171475288923
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_11: -1474803997917829326
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_12: 5813414491406816116
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_13: -8105162561480639565
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_14: 7789817281087551199
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_15: -68879015058648709
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_16: 1459113584298737089
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_17: -4510990197362329571
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_18: 4454759754875625120
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_19: -8564564948330334447
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_2: 4006354730580598160
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_20: 6641248019227455846
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_21: 8056478612878662928
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_22: 3976273504646462366
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_23: 8409276664082697599
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_24: -7273293687946424447
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_25: -4577792794997440656
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_26: -1836604631199593122
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_3: 7358689099559861718
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_4: 8831133358766192142
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_5: -9092590250475511910
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_6: 1421551469527266853
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_7: 2118905584996726821
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_8: -7428036906231947465
+      SNES - Final Fantasy 4 - Playable Characters - Yang Fang Leiden_9: -7985113509829946981
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

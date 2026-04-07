@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: ce515e9724e8213498e4817de1cca13e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4985562478739595470
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_0
+  - first:
+      213: -9165821823357566278
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_1
+  - first:
+      213: 1465541950101224846
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_2
+  - first:
+      213: -3380798671365578077
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_3
+  - first:
+      213: 4113719784921220514
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_4
+  - first:
+      213: 6871076103673501900
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_5
+  - first:
+      213: -2121779804677992945
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_6
+  - first:
+      213: 2201268186126236289
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_7
+  - first:
+      213: -2611484703202473077
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_8
+  - first:
+      213: 8129934956596976971
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_9
+  - first:
+      213: -712690434437826379
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_10
+  - first:
+      213: 6567617960401139432
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_11
+  - first:
+      213: 8560647253301680787
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_12
+  - first:
+      213: 5241300866095031983
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_13
+  - first:
+      213: 620818457384103020
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_14
+  - first:
+      213: 6430292197781987798
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_15
+  - first:
+      213: -4793285241609097275
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_16
+  - first:
+      213: -3084813523860218783
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_17
+  - first:
+      213: -2014394304610967453
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_18
+  - first:
+      213: -214632795070642544
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_19
+  - first:
+      213: -472824508311480118
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_20
+  - first:
+      213: -6698884451943044243
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_21
+  - first:
+      213: -6795255131105355798
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_22
+  - first:
+      213: -2668520512164153584
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_23
+  - first:
+      213: -6567170470926007121
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_24
+  - first:
+      213: -1394912167959496740
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_25
+  - first:
+      213: 7228554870933138106
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_26
+  - first:
+      213: 8313358233688022927
+    second: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec02ac6e8a6403540800000000000000
+      internalID: 4985562478739595470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 172
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2cf304d957cc080800000000000000
+      internalID: -9165821823357566278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 154
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d773b83a6a65410800000000000000
+      internalID: 1465541950101224846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a26428458df411d0800000000000000
+      internalID: -3380798671365578077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 154
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a5c9b5595ed61930800000000000000
+      internalID: 4113719784921220514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 172
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc85220df47fa5f50800000000000000
+      internalID: 6871076103673501900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 154
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e0292628ced82e0800000000000000
+      internalID: -2121779804677992945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_7
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a3c61a0c97c8e10800000000000000
+      internalID: 2201268186126236289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 154
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b0049af7422cbd0800000000000000
+      internalID: -2611484703202473077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d5efec4c453d070800000000000000
+      internalID: 8129934956596976971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 172
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8b38c63d30c16f0800000000000000
+      internalID: -712690434437826379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_11
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 154
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e67f2efcbdd42b50800000000000000
+      internalID: 6567617960401139432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_12
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 154
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a587412578dc670800000000000000
+      internalID: 8560647253301680787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_13
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 126
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6aa8c3e57dcb840800000000000000
+      internalID: 5241300866095031983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_14
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 126
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ca26609179d9800800000000000000
+      internalID: 620818457384103020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_15
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 98
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1e2ca4facfc3950800000000000000
+      internalID: 6430292197781987798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 98
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf64caf774da7db0800000000000000
+      internalID: -4793285241609097275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_17
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 98
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c9dffa17a8035d0800000000000000
+      internalID: -3084813523860218783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_18
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 98
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360e71c7d0f6b04e0800000000000000
+      internalID: -2014394304610967453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_19
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 98
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0964aac2c98750df0800000000000000
+      internalID: -214632795070642544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 69
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac8def46d903079f0800000000000000
+      internalID: -472824508311480118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 69
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b2c8a4518c803a0800000000000000
+      internalID: -6698884451943044243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_22
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 69
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae79058067762b1a0800000000000000
+      internalID: -6795255131105355798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_23
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 69
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017bc9c8bb287fad0800000000000000
+      internalID: -2668520512164153584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_24
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 69
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa445054049bcd4a0800000000000000
+      internalID: -6567170470926007121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_25
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 69
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd777e716c644ace0800000000000000
+      internalID: -1394912167959496740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 69
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abaa3694b5cf05460800000000000000
+      internalID: 7228554870933138106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_27
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 69
+        width: 25
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f1b89744bfe5370800000000000000
+      internalID: 8313358233688022927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_0: 4985562478739595470
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_1: -9165821823357566278
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_10: -712690434437826379
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_11: 6567617960401139432
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_12: 8560647253301680787
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_13: 5241300866095031983
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_14: 620818457384103020
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_15: 6430292197781987798
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_16: -4793285241609097275
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_17: -3084813523860218783
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_18: -2014394304610967453
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_19: -214632795070642544
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_2: 1465541950101224846
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_20: -472824508311480118
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_21: -6698884451943044243
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_22: -6795255131105355798
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_23: -2668520512164153584
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_24: -6567170470926007121
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_25: -1394912167959496740
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_26: 7228554870933138106
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_27: 8313358233688022927
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_3: -3380798671365578077
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_4: 4113719784921220514
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_5: 6871076103673501900
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_6: -2121779804677992945
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_7: 2201268186126236289
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_8: -2611484703202473077
+      SNES - Final Fantasy 4 - Playable Characters - Rydia (Adult)_9: 8129934956596976971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
