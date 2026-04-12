@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2551600458683156351}
   - component: {fileID: 2721904754921337114}
   - component: {fileID: -7499918183700700106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GenericFollowerPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4508903362866621807, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-7499918183700700106
 MonoBehaviour:
   m_ObjectHideFlags: 0
