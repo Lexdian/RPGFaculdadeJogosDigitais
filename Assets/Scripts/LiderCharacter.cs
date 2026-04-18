@@ -16,6 +16,7 @@ public class LiderCharacter : Character
     private Rigidbody2D rb;
 
     private Vector2 Dir;
+    private Vector2 lastDir;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,6 +45,7 @@ public class LiderCharacter : Character
             anim.SetBool("Moving", true);
             anim.SetFloat("DirX", input.Get<Vector2>().x);
             anim.SetFloat("DirY", input.Get<Vector2>().y);
+            lastDir = Dir;
         }
         else
         {
@@ -54,6 +56,18 @@ public class LiderCharacter : Character
                 {
                     followers[i].Anim.SetBool("Moving", false);
                 }
+            }
+        }
+    }
+    public void OnInteract()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, lastDir, 1f, LayerMask.GetMask("Objects"));
+        if (hit.collider != null)
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Interact(this.gameObject);
             }
         }
     }

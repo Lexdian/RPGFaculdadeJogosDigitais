@@ -14,6 +14,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "83e38f31-1732-48c0-bd42-7d8de6ab0a68",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -71,6 +80,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "688be4fa-8adc-4f53-8d1d-a93a1e4fb1b5",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -79,6 +99,34 @@
             "id": "6ced06a5-6ea3-4bfd-87f8-4e0d612a79a7",
             "actions": [],
             "bindings": []
+        },
+        {
+            "name": "OnDialog",
+            "id": "3e0594a4-b18b-4ddc-9ce2-9322f3f34578",
+            "actions": [
+                {
+                    "name": "Advance",
+                    "type": "Button",
+                    "id": "6b6a32d8-2eab-4db1-a68b-d198743bfc09",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "89a8816d-30fa-4865-b459-c7220d0bb526",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Advance",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
