@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e62af642af45847a72db9346605206, type: 3}
+  m_Name: Zumbi
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySO
+  enemyName: Zumbi
+  enemySprite: {fileID: -6690086926033566117, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
+  vida: 50
+  mana: 0
+  forca: 10
+  inteligencia: 2
+  agilidade: 2
+  resiliencia: 5
+  sorte: 5

@@ -12,19 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
   m_Name: Guerreiro
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
-  charName: 
-  animatorOverride: {fileID: 0}
-  baseVida: 0
-  baseMana: 0
-  baseForca: 0
-  baseInteligencia: 0
-  baseAgilidade: 0
-  baseResiliencia: 0
-  baseSorte: 0
-  perLevelUpgradeVida: 0
-  perLevelUpgradeMana: 0
-  perLevelUpgradeForca: 0
-  perLevelUpgradeInteligencia: 0
-  perLevelUpgradeAgilidade: 0
-  perLevelUpgradeResiliencia: 0
-  perLevelUpgradeSorte: 0
+  charName: Cedric
+  charPortrait: {fileID: 3495343697079484691, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
+  overworldAnimator: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  battleAnimator: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  baseVida: 50
+  baseMana: 10
+  baseForca: 25
+  baseInteligencia: 20
+  baseAgilidade: 15
+  baseResiliencia: 25
+  baseSorte: 10
+  perLevelUpgradeVida: 5
+  perLevelUpgradeMana: 5
+  perLevelUpgradeForca: 5
+  perLevelUpgradeInteligencia: 5
+  perLevelUpgradeAgilidade: 5
+  perLevelUpgradeResiliencia: 5
+  perLevelUpgradeSorte: 5
+  xpBaseNecessario: 100
+  curvaXPMultiplicador: 1.2
+  habilidadesIniciais: []
+  habilidadesPorNivel: []

@@ -15,7 +15,7 @@ public class LiderCharacter : Character
     private float speed = 5f;
     private Rigidbody2D rb;
 
-    private Vector2 Dir;
+    public Vector2 Dir;
     private Vector2 lastDir;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
