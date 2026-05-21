@@ -19,6 +19,9 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Vector3 centroChaoAliados = new Vector3(4f, -1.5f, 0);
     public float alturaTotalColunaAliados = 4.0f;
 
+    private List<ActionData> actionQueue = new List<ActionData>();
+    private int currentTurn = 0;
+
     void Start()
     {
         SpawnEnemies();
@@ -128,6 +131,40 @@ public class BattleManager : MonoBehaviour
     }
     #endregion
 
+    #region Pipeline de Batalha
+        
+    public void MainPipeline()
+    {
+    }
+
+
+    private void AddActionToQueue(CombatenteData executor, CombatenteData[] alvo, SkillSO habilidade)
+    {
+        ActionData novaAcao = new ActionData
+        {
+            executor = executor,
+            alvo = alvo,
+            habilidade = habilidade,
+            turnoExecucao = currentTurn + 1 // Simples exemplo: executa no próximo turno
+        };
+        actionQueue.Add(novaAcao);
+        actionQueue = actionQueue.OrderBy(a => a.turnoExecucao).ToList(); // Mantém a fila ordenada por turno
+    }
+
+    private ActionData GetNextAction()
+    {
+        if (actionQueue.Count == 0) return default;
+        if(actionQueue[0].turnoExecucao > currentTurn) return default;
+
+        ActionData[] thisTurnActions = actionQueue.Where(a => a.turnoExecucao == currentTurn).OrderBy(a => a.executor.GetAgilidade()).ToArray();
+        // Lógica simples: retorna a próxima ação na fila
+        ActionData nextAction = thisTurnActions[0];
+        actionQueue.Remove(nextAction);
+        return nextAction;
+    }
+
+    #endregion
+
     #region UTILITÁRIOS
     void InstanciarSombra(Vector3 posicaoChao)
     {
@@ -139,4 +176,11 @@ public class BattleManager : MonoBehaviour
         sr.sortingOrder = 9;
     }
     #endregion
+}
+struct ActionData
+{
+    public CombatenteData executor;
+    public CombatenteData[] alvo;
+    public SkillSO habilidade;
+    public int turnoExecucao;
 }
