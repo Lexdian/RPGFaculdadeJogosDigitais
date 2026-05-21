@@ -5,17 +5,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("ConfiguraÁ„o de Assets dos HerÛis")]
-    public CharacterSO[] heroisDisponiveis = new CharacterSO[4]; // Arraste seus CharacterSOs aqui no Inspector
+    [Header("Configura√ß√£o de Assets dos Her√≥is")]
+    public CharacterSO[] heroisDisponiveis = new CharacterSO[4];
 
     [Header("Dados de Campanha da Equipe")]
     public List<CombatenteData> equipeAtual = new List<CombatenteData>();
+
+    [Header("Invent√°rio do Grupo")]
+    public Inventory inventarioGrupo;
 
     [Header("Prefabs do Overworld")]
     public GameObject lider;
     public GameObject followers;
 
-    [Header("Dados de Batalha tempor·rios")]
+    [Header("Dados de Batalha tempor√°rios")]
     public EnemyGroup inimigosParaSpawnar;
 
     private void Awake()
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            inventarioGrupo = new Inventory(initialMaxSlots: 10);
             InicializarEquipe();
         }
         else
@@ -34,13 +38,10 @@ public class GameManager : MonoBehaviour
 
     private void InicializarEquipe()
     {
-        // Cria os dados persistentes dos personagens no nÌvel 1 ao iniciar o jogo
         foreach (var heroiSO in heroisDisponiveis)
         {
             if (heroiSO != null)
-            {
                 equipeAtual.Add(new CombatenteData(heroiSO, 1));
-            }
         }
     }
 
@@ -53,16 +54,13 @@ public class GameManager : MonoBehaviour
     {
         if (equipeAtual.Count == 0) return;
 
-        // Spawn do LÌder no mapa
-        GameObject liderChar = GameObject.Instantiate(lider, new Vector2(0, 0), Quaternion.identity);
+        GameObject liderChar = Instantiate(lider, new Vector2(0, 0), Quaternion.identity);
         liderChar.GetComponent<LiderCharacter>().Setup(equipeAtual[0].fichaBase.overworldAnimator);
 
-        // Spawn dos Seguidores na fila do mapa
         for (int i = 1; i < equipeAtual.Count; i++)
         {
-            GameObject newChar = GameObject.Instantiate(followers, new Vector2(0, 0), Quaternion.identity);
+            GameObject newChar = Instantiate(followers, new Vector2(0, 0), Quaternion.identity);
             newChar.GetComponent<Character>().Setup(equipeAtual[i].fichaBase.overworldAnimator);
-
             liderChar.GetComponent<LiderCharacter>().followers[i - 1] = newChar.GetComponent<Character>();
         }
     }

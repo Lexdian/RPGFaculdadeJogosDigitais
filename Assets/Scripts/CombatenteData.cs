@@ -7,25 +7,89 @@ public class CombatenteData
     public int nivelAtual = 1;
     public int xpAtual = 0;
 
-    // Status Dinâmicos (que mudam na batalha)
+    [Header("Status DinÃ¢micos")]
     public int vidaAtual;
     public int manaAtual;
 
-    // Construtor para inicializar o personagem com status cheios
+    [Header("Equipamentos")]
+    public EquipableItemSO cabeca;
+    public EquipableItemSO corpo;
+    public EquipableItemSO botas;
+    public EquipableItemSO arma;
+    public EquipableItemSO acessorio1;
+    public EquipableItemSO acessorio2;
+
     public CombatenteData(CharacterSO baseData, int nivel)
     {
         this.fichaBase = baseData;
         this.nivelAtual = nivel;
-
-        // Inicializa calculando o status baseado no nível
-        this.vidaAtual = GetMaxVida();
-        this.manaAtual = GetMaxMana();
+        this.vidaAtual = GetMaxVidaTotal();
+        this.manaAtual = GetMaxManaTotal();
     }
 
-    // Fórmulas para calcular os status totais com base no nível atual
-    public int GetMaxVida() => fichaBase.baseVida + (fichaBase.perLevelUpgradeVida * (nivelAtual - 1));
-    public int GetMaxMana() => fichaBase.baseMana + (fichaBase.perLevelUpgradeMana * (nivelAtual - 1));
-    public int GetForca() => fichaBase.baseForca + (fichaBase.perLevelUpgradeForca * (nivelAtual - 1));
-    public int GetInteligencia() => fichaBase.baseInteligencia + (fichaBase.perLevelUpgradeInteligencia * (nivelAtual - 1));
-    public int GetAgilidade() => fichaBase.baseAgilidade + (fichaBase.perLevelUpgradeAgilidade * (nivelAtual - 1));
+    public int GetMaxVida()       => fichaBase.baseVida          + (fichaBase.perLevelUpgradeVida          * (nivelAtual - 1));
+    public int GetMaxMana()       => fichaBase.baseMana          + (fichaBase.perLevelUpgradeMana          * (nivelAtual - 1));
+    public int GetForca()         => fichaBase.baseForca         + (fichaBase.perLevelUpgradeForca         * (nivelAtual - 1));
+    public int GetInteligencia()  => fichaBase.baseInteligencia  + (fichaBase.perLevelUpgradeInteligencia  * (nivelAtual - 1));
+    public int GetAgilidade()     => fichaBase.baseAgilidade     + (fichaBase.perLevelUpgradeAgilidade     * (nivelAtual - 1));
+    public int GetResilienciaTotal() => fichaBase.baseResiliencia + (fichaBase.perLevelUpgradeResiliencia * (nivelAtual - 1)) + SomarBonus(e => e.bonusResiliencia);
+    public int GetSorteTotal()       => fichaBase.baseSorte       + (fichaBase.perLevelUpgradeSorte       * (nivelAtual - 1)) + SomarBonus(e => e.bonusSorte); 
+    
+    public int GetMaxVidaTotal()       => GetMaxVida()      + SomarBonus(e => e.bonusVida);
+    public int GetMaxManaTotal()       => GetMaxMana()      + SomarBonus(e => e.bonusMana);
+    public int GetForcaTotal()         => GetForca()        + SomarBonus(e => e.bonusForca);
+    public int GetInteligenciaTotal()  => GetInteligencia() + SomarBonus(e => e.bonusInteligencia);
+    public int GetAgilidadeTotal()     => GetAgilidade()    + SomarBonus(e => e.bonusAgilidade);
+
+    public void Equipar(EquipableItemSO item)
+    {
+        EquipableItemSO atual = GetSlot(item.slot);
+
+        if (atual != null)
+            GameManager.Instance.inventarioGrupo.TryAdd(atual);
+
+        SetSlot(item.slot, item);
+        GameManager.Instance.inventarioGrupo.TryRemove(item);
+    }
+
+    public void Desequipar(SlotEquipamento slot)
+    {
+        EquipableItemSO atual = GetSlot(slot);
+        if (atual == null) return;
+
+        GameManager.Instance.inventarioGrupo.TryAdd(atual);
+        SetSlot(slot, null);
+    }
+
+    private EquipableItemSO GetSlot(SlotEquipamento slot) => slot switch
+    {
+        SlotEquipamento.Cabeca     => cabeca,
+        SlotEquipamento.Corpo      => corpo,
+        SlotEquipamento.Botas      => botas,
+        SlotEquipamento.Arma       => arma,
+        SlotEquipamento.Acessorio1 => acessorio1,
+        SlotEquipamento.Acessorio2 => acessorio2,
+        _ => null
+    };
+
+    private void SetSlot(SlotEquipamento slot, EquipableItemSO item)
+    {
+        switch (slot)
+        {
+            case SlotEquipamento.Cabeca:      cabeca     = item; break;
+            case SlotEquipamento.Corpo:       corpo      = item; break;
+            case SlotEquipamento.Botas:       botas      = item; break;
+            case SlotEquipamento.Arma:        arma       = item; break;
+            case SlotEquipamento.Acessorio1:  acessorio1 = item; break;
+            case SlotEquipamento.Acessorio2:  acessorio2 = item; break;
+        }
+    }
+
+    private int SomarBonus(System.Func<EquipableItemSO, int> selector)
+    {
+        int total = 0;
+        foreach (var equip in new[] { cabeca, corpo, botas, arma, acessorio1, acessorio2 })
+            if (equip != null) total += selector(equip);
+        return total;
+    }
 }
