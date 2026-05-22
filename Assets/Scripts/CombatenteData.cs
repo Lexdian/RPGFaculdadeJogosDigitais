@@ -32,8 +32,8 @@ public class CombatenteData
     public int GetForca()         => fichaBase.baseForca         + (fichaBase.perLevelUpgradeForca         * (nivelAtual - 1));
     public int GetInteligencia()  => fichaBase.baseInteligencia  + (fichaBase.perLevelUpgradeInteligencia  * (nivelAtual - 1));
     public int GetAgilidade()     => fichaBase.baseAgilidade     + (fichaBase.perLevelUpgradeAgilidade     * (nivelAtual - 1));
-    public int GetResilienciaTotal() => fichaBase.baseResiliencia + (fichaBase.perLevelUpgradeResiliencia * (nivelAtual - 1)) + SomarBonus(e => e.bonusResiliencia);
-    public int GetSorteTotal()       => fichaBase.baseSorte       + (fichaBase.perLevelUpgradeSorte       * (nivelAtual - 1)) + SomarBonus(e => e.bonusSorte); 
+    public int GetResiliencia() => fichaBase.baseResiliencia + (fichaBase.perLevelUpgradeResiliencia * (nivelAtual - 1)) + SomarBonus(e => e.bonusResiliencia);
+    public int GetSorte()       => fichaBase.baseSorte       + (fichaBase.perLevelUpgradeSorte       * (nivelAtual - 1)) + SomarBonus(e => e.bonusSorte); 
     
     public int GetMaxVidaTotal()       => GetMaxVida()      + SomarBonus(e => e.bonusVida);
     public int GetMaxManaTotal()       => GetMaxMana()      + SomarBonus(e => e.bonusMana);

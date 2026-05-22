@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 // Enums para categorizar as regras da habilidade
 public enum TipoAlvo { UnicoInimigo, TodosInimigos, UnicoAliado, TodosAliados, OProprio }
-public enum TipoDano { Fisico, Fogo, Gelo, Eletrico, Sombrio, Luz, Agua, Vento, Terra, Cura, Suporte }
+public enum CategoriaHabilidade { Fisico, Magia, Cura, Suporte }
+public enum TipoDano { Normal, Fogo, Gelo, Eletrico, Sombrio, Luz, Agua, Vento, Terra}
 public enum Elemento { Neutro, Fogo, Gelo, Eletrico, Sombrio }
 
 [CreateAssetMenu(fileName = "NovaHabilidade", menuName = "RPG/Habilidade")]
@@ -15,8 +17,10 @@ public class SkillSO : ScriptableObject
 
     [Header("Regras de Alvo e Tipo")]
     public TipoAlvo alvo;
+    public CategoriaHabilidade categoria;
     public TipoDano tipoDano;
     public Elemento elemento;
+    public List<AbstactSkillEfect> efeitosExtras;
 
     [Header("Custos e Valores")]
     public int custoMana;
@@ -25,10 +29,10 @@ public class SkillSO : ScriptableObject
 
     [Header("Tempo")]
     [Tooltip("Quantos segmentos/ticks o personagem precisa esperar após selecionar a skill para ela EXECUTAR.")]
-    public int segmentosParaCast;
+    public int turnosParaExecutar;
 
     [Tooltip("Modificador de recuo. Ex: Um golpe pesado pode fazer o próximo turno demorar mais (muda o tempo inicial pós-execução).")]
-    public float penalidadeTempoPosUso = 0f;
+    public int turnosRecuperacao = 0;
 
     [Header("Efeitos Visuais e Sonoros")]
     public string gatilhoAnimacao = "CastSkill"; // Nome do Trigger no Animator do personagem

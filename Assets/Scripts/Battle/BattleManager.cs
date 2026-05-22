@@ -19,6 +19,15 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Vector3 centroChaoAliados = new Vector3(4f, -1.5f, 0);
     public float alturaTotalColunaAliados = 4.0f;
 
+    private List<ActionData> actionQueue = new List<ActionData>();
+    private int currentTurn = 0;
+
+    private List<EnemyEntity> enemies = new();
+    private List<CharEntity> allies = new();
+
+    public List<EnemyEntity> Enemies => enemies;
+    public List<CharEntity> Allies => allies;
+
     void Start()
     {
         SpawnEnemies();
@@ -71,11 +80,17 @@ public class BattleManager : MonoBehaviour
         GameObject go = Instantiate(enemyPrefab, posicao, Quaternion.identity);
 
         var sr = go.GetComponent<SpriteRenderer>();
+
         if (sr != null)
         {
             sr.sprite = data.enemySprite;
             sr.sortingOrder = 10 + order;
         }
+
+        EnemyEntity entity = go.AddComponent<EnemyEntity>();
+        entity.Setup(data);
+
+        enemies.Add(entity);
 
         go.name = data.enemyName;
     }
@@ -109,23 +124,155 @@ public class BattleManager : MonoBehaviour
     {
         GameObject go = Instantiate(allyPrefab, posicao, Quaternion.identity);
 
-        // Aplica o Animator específico de batalha configurado no ScriptableObject
         var animador = go.GetComponent<Animator>();
+
         if (animador != null)
         {
             animador.runtimeAnimatorController = dados.fichaBase.battleAnimator;
         }
 
-        // Configura o visual básico e espelha o sprite para olhar em direção aos inimigos
         var sr = go.GetComponent<SpriteRenderer>();
+
         if (sr != null)
         {
             sr.sortingOrder = 10 + order;
             sr.flipX = true;
         }
 
+        CharEntity entity = go.AddComponent<CharEntity>();
+        entity.Setup(dados);
+
+        allies.Add(entity);
+
         go.name = dados.fichaBase.charName;
     }
+    #endregion
+
+    #region Pipeline de Batalha
+
+    public void MainPipeline()
+    {
+        Debug.Log($"TURNO {currentTurn}");
+
+        ExecuteActions();
+
+        UpdateRecovery();
+
+        AskForActions();
+
+        CheckBattleEnd();
+
+        currentTurn++;
+    }
+
+    void ExecuteActions()
+    {
+        List<ActionData> actionsThisTurn =
+            actionQueue
+            .Where(a => a.turnoExecucao == currentTurn)
+            .OrderByDescending(a => a.executor.Agilidade)
+            .ToList();
+
+        foreach (var action in actionsThisTurn)
+        {
+            ExecuteAction(action);
+
+            actionQueue.Remove(action);
+        }
+    }
+
+    void ExecuteAction(ActionData action)
+    {
+        if (!action.executor.IsAlive)
+            return;
+
+        foreach (var alvo in action.alvo)
+        {
+            if (!alvo.IsAlive)
+                continue;
+
+            alvo.ReceiveAction(action.executor, action.habilidade);
+        }
+
+        Debug.Log($"{action.executor.EntityName} usou {action.habilidade.skillName}");
+
+        action.executor.CurrentState = BattleState.Resting;
+
+        action.executor.ReadyTurn = currentTurn + action.turnoRecuperacao;
+    }
+
+    void QueueAction(BattleEntity executor, BattleEntity[] alvo, SkillSO habilidade)
+    {
+        ActionData action = new ActionData
+        {
+            executor = executor,
+            alvo = alvo,
+            habilidade = habilidade,
+
+            turnoExecucao = currentTurn + habilidade.turnosParaExecutar,
+
+            turnoRecuperacao = habilidade.turnosRecuperacao
+        };
+
+        actionQueue.Add(action);
+
+        executor.CurrentState = BattleState.Preparing;
+
+        Debug.Log($"{executor.EntityName} começou preparar {habilidade.skillName}");
+    }
+
+    void UpdateRecovery()
+    {
+        foreach (var entity in GetAllEntities())
+        {
+            if (!entity.IsAlive)
+                continue;
+
+            if (entity.CurrentState == BattleState.Resting &&
+                currentTurn >= entity.ReadyTurn)
+            {
+                entity.CurrentState = BattleState.WaitingAction;
+
+                Debug.Log($"{entity.EntityName} pode agir novamente");
+            }
+        }
+    }
+
+    void AskForActions()
+    {
+        foreach (var entity in GetAllEntities())
+        {
+            if (!entity.IsAlive)
+                continue;
+
+            if (entity.CurrentState != BattleState.WaitingAction)
+                continue;
+
+            BattleDecision decision = entity.GetAction(GetAllEntities());
+
+            if (decision.skill == null)
+                continue;
+
+            QueueAction(entity, decision.targets, decision.skill);
+        }
+    }
+
+    public void CheckBattleEnd()
+    {
+        bool allEnemiesDead = enemies.All(e => !e.IsAlive);
+        bool allAlliesDead = allies.All(a => !a.IsAlive);
+        if (allEnemiesDead)
+        {
+            Debug.Log("Vitória!");
+            // Aqui você pode chamar a tela de vitória, recompensas, etc.
+        }
+        else if (allAlliesDead)
+        {
+            Debug.Log("Derrota...");
+            // Aqui você pode chamar a tela de derrota, opções de retry, etc.
+        }
+    }
+
     #endregion
 
     #region UTILITÁRIOS
@@ -138,5 +285,23 @@ public class BattleManager : MonoBehaviour
         sr.color = new Color(0, 0, 0, 0.4f);
         sr.sortingOrder = 9;
     }
+
+    public List<BattleEntity> GetAllEntities()
+    {
+        List<BattleEntity> all = new();
+
+        all.AddRange(allies);
+        all.AddRange(enemies);
+
+        return all;
+    }
     #endregion
+}
+struct ActionData
+{
+    public BattleEntity executor;
+    public BattleEntity[] alvo;
+    public SkillSO habilidade;
+    public int turnoExecucao;
+    public int turnoRecuperacao;
 }
