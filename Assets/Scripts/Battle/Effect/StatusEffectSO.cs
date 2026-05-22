@@ -4,7 +4,6 @@ public enum TipoDanoStatus { Nenhum, Normal, Fogo, Gelo, Eletrico, Sombrio, Luz,
 
 public enum DuracaoStatus { Combate, Persistente };
 
-[CreateAssetMenu(fileName = "StatusEffectSO", menuName = "RPG/StatusEffect")]
 public abstract class StatusEffectSO : ScriptableObject
 {
     [Header("Identidade")]
