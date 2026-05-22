@@ -48,10 +48,45 @@ public abstract class BattleEntity : MonoBehaviour
 
     [Header("Battle State")]
     public BattleState CurrentState = BattleState.WaitingAction;
+    public List<StatusEffectInstance> statusAtivos = new();
+
 
     public int ReadyTurn = 0;
 
     public SkillSO AtaqueBasico;
+
+    public void ApplyStatusEffect(StatusEffectSO status, BattleEntity dealler)
+    {
+        if (!status.IsStackable)
+        {
+            var statusExistente = statusAtivos.Find(e => e.source == status);
+            if (statusExistente != null)
+            {
+                statusExistente.turnosRestantes = status.duracao;
+                return;
+            }
+
+        }
+
+        var statusInstance = new StatusEffectInstance(status, dealler);
+        status.OnApply(this, dealler);
+        statusAtivos.Add(statusInstance);
+    }
+    public void TickAllStatus()
+    {
+        //Itera sobre todos os status e retira aqueles que tiverem acabado
+        statusAtivos.RemoveAll(e => !e.Tick(this));
+    }
+
+    public void RemoveStatusEffect(StatusEffectSO status)
+    {
+        var statusInstance = statusAtivos.Find(e => e.source == status);
+        if (statusInstance != null)
+        {
+            status.OnExpire(this);
+            statusAtivos.Remove(statusInstance);
+        }
+    }
 
     public virtual void ReceiveAction(BattleEntity dealer, SkillSO skill)
     {
@@ -76,7 +111,7 @@ public abstract class BattleEntity : MonoBehaviour
     {
         if (Imunidades.Contains(tipo))
         {
-            Debug.Log($"{EntityName} é imune a {tipo}");
+            Debug.Log($"{EntityName} ï¿½ imune a {tipo}");
             return;
         }
 
