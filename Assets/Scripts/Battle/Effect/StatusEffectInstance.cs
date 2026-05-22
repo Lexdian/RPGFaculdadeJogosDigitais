@@ -7,11 +7,11 @@ public class StatusEffectInstance
     public int turnosRestantes;
     public StatusEffectSO status;
 
-    public StatusEffectInstance(StatusEffectSO statusEffectSO, BattleEntity dealler)
+    public StatusEffectInstance(StatusEffectSO statusEffectSO, BattleEntity source)
     {
-        status = statusEffectSO;
-        source = dealler;
-        turnosRestantes = statusEffectSO.duracao;
+        this.status = statusEffectSO;
+        this.source = source;
+        this.turnosRestantes = statusEffectSO.duracao;
     }
 
     public bool Tick(BattleEntity target)
