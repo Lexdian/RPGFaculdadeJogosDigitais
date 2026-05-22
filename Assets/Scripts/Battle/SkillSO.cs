@@ -29,10 +29,10 @@ public class SkillSO : ScriptableObject
 
     [Header("Tempo")]
     [Tooltip("Quantos segmentos/ticks o personagem precisa esperar após selecionar a skill para ela EXECUTAR.")]
-    public int segmentosParaCast;
+    public int turnosParaExecutar;
 
     [Tooltip("Modificador de recuo. Ex: Um golpe pesado pode fazer o próximo turno demorar mais (muda o tempo inicial pós-execução).")]
-    public float penalidadeTempoPosUso = 0f;
+    public int turnosRecuperacao = 0f;
 
     [Header("Efeitos Visuais e Sonoros")]
     public string gatilhoAnimacao = "CastSkill"; // Nome do Trigger no Animator do personagem

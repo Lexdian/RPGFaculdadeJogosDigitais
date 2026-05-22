@@ -1,12 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BattleState
+{
+    WaitingAction,
+    Preparing,
+    Resting,
+    Dead
+}
+
+public struct BattleDecision
+{
+    public SkillSO skill;
+    public BattleEntity[] targets;
+}
+
+
 public abstract class BattleEntity : MonoBehaviour
 {
+    [Header("Info")]
     public string EntityName;
-    [Header("Veda & MP")]
+
+    [Header("Vida & Mana")]
     public int MaxHP;
     public int CurrentHP;
+
     public int MaxMP;
     public int CurrentMP;
 
@@ -18,85 +36,84 @@ public abstract class BattleEntity : MonoBehaviour
     public int Evasao;
     public int Agilidade;
 
-    [Header("Afinidade Elemental")]
-    public List<TipoDano> Resistencias; // Lista de tipos de dano que a entidade щ resistente
-    public List<TipoDano> Fraquezas; // Lista de tipos de dano que a entidade щ fraca
-    public List<TipoDano> Imunidades; // Lista de tipos de dano que a entidade щ imune
+    [Header("Afinidades")]
+    public List<TipoDano> Resistencias = new();
+    public List<TipoDano> Fraquezas = new();
+    public List<TipoDano> Imunidades = new();
 
     public bool IsAlive => CurrentHP > 0;
-    public bool IsActiong = false; // Flag para indicar se a entidade estс realizando uma aчуo
 
-    public int AttackColdown = 0; // Turnos para recarregar o ataque
+    [Header("Battle State")]
+    public BattleState CurrentState = BattleState.WaitingAction;
 
-    public abstract SkillSO GetAction(); // Sprite para a batalha
+    public int ReadyTurn = 0;
 
-    
-
-    private void ApplyExtraEffects(BattleEntity target, BattleEntity dealler, SkillSO skill)
+    public virtual void ReceiveAction(BattleEntity dealer, SkillSO skill)
     {
-        if (skill.efeitosExtras != null)
+        switch (skill.categoria)
         {
-            foreach (var efeito in skill.efeitosExtras)
-            {
-                efeito.ApplyEffect(target, dealler, skill);
-            }
+            case CategoriaHabilidade.Cura:
+                Heal(skill.poderBase);
+                break;
+
+            case CategoriaHabilidade.Suporte:
+                ApplyExtraEffects(this, dealer, skill);
+                break;
+
+            default:
+                TakeDamage(dealer, skill.poderBase, skill.tipoDano, skill.categoria);
+                ApplyExtraEffects(this, dealer, skill);
+                break;
         }
     }
 
-    public void ReceiveAction(BattleEntity dealler, SkillSO skill)
+    private void TakeDamage(BattleEntity dealer, int amount, TipoDano tipo, CategoriaHabilidade categoria)
     {
-        if (skill.categoria == CategoriaHabilidade.Cura)
+        if (Imunidades.Contains(tipo))
         {
-            RecebeuCura(skill.poderBase);
-            ApplyExtraEffects(this, dealler, skill);
-        }
-        if (skill.categoria == CategoriaHabilidade.Suporte)
-        {
-            ApplyExtraEffects(this, dealler, skill);
-            Debug.Log($"{EntityName} recebeu um efeito de suporte: {skill.skillName}.");
-        }
-        else
-        {
-            TakeDamage(dealler, skill.poderBase, skill.tipoDano, skill.categoria);
-            ApplyExtraEffects(this, dealler, skill);
-        }
-    }
-    private void TakeDamage(BattleEntity dealler, int amount, TipoDano td, CategoriaHabilidade ch)
-    {
-        if (Imunidades.Contains(td))
-        {
-            Debug.Log($"{EntityName} щ imune a {td}!");
+            Debug.Log($"{EntityName} щ imune a {tipo}");
             return;
         }
-        if (Resistencias.Contains(td))
-        {
-            amount = Mathf.Max(0, amount - 10); // Reduz o dano em 10 pontos
-            Debug.Log($"{EntityName} щ resistente a {td}! Dano reduzido para {amount}.");
-        }
-        else if (Fraquezas.Contains(td))
-        {
-            amount += 10; // Aumenta o dano em 10 pontos
-            Debug.Log($"{EntityName} щ fraco a {td}! Dano aumentado para {amount}.");
-        }
-        if (CategoriaHabilidade.Fisico == ch)
-        {
-            TakeFisicalDamage(dealler, amount);
-        }
+
+        if (Resistencias.Contains(tipo))
+            amount -= 10;
+
+        if (Fraquezas.Contains(tipo))
+            amount += 10;
+
+        amount = Mathf.Max(0, amount);
+
+        if (categoria == CategoriaHabilidade.Fisico)
+            TakeFisicalDamage(dealer, amount);
         else
+            TakeMagicalDamage(dealer, amount);
+    }
+
+    protected virtual void ApplyExtraEffects(BattleEntity target, BattleEntity dealer, SkillSO skill)
+    {
+        if (skill.efeitosExtras == null) return;
+
+        foreach (var efeito in skill.efeitosExtras)
         {
-            TakeMagicalDamage(dealler, amount);
+            efeito.ApplyEffect(target, dealer, skill);
         }
     }
 
-    public abstract void TakeFisicalDamage(BattleEntity dealler, int amount);
-    public abstract void TakeMagicalDamage(BattleEntity dealler, int amount);
+    public virtual void Heal(int amount)
+    {
+        CurrentHP = Mathf.Min(CurrentHP + amount, MaxHP);
 
-    public virtual void RecebeuCura(int amount)
-    {
-        Heal(amount);
+        Debug.Log($"{EntityName} curou {amount} HP");
     }
-    private void Heal(int amount)
+
+    protected virtual void Die()
     {
-        this.CurrentHP = Mathf.Min(this.CurrentHP + amount, this.MaxHP);
+        Debug.Log($"{EntityName} morreu!");
     }
+
+    public abstract BattleDecision GetAction(List<BattleEntity> allEntities);
+
+    public abstract void TakeFisicalDamage(BattleEntity dealer, int amount);
+
+    public abstract void TakeMagicalDamage(BattleEntity dealer, int amount);
 }

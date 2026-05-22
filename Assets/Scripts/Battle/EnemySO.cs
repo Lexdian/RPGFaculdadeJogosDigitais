@@ -15,10 +15,11 @@ public class EnemySO : ScriptableObject
     [Header("Atributos")]
     public int vida;
     public int mana;
-    public int forca;
-    public int inteligencia;
+    public int ataqueFisico;
+    public int ataqueMagico;
+    public int defesaFisica;
+    public int defesaMagica;
+    public int evasao;
     public int agilidade;
-    public int resiliencia;
-    public int sorte;
 
 }
