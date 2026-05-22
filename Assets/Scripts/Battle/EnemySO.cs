@@ -22,4 +22,6 @@ public class EnemySO : ScriptableObject
     public int evasao;
     public int agilidade;
 
+    [Header("Comportamento")]
+    public AbstractEnemyBehavior behavior;
 }

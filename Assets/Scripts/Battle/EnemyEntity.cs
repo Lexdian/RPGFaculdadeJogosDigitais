@@ -5,6 +5,7 @@ public class EnemyEntity : BattleEntity
 {
     public EnemySO Data;
 
+    private AbstractEnemyBehavior behavior;
     public void Setup(EnemySO data)
     {
         Data = data;
@@ -25,6 +26,8 @@ public class EnemyEntity : BattleEntity
 
         Evasao = data.evasao;
         Agilidade = data.agilidade;
+
+        behavior = data.behavior;
     }
 
     public override BattleDecision GetAction(List<BattleEntity> allEntities)

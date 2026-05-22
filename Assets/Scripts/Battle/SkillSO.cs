@@ -32,7 +32,7 @@ public class SkillSO : ScriptableObject
     public int turnosParaExecutar;
 
     [Tooltip("Modificador de recuo. Ex: Um golpe pesado pode fazer o próximo turno demorar mais (muda o tempo inicial pós-execução).")]
-    public int turnosRecuperacao = 0f;
+    public int turnosRecuperacao = 0;
 
     [Header("Efeitos Visuais e Sonoros")]
     public string gatilhoAnimacao = "CastSkill"; // Nome do Trigger no Animator do personagem
