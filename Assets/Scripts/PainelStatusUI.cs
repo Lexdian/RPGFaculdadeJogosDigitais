@@ -60,8 +60,8 @@ public class PainelStatusUI : MonoBehaviour
         txtForca.text         = $"Força {combatente.GetForcaTotal()}";
         txtInteligencia.text  = $"Inteligência {combatente.GetInteligenciaTotal()}";
         txtAgilidade.text     = $"Agilidade {combatente.GetAgilidadeTotal()}";
-        txtResiliencia.text   = $"Resiliência {combatente.GetResilienciaTotal()}";
-        txtSorte.text         = $"Sorte {combatente.GetSorteTotal()}";
+        txtResiliencia.text   = $"Resiliência {combatente.GetResiliencia()}";
+        txtSorte.text         = $"Sorte {combatente.GetSorte()}";
 
         if (combatente.fichaBase.charPortrait != null)
             imgPortrait.sprite = combatente.fichaBase.charPortrait;
