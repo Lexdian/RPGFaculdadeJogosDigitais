@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     [Header("Dados de Batalha temporários")]
     public EnemyGroup inimigosParaSpawnar;
 
+    [Header("Itens de Teste")]
+    public List<ItemSO> itensTeste = new List<ItemSO>();
+
+    [Header("Recursos")]
+    public int gold = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +54,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CreateTeam();
+        InicializarItensTeste();
+    }
+
+    private void InicializarItensTeste()
+    {
+        foreach (var item in itensTeste)
+        {
+            if (item != null)
+                inventarioGrupo.TryAdd(item, 1);
+        }
     }
 
     private void CreateTeam()

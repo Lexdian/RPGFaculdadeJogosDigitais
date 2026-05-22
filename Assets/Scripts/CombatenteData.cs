@@ -40,6 +40,8 @@ public class CombatenteData
     public int GetForcaTotal()         => GetForca()        + SomarBonus(e => e.bonusForca);
     public int GetInteligenciaTotal()  => GetInteligencia() + SomarBonus(e => e.bonusInteligencia);
     public int GetAgilidadeTotal()     => GetAgilidade()    + SomarBonus(e => e.bonusAgilidade);
+    public int GetDefesaFisicaTotal() => SomarBonus(e => e.bonusDefesaFisica);
+    public int GetDefesaMagicaTotal() => SomarBonus(e => e.bonusDefesaMagica);
 
     public void Equipar(EquipableItemSO item)
     {
