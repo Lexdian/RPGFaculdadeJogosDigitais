@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -25,6 +26,7 @@ public class CombatenteData
         this.nivelAtual = nivel;
         this.vidaAtual = GetMaxVidaTotal();
         this.manaAtual = GetMaxManaTotal();
+        this.Skills = new List<SkillSO>(fichaBase.habilidadesIniciais);
     }
 
     public int GetMaxVida()       => fichaBase.baseVida          + (fichaBase.perLevelUpgradeVida          * (nivelAtual - 1));
@@ -42,6 +44,8 @@ public class CombatenteData
     public int GetAgilidadeTotal()     => GetAgilidade()    + SomarBonus(e => e.bonusAgilidade);
     public int GetDefesaFisicaTotal() => SomarBonus(e => e.bonusDefesaFisica);
     public int GetDefesaMagicaTotal() => SomarBonus(e => e.bonusDefesaMagica);
+
+    public List<SkillSO> Skills = new();
 
     public void Equipar(EquipableItemSO item)
     {

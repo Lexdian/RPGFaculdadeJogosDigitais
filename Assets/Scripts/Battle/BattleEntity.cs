@@ -20,6 +20,7 @@ public abstract class BattleEntity : MonoBehaviour
 {
     [Header("Info")]
     public string EntityName;
+    public Sprite Icon;
 
     [Header("Vida & Mana")]
     public int MaxHP;
@@ -36,6 +37,8 @@ public abstract class BattleEntity : MonoBehaviour
     public int Evasao;
     public int Agilidade;
 
+    public List<SkillSO> Skills = new();
+
     [Header("Afinidades")]
     public List<TipoDano> Resistencias = new();
     public List<TipoDano> Fraquezas = new();
@@ -47,6 +50,8 @@ public abstract class BattleEntity : MonoBehaviour
     public BattleState CurrentState = BattleState.WaitingAction;
 
     public int ReadyTurn = 0;
+
+    public SkillSO AtaqueBasico;
 
     public virtual void ReceiveAction(BattleEntity dealer, SkillSO skill)
     {
@@ -110,8 +115,6 @@ public abstract class BattleEntity : MonoBehaviour
     {
         Debug.Log($"{EntityName} morreu!");
     }
-
-    public abstract BattleDecision GetAction(List<BattleEntity> allEntities);
 
     public abstract void TakeFisicalDamage(BattleEntity dealer, int amount);
 

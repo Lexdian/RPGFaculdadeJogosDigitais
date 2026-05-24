@@ -14,10 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   enemyName: Zumbi
   enemySprite: {fileID: -6690086926033566117, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
+  enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
+  tamanho: 0
+  isVoador: 0
   vida: 50
   mana: 0
-  forca: 10
-  inteligencia: 2
+  ataqueFisico: 0
+  ataqueMagico: 0
+  defesaFisica: 0
+  defesaMagica: 0
+  evasao: 0
   agilidade: 2
-  resiliencia: 5
-  sorte: 5
+  xpReward: 0
+  delay: 1
+  recuperacao: 1
+  tipoAlvo: 0
+  dano: 0
+  Skills:
+  - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
+  behavior:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
