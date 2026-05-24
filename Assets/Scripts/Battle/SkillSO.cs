@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 
 // Enums para categorizar as regras da habilidade
-public enum TipoAlvo { UnicoInimigo, TodosInimigos, UnicoAliado, TodosAliados, OProprio }
+public enum TipoAlvo { Unico, Grupo}
 public enum CategoriaHabilidade { Fisico, Magia, Cura, Suporte }
 public enum TipoDano { Normal, Fogo, Gelo, Eletrico, Sombrio, Luz, Agua, Vento, Terra}
-public enum Elemento { Neutro, Fogo, Gelo, Eletrico, Sombrio }
+public enum Prioridade { Aliados, Inimigos }
 
 [CreateAssetMenu(fileName = "NovaHabilidade", menuName = "RPG/Habilidade")]
 public class SkillSO : ScriptableObject
@@ -19,7 +19,7 @@ public class SkillSO : ScriptableObject
     public TipoAlvo alvo;
     public CategoriaHabilidade categoria;
     public TipoDano tipoDano;
-    public Elemento elemento;
+    public Prioridade prioridade;
     public List<AbstactSkillEfect> efeitosExtras;
 
     [Header("Custos e Valores")]
@@ -38,4 +38,35 @@ public class SkillSO : ScriptableObject
     public string gatilhoAnimacao = "CastSkill"; // Nome do Trigger no Animator do personagem
     public GameObject efeitoVisualPrefab; // Prefab de partículas (ex: fogo estourando no inimigo)
     public AudioClip somExecucao;
+
+    /// <summary>
+    /// Nosso "Construtor" customizado e seguro para o Unity.
+    /// </summary>
+    public static SkillSO AtaqueBasico(
+        int delay,
+        int recuperacao,
+        TipoAlvo tipoAlvo,
+        TipoDano dano)
+    {
+        // 1. Instancia corretamente na memória do Unity
+        SkillSO novaSkill = ScriptableObject.CreateInstance<SkillSO>();
+
+        // 2. Inicializa os campos desejados
+        novaSkill.skillName = "Ataque Básico";
+        novaSkill.custoMana = 0;
+        novaSkill.poderBase = 10;
+        novaSkill.turnosParaExecutar = delay;
+        novaSkill.turnosRecuperacao = recuperacao;
+        novaSkill.alvo = tipoAlvo;
+        novaSkill.categoria = CategoriaHabilidade.Fisico;
+        novaSkill.tipoDano = dano;
+        novaSkill.prioridade = Prioridade.Inimigos;
+
+        // Inicializações padrão para evitar NullReference comuns
+        novaSkill.efeitosExtras = new List<AbstactSkillEfect>();
+        novaSkill.chanceAcerto = 1f;
+        novaSkill.gatilhoAnimacao = "CastSkill";
+
+        return novaSkill;
+    }
 }

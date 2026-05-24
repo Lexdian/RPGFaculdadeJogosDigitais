@@ -5,6 +5,9 @@ public class CharEntity : BattleEntity
 {
     public CombatenteData Data;
 
+    public bool DecididoNoTurno { get; private set; }
+    private BattleDecision decisaoSelecionada;
+
     public void Setup(CombatenteData data)
     {
         Data = data;
@@ -25,12 +28,34 @@ public class CharEntity : BattleEntity
 
         Evasao = data.GetAgilidade()/2;
         Agilidade = data.GetAgilidade();
+
+        Skills = data.Skills;
+
+        Icon = data.fichaBase.charPortrait;
+
+        AtaqueBasico = SkillSO.AtaqueBasico(1, 1, TipoAlvo.Unico, TipoDano.Normal);
     }
 
-    public override BattleDecision GetAction(List<BattleEntity> allEntities)
+    public void EscoolherAcaoDoPlayer(List<BattleEntity> todasAsEntidades, MenuFocadoNoPlayer menuUI)
     {
-        // Depois tu troca pela UI do jogador
-        return new BattleDecision();
+        DecididoNoTurno = false;
+
+        if (menuUI != null)
+        {
+            menuUI.FocarNoPlayer(this, todasAsEntidades);
+        }
+    }
+
+    // Função que a UI vai chamar de volta para entregar a decisão
+    public void DefinirDecisao(BattleDecision decision)
+    {
+        decisaoSelecionada = decision;
+        DecididoNoTurno = true; // Libera o BattleManager para continuar
+    }
+
+    public BattleDecision ObterDecisaoFinal()
+    {
+        return decisaoSelecionada;
     }
 
     public override void TakeFisicalDamage(BattleEntity dealer, int amount)

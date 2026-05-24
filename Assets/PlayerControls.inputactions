@@ -97,8 +97,114 @@
         {
             "name": "InBattle",
             "id": "6ced06a5-6ea3-4bfd-87f8-4e0d612a79a7",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Confirmar",
+                    "type": "Button",
+                    "id": "5fb05f8b-a475-4123-b51b-34fbf8df9635",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancelar",
+                    "type": "Button",
+                    "id": "3c553498-d11a-4cc7-b52b-8bb89c342950",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Navegacao",
+                    "type": "Value",
+                    "id": "ebeb3e52-bc8b-4ae1-9371-52b63ab9d9ce",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d57c594a-9ad2-40c5-8a4c-2c6bc2ff87e0",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Confirmar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8aa02b45-6c1a-4904-a6fa-0618401cc093",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancelar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "9868aca6-b008-46e3-94d2-67f9306833c5",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navegacao",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "81d6acd8-d80b-4879-8abd-87d77c2a6f56",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navegacao",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "a250e67b-94fe-4091-9dff-2090ff5a8365",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navegacao",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "cc1dbce4-12a9-42b9-9c97-0caf5661ee79",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navegacao",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "2019d999-00cd-40af-9067-c9f21dd55a24",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navegacao",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
         },
         {
             "name": "OnDialog",

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemySize { Pequeno, Grande }
@@ -7,6 +8,7 @@ public class EnemySO : ScriptableObject
 {
     public string enemyName;
     public Sprite enemySprite;
+    public Sprite enemyIcon;
     public EnemySize tamanho;
     public bool isVoador;
 
@@ -22,6 +24,18 @@ public class EnemySO : ScriptableObject
     public int evasao;
     public int agilidade;
 
+    public int xpReward;
+
+
+    [Header("Infos Ataque base")]
+    public int delay;
+    public int recuperacao;
+    public TipoAlvo tipoAlvo;
+    public TipoDano dano;
+
+    public List<SkillSO> Skills = new();
+
     [Header("Comportamento")]
+    [SerializeReference, SubclassSelector]
     public AbstractEnemyBehavior behavior;
 }

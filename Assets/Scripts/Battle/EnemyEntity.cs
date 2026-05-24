@@ -28,12 +28,17 @@ public class EnemyEntity : BattleEntity
         Agilidade = data.agilidade;
 
         behavior = data.behavior;
+
+        Skills = data.Skills;
+
+        Icon = data.enemyIcon;
+
+        AtaqueBasico = SkillSO.AtaqueBasico(data.delay, data.recuperacao, data.tipoAlvo, data.dano);
     }
 
-    public override BattleDecision GetAction(List<BattleEntity> allEntities)
+    public BattleDecision GetAction(List<BattleEntity> allEntities)
     {
-        // IA futura
-        return new BattleDecision();
+        return behavior.ChooseAction(allEntities, Skills, this);
     }
 
     public override void TakeFisicalDamage(BattleEntity dealer, int amount)

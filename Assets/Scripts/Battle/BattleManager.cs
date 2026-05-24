@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,8 +7,8 @@ public class BattleManager : MonoBehaviour
 {
     [Header("Prefabs e Visuais")]
     public GameObject enemyPrefab;
-    public GameObject allyPrefab; // Prefab simples contendo SpriteRenderer e Animator para a batalha
-    public Sprite shadowSprite;    // Sprite de sombra circular
+    public GameObject allyPrefab;
+    public Sprite shadowSprite;
 
     [Header("Configurações dos Inimigos (Esquerda)")]
     [SerializeField] private Vector3 centroChaoInimigos = new Vector3(-4f, -1.5f, 0);
@@ -28,10 +29,19 @@ public class BattleManager : MonoBehaviour
     public List<EnemyEntity> Enemies => enemies;
     public List<CharEntity> Allies => allies;
 
-    void Start()
+    [Header("Referências de UI")]
+    public MenuFocadoNoPlayer menuUI;
+    public BarraProgresso timelineUI;
+
+    void Awake()
     {
         SpawnEnemies();
         SpawnAllies();
+    }
+
+    void Start()
+    {
+        StartCoroutine(BattleLoop());
     }
 
     #region SPAWN DOS INIMIGOS
@@ -52,14 +62,12 @@ public class BattleManager : MonoBehaviour
         int total = lista.Count;
         if (total == 0) return;
 
-        // X da coluna: Frente fica mais perto do centro (centroChao.x). Meio e Trás recuam para a esquerda (-).
         float posX = centroChaoInimigos.x - (indexColuna * distanciaEntreColunasInimigos);
 
         for (int i = 0; i < total; i++)
         {
             EnemySO data = lista[i];
 
-            // Cálculo de Y para centralizar verticalmente na tela
             float stepY = alturaTotalColunaInimigos / (total + 1);
             float posY = centroChaoInimigos.y + (alturaTotalColunaInimigos / 2) - (stepY * (i + 1));
 
@@ -110,7 +118,6 @@ public class BattleManager : MonoBehaviour
             CombatenteData dadosAliado = equipe[i];
             if (dadosAliado == null || dadosAliado.fichaBase == null) continue;
 
-            // Cálculo de Y para balancear e centralizar a equipe dinamicamente no lado direito
             float stepY = alturaTotalColunaAliados / (totalAliados + 1);
             float posY = centroChaoAliados.y + (alturaTotalColunaAliados / 2) - (stepY * (i + 1));
 
@@ -150,17 +157,29 @@ public class BattleManager : MonoBehaviour
 
     #region Pipeline de Batalha
 
-    public void MainPipeline()
+    IEnumerator BattleLoop()
     {
-        Debug.Log($"TURNO {currentTurn}");
+        while (currentTurn < 10)
+        {
+            yield return StartCoroutine(MainPipelineCoroutine());
+        }
+    }
+
+    public IEnumerator MainPipelineCoroutine()
+    {
+        Debug.Log($"=========================TURNO {currentTurn}=========================");
 
         ExecuteActions();
 
         UpdateRecovery();
 
-        AskForActions();
+        yield return StartCoroutine(AskForActionsCoroutine());
 
         CheckBattleEnd();
+
+        bool carregouSegmento = false;
+        timelineUI.AtualizarProgressoTurno(() => carregouSegmento = true);
+        yield return new WaitUntil(() => carregouSegmento);
 
         currentTurn++;
     }
@@ -173,50 +192,54 @@ public class BattleManager : MonoBehaviour
             .OrderByDescending(a => a.executor.Agilidade)
             .ToList();
 
+        bool acted = actionsThisTurn.Count > 0;
         foreach (var action in actionsThisTurn)
         {
             ExecuteAction(action);
 
             actionQueue.Remove(action);
         }
+
+        if (acted)
+            timelineUI.ZerarBarra(currentTurn + 1);
     }
 
     void ExecuteAction(ActionData action)
     {
-        if (!action.executor.IsAlive)
-            return;
+        if (!action.executor.IsAlive) return;
+
+        timelineUI.RemoverIcone(action.executor);
 
         foreach (var alvo in action.alvo)
         {
-            if (!alvo.IsAlive)
-                continue;
-
+            if (!alvo.IsAlive) continue;
             alvo.ReceiveAction(action.executor, action.habilidade);
         }
 
         Debug.Log($"{action.executor.EntityName} usou {action.habilidade.skillName}");
-
         action.executor.CurrentState = BattleState.Resting;
-
         action.executor.ReadyTurn = currentTurn + action.turnoRecuperacao;
     }
 
     void QueueAction(BattleEntity executor, BattleEntity[] alvo, SkillSO habilidade)
     {
+        int turnoDeExecucao = currentTurn + habilidade.turnosParaExecutar;
+
         ActionData action = new ActionData
         {
             executor = executor,
             alvo = alvo,
             habilidade = habilidade,
-
-            turnoExecucao = currentTurn + habilidade.turnosParaExecutar,
-
+            turnoExecucao = turnoDeExecucao,
             turnoRecuperacao = habilidade.turnosRecuperacao
         };
 
         actionQueue.Add(action);
-
         executor.CurrentState = BattleState.Preparing;
+
+        int turnoRecuperacao = turnoDeExecucao + habilidade.turnosRecuperacao;
+
+        timelineUI.AdicionarOuMoverIconeDuplo(executor, turnoDeExecucao, turnoRecuperacao, executor.Icon);
 
         Debug.Log($"{executor.EntityName} começou preparar {habilidade.skillName}");
     }
@@ -238,22 +261,30 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    void AskForActions()
+    IEnumerator AskForActionsCoroutine()
     {
-        foreach (var entity in GetAllEntities())
+        foreach (var entity in Enemies)
         {
-            if (!entity.IsAlive)
-                continue;
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) continue;
 
-            if (entity.CurrentState != BattleState.WaitingAction)
-                continue;
+            BattleDecision decision = ((EnemyEntity)entity).GetAction(GetAllEntities());
+            if (decision.skill != null)
+                QueueAction(entity, decision.targets, decision.skill);
+        }
 
-            BattleDecision decision = entity.GetAction(GetAllEntities());
+        foreach (var entity in Allies)
+        {
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Não atua"); continue; }
 
-            if (decision.skill == null)
-                continue;
+            ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
 
-            QueueAction(entity, decision.targets, decision.skill);
+            yield return new WaitUntil(() => ((CharEntity)entity).DecididoNoTurno == true);
+
+            BattleDecision decision = ((CharEntity)entity).ObterDecisaoFinal();
+            if (decision.skill != null)
+            {
+                QueueAction(entity, decision.targets, decision.skill);
+            }
         }
     }
 
@@ -264,12 +295,10 @@ public class BattleManager : MonoBehaviour
         if (allEnemiesDead)
         {
             Debug.Log("Vitória!");
-            // Aqui você pode chamar a tela de vitória, recompensas, etc.
         }
         else if (allAlliesDead)
         {
             Debug.Log("Derrota...");
-            // Aqui você pode chamar a tela de derrota, opções de retry, etc.
         }
     }
 
@@ -294,6 +323,72 @@ public class BattleManager : MonoBehaviour
         all.AddRange(enemies);
 
         return all;
+    }
+    #endregion
+
+    #region MOTOR DE PREVISÃO VISUAL (GIZMOS NO EDITOR)
+    private void OnDrawGizmos()
+    {
+        // Se o jogo já estiver rodando, não precisamos desenhar a previsão por cima dos heróis reais
+        if (Application.isPlaying) return;
+
+        // --- 1. DESENHO DOS ALIADOS (Lado Direito) ---
+        Gizmos.color = Color.cyan;
+        // Desenha uma linha vertical mostrando a altura do limite da coluna de aliados
+        Vector3 topoAliados = centroChaoAliados + new Vector3(0, alturaTotalColunaAliados / 2, 0);
+        Vector3 baseAliados = centroChaoAliados - new Vector3(0, alturaTotalColunaAliados / 2, 0);
+        Gizmos.DrawLine(topoAliados, baseAliados);
+
+        // Simula o spawn de uma equipe de até 3 aliados para teste visual
+        int testeAliadosCount = 3;
+        for (int i = 0; i < testeAliadosCount; i++)
+        {
+            float stepY = alturaTotalColunaAliados / (testeAliadosCount + 1);
+            float posY = centroChaoAliados.y + (alturaTotalColunaAliados / 2) - (stepY * (i + 1));
+            Vector3 posPrevisao = new Vector3(centroChaoAliados.x, posY, 0);
+
+            // Desenha uma esfera azul onde o aliado vai nascer
+            Gizmos.DrawWireSphere(posPrevisao, 0.3f);
+        }
+
+        // --- 2. DESENHO DOS INIMIGOS (Lado Esquerdo - 3 Colunas) ---
+        // Vamos testar simulando 2 inimigos por coluna para ver o espacamento
+        int testeInimigosPorColuna = 2;
+
+        for (int col = 0; col < 3; col++)
+        {
+            // Define uma cor para cada coluna: Frente (Verde), Meio (Amarelo), Trás (Vermelho)
+            if (col == 0) Gizmos.color = Color.green;
+            else if (col == 1) Gizmos.color = Color.yellow;
+            else Gizmos.color = Color.red;
+
+            float posX = centroChaoInimigos.x - (col * distanciaEntreColunasInimigos);
+
+            // Linha guia da coluna atual
+            Vector3 topoInimigoCol = new Vector3(posX, centroChaoInimigos.y + (alturaTotalColunaInimigos / 2), 0);
+            Vector3 baseInimigoCol = new Vector3(posX, centroChaoInimigos.y - (alturaTotalColunaInimigos / 2), 0);
+            Gizmos.DrawLine(topoInimigoCol, baseInimigoCol);
+
+            for (int i = 0; i < testeInimigosPorColuna; i++)
+            {
+                float stepY = alturaTotalColunaInimigos / (testeInimigosPorColuna + 1);
+                float posY = centroChaoInimigos.y + (alturaTotalColunaInimigos / 2) - (stepY * (i + 1));
+                Vector3 posPrevisaoInimigo = new Vector3(posX, posY, 0);
+
+                // Desenha um cubo aramado representando o inimigo no chão
+                Gizmos.DrawWireCube(posPrevisaoInimigo, new Vector3(0.5f, 0.5f, 0));
+
+                // Desenha uma caixinha extra flutuante para checar visualmente o "Offset Voador" na coluna de trás (como teste)
+                if (col == 2 && i == 0)
+                {
+                    Gizmos.color = Color.magenta;
+                    Vector3 posVoador = posPrevisaoInimigo + new Vector3(0, offsetVoadorY, 0);
+                    Gizmos.DrawWireCube(posVoador, new Vector3(0.4f, 0.4f, 0));
+                    Gizmos.DrawLine(posPrevisaoInimigo, posVoador); // Linha ligando a sombra ao voador
+                    Gizmos.color = Color.red; // Reseta a cor da coluna
+                }
+            }
+        }
     }
     #endregion
 }
