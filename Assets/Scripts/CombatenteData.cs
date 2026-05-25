@@ -98,4 +98,58 @@ public class CombatenteData
             if (equip != null) total += selector(equip);
         return total;
     }
+
+    public int XPParaProximoNivel()
+    {
+        return Mathf.RoundToInt(
+            fichaBase.xpBaseNecessario * Mathf.Pow(fichaBase.curvaXPMultiplicador, nivelAtual)
+        );
+    }   
+
+    public InfoLevelUp GanharXP(int xp)
+    {
+        var info = new InfoLevelUp
+        {
+            nivelAnterior = nivelAtual,
+            nivelAtual = nivelAtual,
+            subiuDeNivel = false,
+            habilidadesAprendidas = new List<SkillSO>()
+        };
+
+        xpAtual += xp;
+
+        while (xpAtual >= XPParaProximoNivel())
+        {
+            xpAtual -= XPParaProximoNivel();
+            nivelAtual++;
+
+            info.subiuDeNivel = true;
+            info.nivelAtual = nivelAtual;
+
+            vidaAtual += fichaBase.perLevelUpgradeVida;
+            manaAtual += fichaBase.perLevelUpgradeMana;
+
+            if (fichaBase.habilidadesPorNivel != null)
+            {
+                foreach (var entrada in fichaBase.habilidadesPorNivel)
+                {
+                    if (entrada.nivelNecessario == nivelAtual && !Skills.Contains(entrada.habilidade))
+                    {
+                        Skills.Add(entrada.habilidade);
+                        info.habilidadesAprendidas.Add(entrada.habilidade);
+                    }
+                }
+            }
+        }
+
+        return info;
+    }
+}
+
+public struct InfoLevelUp
+{
+    public bool subiuDeNivel;
+    public int nivelAnterior;
+    public int nivelAtual;
+    public List<SkillSO> habilidadesAprendidas;
 }

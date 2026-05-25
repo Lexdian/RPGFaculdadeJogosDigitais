@@ -26,6 +26,8 @@ public class EnemySO : ScriptableObject
 
     public int xpReward;
 
+    [Header("Drop Table")]
+    public List<DropEntry> dropTable = new();
 
     [Header("Infos Ataque base")]
     public int delay;
@@ -34,8 +36,21 @@ public class EnemySO : ScriptableObject
     public TipoDano dano;
 
     public List<SkillSO> Skills = new();
-
+    
     [Header("Comportamento")]
     [SerializeReference, SubclassSelector]
     public AbstractEnemyBehavior behavior;
+
+    public List<(ItemSO item, int quantidade)> RollDrops()
+    {
+        var resultado = new List<(ItemSO, int)>();
+        foreach (var entry in dropTable)
+        {
+            int qty = entry.Roll();
+            if (qty > 0)
+                resultado.Add((entry.item, qty));
+        }
+        return resultado;
+    }
+
 }
