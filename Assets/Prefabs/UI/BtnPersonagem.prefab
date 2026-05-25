@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7709459742913006122}
   - component: {fileID: 7781966932883311942}
   - component: {fileID: 5703689695265276511}
+  - component: {fileID: 6678935347754212604}
   m_Layer: 5
   m_Name: BtnPersonagem
   m_TagString: Untagged
@@ -142,6 +143,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6678935347754212604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414440663170638057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba245b4d8643fbb4b9aeb9e9b2cc9143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BotaoPersonagem
+  imagemBotao: {fileID: 0}
+  corNormal: {r: 1, g: 1, b: 1, a: 1}
+  corSelecionado: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &7360494049986821347
 GameObject:
   m_ObjectHideFlags: 0
