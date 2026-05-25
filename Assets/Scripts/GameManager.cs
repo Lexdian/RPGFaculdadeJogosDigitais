@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     [Header("Recursos")]
     public int gold = 0;
 
+    [Header("Localização")]
+    public string cidadeAtual = "Kran-Tor";
+
     private void Awake()
     {
         if (Instance == null)
