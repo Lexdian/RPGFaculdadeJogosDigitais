@@ -33,6 +33,7 @@ public class BattleManager : MonoBehaviour
     [Header("Referências de UI")]
     public MenuFocadoNoPlayer menuUI;
     public BarraProgresso timelineUI;
+    public BattleResultUI resultUI;
 
     void Awake()
     {
@@ -323,17 +324,77 @@ IEnumerator AskForActionsCoroutine()
         }
     }
 
-    public void CheckBattleEnd()
+    public bool CheckBattleEnd()
     {
         bool allEnemiesDead = enemies.All(e => !e.IsAlive);
         bool allAlliesDead = allies.All(a => !a.IsAlive);
         if (allEnemiesDead)
         {
             Debug.Log("Vitória!");
+            BattleResult resultado = CalcularResultadoVitoria();
+            AplicarResultado(resultado);
+
+            if (resultUI != null)
+                resultUI.MostrarVitoria(resultado);
         }
-        else if (allAlliesDead)
+        else
         {
             Debug.Log("Derrota...");
+            if (resultUI != null)
+                resultUI.MostrarDerrota();
+        }
+
+        return true;
+    }
+
+    private BattleResult CalcularResultadoVitoria()
+    {
+        var resultado = new BattleResult { vitoria = true };
+
+        int xpTotal = enemies.Sum(e => e.Data?.xpReward ?? 0);
+        resultado.xpTotal = xpTotal;
+
+        foreach (var enemy in enemies)
+        {
+            if (enemy.Data == null) continue;
+            foreach (var drop in enemy.Data.RollDrops())
+                resultado.drops.Add(drop);
+        }
+
+        foreach (var ally in allies)
+        {
+            resultado.personagens.Add(new CharacterBattleResult
+            {
+                entidade = ally,
+                xpGanho = xpTotal
+            });
+        }
+
+        return resultado;
+    }
+
+    private void AplicarResultado(BattleResult resultado)
+    {
+        foreach (var rp in resultado.personagens)
+        {
+            if (!rp.entidade.IsAlive) continue;
+
+            CombatenteData dados = rp.entidade.Data;
+            if (dados == null) continue;
+
+            int nivelAntes = dados.nivelAtual;
+            InfoLevelUp info = dados.GanharXP(rp.xpGanho);
+
+            rp.nivelAnterior = nivelAntes;
+            rp.nivelAtual = dados.nivelAtual;
+            rp.subiuDeNivel = info.subiuDeNivel;
+            rp.habilidadesAprendidas = info.habilidadesAprendidas;
+        }
+
+        if (GameManager.Instance?.inventarioGrupo != null)
+        {
+            foreach (var (item, qty) in resultado.drops)
+                GameManager.Instance.inventarioGrupo.TryAdd(item, qty);
         }
     }
 
