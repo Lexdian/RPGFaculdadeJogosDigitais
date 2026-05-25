@@ -10,6 +10,10 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] private GameObject painelStatus;
     [SerializeField] private GameObject painelSelecaoPersonagem;
 
+    [SerializeField] private GameObject painelLocalizacao;
+
+    [SerializeField] private GameObject painelTitulo;
+
     private bool pausado = false;
 
     private void Update()
@@ -33,6 +37,8 @@ public class MenuPausa : MonoBehaviour
     public void Fechar()
     {
         painelSelecaoPersonagem.SetActive(false);
+        painelLocalizacao.SetActive(true);
+        painelTitulo.SetActive(true);
         painelInventario.SetActive(false);
         painelEquipamentos.SetActive(false);
         painelStatus.SetActive(false);
