@@ -23,8 +23,11 @@ public class BarraProgresso : MonoBehaviour
     public Color corRest = Color.white;
 
     [Header("Configurações do Ícone de Escolha Definitivo")]
-    // Defina no inspetor a cor azul para o ícone de retorno definitivo
     public Color corMascaraEscolha = new Color(0f, 0.5f, 1f, 1f);
+
+    [Header("Configurações de Animação")]
+    [SerializeField] private float duracaoMovimentoIcones = 0.6f;
+    [SerializeField] private Ease tipoTransicao = Ease.OutQuad;
 
     private GameObject previewAcaoInstanciado;
     private GameObject previewRecuperacaoInstanciado;
@@ -32,7 +35,6 @@ public class BarraProgresso : MonoBehaviour
     private const float VALOR_SEGMENTO = 0.125f; // 1/8
     private List<RectTransform> listaContainersSegmentos = new List<RectTransform>();
 
-    // Estrutura para guardar os turnos calculados de um personagem
     private class DadosTurnoPersonagem
     {
         public Sprite foto;
@@ -40,7 +42,6 @@ public class BarraProgresso : MonoBehaviour
         public int turnoRecuperacao;
     }
 
-    // Estrutura para rastrear os dois GameObjects físicos criados na UI
     private class IconesInstanciadosPersonagem
     {
         public GameObject iconeAcao;
@@ -101,29 +102,30 @@ public class BarraProgresso : MonoBehaviour
         if (alvoFill > 1.0f) alvoFill = 1.0f;
         if (alvoFill < 0f) alvoFill = 0f;
 
-        barraFilled.DOFillAmount(alvoFill, 1.0f)
+        barraFilled.DOFillAmount(alvoFill, 0.5f)
             .SetEase(Ease.Linear)
             .OnComplete(() => onComplete?.Invoke());
     }
 
-    public void ZerarBarra(int novoPrimeiroTurno)
+    public Tweener ZerarBarra(int novoPrimeiroTurno)
     {
-        if (barraFilled == null) return;
+        if (barraFilled == null) return null;
 
         barraFilled.DOKill();
-        barraFilled.fillAmount = 0f;
+        LimparPrevisaoTurno(); // Garante que previews antigos sumam ao resetar a barra
 
         primeiroTurno = novoPrimeiroTurno;
         segmentosPreenchidos = 0;
 
-        LimparPrevisaoTurno();
-        RedesenharTodosOsIcones();
+        // Anima a transição de posição dos ícones reais na tela
+        AnimarMovimentoDeTodosOsIcones();
+
+        // Retorna a animação do Fill esvaziando para sincronia com o BattleManager
+        return barraFilled.DOFillAmount(0f, duracaoMovimentoIcones).SetEase(tipoTransicao);
     }
 
-    // MODIFICADO: Agora aceita os dois turnos finais calculados no momento da confirmação da Skill
     public void AdicionarOuMoverIconeDuplo(BattleEntity personagem, int turnoAcao, int turnoRecuperacao, Sprite fotoPersonagem)
     {
-        // Atualiza o turno principal da entidade para o gerenciador do combate
         personagem.ReadyTurn = turnoAcao;
 
         DadosTurnoPersonagem dados = new DadosTurnoPersonagem
@@ -135,23 +137,25 @@ public class BarraProgresso : MonoBehaviour
 
         dadosDosIcones[personagem] = dados;
 
-        PosicionarIconesNaTela(personagem, dados);
+        if (iconesInstanciados.ContainsKey(personagem))
+        {
+            AnimarMovimentoDeUmPersonagem(personagem, dados);
+        }
+        else
+        {
+            InstanciarIconesIniciais(personagem, dados);
+        }
     }
 
-    // Mantido por compatibilidade caso outros scripts usem a assinatura antiga (ex: Inimigos ou setups iniciais)
     public void AdicionarOuMoverIcone(BattleEntity personagem, int turnoDestino, Sprite fotoPersonagem)
     {
         AdicionarOuMoverIconeDuplo(personagem, turnoDestino, turnoDestino, fotoPersonagem);
     }
 
-    private void PosicionarIconesNaTela(BattleEntity personagem, DadosTurnoPersonagem dados)
+    private void InstanciarIconesIniciais(BattleEntity personagem, DadosTurnoPersonagem dados)
     {
-        // Limpa os ícones antigos desse personagem antes de reposicionar
-        RemoverIconesFisicos(personagem);
-
         IconesInstanciadosPersonagem novosIcones = new IconesInstanciadosPersonagem();
 
-        // 1. Posiciona o Ícone de Ação (Normal)
         int segAcao = dados.turnoAcao - primeiroTurno;
         if (segAcao >= 0 && segAcao < 8)
         {
@@ -160,8 +164,6 @@ public class BarraProgresso : MonoBehaviour
             novosIcones.iconeAcao.GetComponent<Image>().sprite = dados.foto;
         }
 
-        // 2. Posiciona o Ícone de Escolha Futura (Com a Máscara Azul definida)
-        // Só cria se o turno de recuperação for diferente ou se você quiser os dois juntos no mesmo slot
         int segEscolha = dados.turnoRecuperacao - primeiroTurno;
         if (segEscolha >= 0 && segEscolha < 8)
         {
@@ -170,29 +172,13 @@ public class BarraProgresso : MonoBehaviour
 
             Image imgEscolha = novosIcones.iconeEscolha.GetComponent<Image>();
             imgEscolha.sprite = dados.foto;
-            imgEscolha.color = corMascaraEscolha; // Aplica a MascaraEscolha (Azul)
+            imgEscolha.color = corMascaraEscolha;
         }
 
         iconesInstanciados[personagem] = novosIcones;
     }
 
-    public void RemoverIcone(BattleEntity personagem)
-    {
-        RemoverIconesFisicos(personagem);
-        dadosDosIcones.Remove(personagem);
-    }
-
-    private void RemoverIconesFisicos(BattleEntity personaje)
-    {
-        if (iconesInstanciados.TryGetValue(personaje, out IconesInstanciadosPersonagem icones))
-        {
-            if (icones.iconeAcao != null) Destroy(icones.iconeAcao);
-            if (icones.iconeEscolha != null) Destroy(icones.iconeEscolha);
-            iconesInstanciados.Remove(personaje);
-        }
-    }
-
-    private void RedesenharTodosOsIcones()
+    private void AnimarMovimentoDeTodosOsIcones()
     {
         foreach (var par in dadosDosIcones)
         {
@@ -201,17 +187,72 @@ public class BarraProgresso : MonoBehaviour
 
             if (personagem != null && personagem.IsAlive)
             {
-                PosicionarIconesNaTela(personagem, dados);
+                AnimarMovimentoDeUmPersonagem(personagem, dados);
             }
         }
     }
 
-    #region SISTEMA DE PREVISÃO VISUAL (PREVIEWS FANTASMAS)
+    private void AnimarMovimentoDeUmPersonagem(BattleEntity personagem, DadosTurnoPersonagem dados)
+    {
+        if (!iconesInstanciados.TryGetValue(personagem, out IconesInstanciadosPersonagem icones)) return;
+
+        // Mover Ícone de Ação
+        int segAcao = dados.turnoAcao - primeiroTurno;
+        if (icones.iconeAcao != null)
+        {
+            if (segAcao >= 0 && segAcao < 8)
+            {
+                MoverIconeParaSegmentoSuave(icones.iconeAcao, listaContainersSegmentos[segAcao]);
+            }
+            else
+            {
+                icones.iconeAcao.GetComponent<Image>().DOFade(0f, duracaoMovimentoIcones).OnComplete(() => Destroy(icones.iconeAcao));
+            }
+        }
+
+        // Mover Ícone de Escolha
+        int segEscolha = dados.turnoRecuperacao - primeiroTurno;
+        if (icones.iconeEscolha != null)
+        {
+            if (segEscolha >= 0 && segEscolha < 8)
+            {
+                MoverIconeParaSegmentoSuave(icones.iconeEscolha, listaContainersSegmentos[segEscolha]);
+            }
+            else
+            {
+                icones.iconeEscolha.GetComponent<Image>().DOFade(0f, duracaoMovimentoIcones).OnComplete(() => Destroy(icones.iconeEscolha));
+            }
+        }
+    }
+
+    private void MoverIconeParaSegmentoSuave(GameObject icone, RectTransform segmentoAlvo)
+    {
+        if (icone == null || segmentoAlvo == null) return;
+
+        RectTransform iconeRect = icone.GetComponent<RectTransform>();
+        iconeRect.SetParent(containerSegmentos, true);
+
+        Vector3 posicaoAlvoGlobal = segmentoAlvo.position;
+
+        iconeRect.DOMove(posicaoAlvoGlobal, duracaoMovimentoIcones)
+            .SetEase(tipoTransicao)
+            .OnComplete(() =>
+            {
+                if (icone != null && segmentoAlvo != null)
+                {
+                    iconeRect.SetParent(segmentoAlvo, false);
+                    iconeRect.anchoredPosition = Vector2.zero;
+                }
+            });
+    }
+
+    #region SISTEMA DE PREVISÃO VISUAL (RESTAURADO)
 
     public void MostrarPrevisaoTurno(BattleEntity executor, int turnoAcao, int turnoRecuperacao, Sprite icone)
     {
         LimparPrevisaoTurno();
 
+        // Se os turnos de ação e recuperação caírem no mesmo slot, mescla as cores das máscaras
         if (turnoAcao == turnoRecuperacao)
         {
             Color corMista = Color.Lerp(corAcao, corRest, 0.5f);
@@ -226,6 +267,8 @@ public class BarraProgresso : MonoBehaviour
     private GameObject InstanciarPrevisaoNoTurno(int turno, Sprite icone, Color corMascara)
     {
         int indiceSegmento = turno - primeiroTurno;
+
+        // Proteção contra index out of bounds caso a previsão aponte para além dos 8 espaços visíveis atuais
         if (indiceSegmento < 0 || indiceSegmento >= 8) return null;
 
         Transform containerAlvo = listaContainersSegmentos[indiceSegmento];
@@ -236,7 +279,7 @@ public class BarraProgresso : MonoBehaviour
         {
             img.sprite = icone;
             img.color = corMascara;
-            img.raycastTarget = false;
+            img.raycastTarget = false; // Evita que o fantasma bloqueie cliques do mouse na UI
         }
 
         return previewGO;
@@ -249,4 +292,38 @@ public class BarraProgresso : MonoBehaviour
     }
 
     #endregion
+
+    public int GetPrimeiroTurno() => primeiroTurno;
+
+    public void RemoverInconeAcao(BattleEntity personagem)
+    {
+        if (iconesInstanciados.TryGetValue(personagem, out IconesInstanciadosPersonagem icones))
+        {
+            if (icones.iconeAcao != null)
+            {
+                icones.iconeAcao.GetComponent<Image>().DOFade(0f, 0.2f).OnComplete(() => Destroy(icones.iconeAcao));
+            }
+        }
+    }
+
+    public void RemoverInconeEscolha(BattleEntity personagem)
+    {
+        if (iconesInstanciados.TryGetValue(personagem, out IconesInstanciadosPersonagem icones))
+        {
+            if (icones.iconeEscolha != null) Destroy(icones.iconeEscolha);
+            iconesInstanciados.Remove(personagem);
+        }
+        dadosDosIcones.Remove(personagem);
+    }
+
+    public void RemoverIcone(BattleEntity personagem)
+    {
+        if (iconesInstanciados.TryGetValue(personagem, out IconesInstanciadosPersonagem icones))
+        {
+            if (icones.iconeAcao != null) Destroy(icones.iconeAcao);
+            if (icones.iconeEscolha != null) Destroy(icones.iconeEscolha);
+            iconesInstanciados.Remove(personagem);
+        }
+        dadosDosIcones.Remove(personagem);
+    }
 }

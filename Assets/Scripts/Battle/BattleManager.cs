@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,7 +170,8 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log($"=========================TURNO {currentTurn}=========================");
 
-        ExecuteActions();
+        // MODIFICADO: Agora espera a execução passo a passo das ações com animação e delay
+        yield return StartCoroutine(ExecuteActionsCoroutine());
 
         UpdateRecovery();
 
@@ -184,7 +186,7 @@ public class BattleManager : MonoBehaviour
         currentTurn++;
     }
 
-    void ExecuteActions()
+    IEnumerator ExecuteActionsCoroutine()
     {
         List<ActionData> actionsThisTurn =
             actionQueue
@@ -192,24 +194,35 @@ public class BattleManager : MonoBehaviour
             .OrderByDescending(a => a.executor.Agilidade)
             .ToList();
 
-        bool acted = actionsThisTurn.Count > 0;
         foreach (var action in actionsThisTurn)
         {
-            ExecuteAction(action);
+            // Executa a ação do personagem atual e aguarda os efeitos/animações terminarem
+            yield return StartCoroutine(ExecuteActionCoroutine(action));
 
             actionQueue.Remove(action);
         }
-
-        if (acted)
-            timelineUI.ZerarBarra(currentTurn + 1);
     }
 
-    void ExecuteAction(ActionData action)
+    // MODIFICADO: Executa os efeitos visuais, aplica o dano e aguarda 1 segundo
+    IEnumerator ExecuteActionCoroutine(ActionData action)
     {
-        if (!action.executor.IsAlive) return;
+        if (!action.executor.IsAlive) yield break;
 
-        timelineUI.RemoverIcone(action.executor);
+        // 1. Inicia o efeito visual de piscar em branco (Início do Ataque)
+        SpriteRenderer srExecutor = action.executor.GetComponent<SpriteRenderer>();
+        Coroutine piscarCoroutine = null;
+        if (srExecutor != null)
+        {
+            piscarCoroutine = StartCoroutine(FlashWhiteCoroutine(srExecutor, 0.4f));
+        }
 
+        // 2. Remove o ícone dele da barra IMEDIATAMENTE quando ele começa a atuar
+        timelineUI.RemoverInconeAcao(action.executor);
+
+        // Aguarda a piscada terminar ligeiramente ou aplica o dano no meio do processo
+        yield return new WaitForSeconds(0.2f);
+
+        // 3. Aplica a lógica de combate nos alvos
         foreach (var alvo in action.alvo)
         {
             if (!alvo.IsAlive) continue;
@@ -219,9 +232,17 @@ public class BattleManager : MonoBehaviour
         Debug.Log($"{action.executor.EntityName} usou {action.habilidade.skillName}");
         action.executor.CurrentState = BattleState.Resting;
         action.executor.ReadyTurn = currentTurn + action.turnoRecuperacao;
+
+        // Se a corotina de piscar ainda estiver rodando, garante que ela encerre e limpe o Material
+        if (piscarCoroutine != null) StopCoroutine(piscarCoroutine);
+        if (srExecutor != null) srExecutor.color = Color.white;
+
+        // 4. Dá o delay obrigatório de 1 segundo para o próximo da lista poder atacar
+        yield return new WaitForSeconds(1.0f);
     }
 
-    void QueueAction(BattleEntity executor, BattleEntity[] alvo, SkillSO habilidade)
+    // MODIFICADO: Transformado em IEnumerator para conseguir dar yield na animação de reset da barra
+    IEnumerator QueueActionCoroutine(BattleEntity executor, BattleEntity[] alvo, SkillSO habilidade)
     {
         int turnoDeExecucao = currentTurn + habilidade.turnosParaExecutar;
 
@@ -237,9 +258,20 @@ public class BattleManager : MonoBehaviour
         actionQueue.Add(action);
         executor.CurrentState = BattleState.Preparing;
 
-        int turnoRecuperacao = turnoDeExecucao + habilidade.turnosRecuperacao;
+        int turnoRecuperacaoFinal = turnoDeExecucao + habilidade.turnosRecuperacao;
 
-        timelineUI.AdicionarOuMoverIconeDuplo(executor, turnoDeExecucao, turnoRecuperacao, executor.Icon);
+        if (turnoRecuperacaoFinal >= timelineUI.GetPrimeiroTurno() + 7 || currentTurn+1 < timelineUI.GetPrimeiroTurno())
+        {
+            // Dispara o ZerarBarra e aguarda o término do Tween suave do DOTween antes de prosseguir
+            var barraTween = timelineUI.ZerarBarra(currentTurn+1);
+            if (barraTween != null)
+            {
+                yield return barraTween.WaitForCompletion();
+            }
+        }
+
+        // Adiciona os ícones que agora se moverão suavemente
+        timelineUI.AdicionarOuMoverIconeDuplo(executor, turnoDeExecucao, turnoRecuperacaoFinal, executor.Icon);
 
         Debug.Log($"{executor.EntityName} começou preparar {habilidade.skillName}");
     }
@@ -257,11 +289,12 @@ public class BattleManager : MonoBehaviour
                 entity.CurrentState = BattleState.WaitingAction;
 
                 Debug.Log($"{entity.EntityName} pode agir novamente");
+                timelineUI.RemoverInconeEscolha(entity);
             }
         }
     }
 
-    IEnumerator AskForActionsCoroutine()
+IEnumerator AskForActionsCoroutine()
     {
         foreach (var entity in Enemies)
         {
@@ -269,7 +302,8 @@ public class BattleManager : MonoBehaviour
 
             BattleDecision decision = ((EnemyEntity)entity).GetAction(GetAllEntities());
             if (decision.skill != null)
-                QueueAction(entity, decision.targets, decision.skill);
+                // MODIFICADO: Espera o enfileiramento e possíveis animações de transição suave terminar
+                yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
         }
 
         foreach (var entity in Allies)
@@ -283,7 +317,8 @@ public class BattleManager : MonoBehaviour
             BattleDecision decision = ((CharEntity)entity).ObterDecisaoFinal();
             if (decision.skill != null)
             {
-                QueueAction(entity, decision.targets, decision.skill);
+                // MODIFICADO: Espera o enfileiramento e possíveis animações de transição suave terminar
+                yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
             }
         }
     }
@@ -323,6 +358,25 @@ public class BattleManager : MonoBehaviour
         all.AddRange(enemies);
 
         return all;
+    }
+
+    IEnumerator FlashWhiteCoroutine(SpriteRenderer sr, float duracaoTotal)
+    {
+        float tempoMapeado = 0f;
+        Color corOriginal = Color.white;
+        // Tom avermelhado/branco brilhante usando a propriedade de coloração nativa do SpriteRenderer
+        Color corBrancaBrilhante = new Color(5f, 5f, 5f, 1f);
+
+        while (tempoMapeado < duracaoTotal)
+        {
+            tempoMapeado += Time.deltaTime;
+            // Interpola a cor de forma linear criando o efeito de "pulso"
+            float interpolador = Mathf.PingPong(tempoMapeado * 4f, 1f);
+            sr.color = Color.Lerp(corOriginal, corBrancaBrilhante, interpolador);
+            yield return null;
+        }
+
+        sr.color = corOriginal;
     }
     #endregion
 
