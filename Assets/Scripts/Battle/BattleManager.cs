@@ -11,13 +11,13 @@ public class BattleManager : MonoBehaviour
     public GameObject allyPrefab;
     public Sprite shadowSprite;
 
-    [Header("Configurações dos Inimigos (Esquerda)")]
+    [Header("Configuraï¿½ï¿½es dos Inimigos (Esquerda)")]
     [SerializeField] private Vector3 centroChaoInimigos = new Vector3(-4f, -1.5f, 0);
     public float distanciaEntreColunasInimigos = 2.0f;
     public float alturaTotalColunaInimigos = 4.0f;
     public float offsetVoadorY = 1.5f;
 
-    [Header("Configurações dos Aliados (Direita)")]
+    [Header("Configuraï¿½ï¿½es dos Aliados (Direita)")]
     [SerializeField] private Vector3 centroChaoAliados = new Vector3(4f, -1.5f, 0);
     public float alturaTotalColunaAliados = 4.0f;
 
@@ -30,12 +30,14 @@ public class BattleManager : MonoBehaviour
     public List<EnemyEntity> Enemies => enemies;
     public List<CharEntity> Allies => allies;
 
-    [Header("Referências de UI")]
+    [Header("Referï¿½ncias de UI")]
     public MenuFocadoNoPlayer menuUI;
     public BarraProgresso timelineUI;
 
     void Awake()
     {
+        if (GameManager.Instance != null)
+            GameManager.Instance.emCombate = true;
         SpawnEnemies();
         SpawnAllies();
     }
@@ -170,7 +172,7 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log($"=========================TURNO {currentTurn}=========================");
 
-        // MODIFICADO: Agora espera a execução passo a passo das ações com animação e delay
+        // MODIFICADO: Agora espera a execuï¿½ï¿½o passo a passo das aï¿½ï¿½es com animaï¿½ï¿½o e delay
         yield return StartCoroutine(ExecuteActionsCoroutine());
 
         UpdateRecovery();
@@ -196,7 +198,7 @@ public class BattleManager : MonoBehaviour
 
         foreach (var action in actionsThisTurn)
         {
-            // Executa a ação do personagem atual e aguarda os efeitos/animações terminarem
+            // Executa a aï¿½ï¿½o do personagem atual e aguarda os efeitos/animaï¿½ï¿½es terminarem
             yield return StartCoroutine(ExecuteActionCoroutine(action));
 
             actionQueue.Remove(action);
@@ -208,7 +210,7 @@ public class BattleManager : MonoBehaviour
     {
         if (!action.executor.IsAlive) yield break;
 
-        // 1. Inicia o efeito visual de piscar em branco (Início do Ataque)
+        // 1. Inicia o efeito visual de piscar em branco (Inï¿½cio do Ataque)
         SpriteRenderer srExecutor = action.executor.GetComponent<SpriteRenderer>();
         Coroutine piscarCoroutine = null;
         if (srExecutor != null)
@@ -216,13 +218,13 @@ public class BattleManager : MonoBehaviour
             piscarCoroutine = StartCoroutine(FlashWhiteCoroutine(srExecutor, 0.4f));
         }
 
-        // 2. Remove o ícone dele da barra IMEDIATAMENTE quando ele começa a atuar
+        // 2. Remove o ï¿½cone dele da barra IMEDIATAMENTE quando ele comeï¿½a a atuar
         timelineUI.RemoverInconeAcao(action.executor);
 
         // Aguarda a piscada terminar ligeiramente ou aplica o dano no meio do processo
         yield return new WaitForSeconds(0.2f);
 
-        // 3. Aplica a lógica de combate nos alvos
+        // 3. Aplica a lï¿½gica de combate nos alvos
         foreach (var alvo in action.alvo)
         {
             if (!alvo.IsAlive) continue;
@@ -237,11 +239,11 @@ public class BattleManager : MonoBehaviour
         if (piscarCoroutine != null) StopCoroutine(piscarCoroutine);
         if (srExecutor != null) srExecutor.color = Color.white;
 
-        // 4. Dá o delay obrigatório de 1 segundo para o próximo da lista poder atacar
+        // 4. Dï¿½ o delay obrigatï¿½rio de 1 segundo para o prï¿½ximo da lista poder atacar
         yield return new WaitForSeconds(1.0f);
     }
 
-    // MODIFICADO: Transformado em IEnumerator para conseguir dar yield na animação de reset da barra
+    // MODIFICADO: Transformado em IEnumerator para conseguir dar yield na animaï¿½ï¿½o de reset da barra
     IEnumerator QueueActionCoroutine(BattleEntity executor, BattleEntity[] alvo, SkillSO habilidade)
     {
         int turnoDeExecucao = currentTurn + habilidade.turnosParaExecutar;
@@ -262,7 +264,7 @@ public class BattleManager : MonoBehaviour
 
         if (turnoRecuperacaoFinal >= timelineUI.GetPrimeiroTurno() + 7 || currentTurn+1 < timelineUI.GetPrimeiroTurno())
         {
-            // Dispara o ZerarBarra e aguarda o término do Tween suave do DOTween antes de prosseguir
+            // Dispara o ZerarBarra e aguarda o tï¿½rmino do Tween suave do DOTween antes de prosseguir
             var barraTween = timelineUI.ZerarBarra(currentTurn+1);
             if (barraTween != null)
             {
@@ -270,10 +272,10 @@ public class BattleManager : MonoBehaviour
             }
         }
 
-        // Adiciona os ícones que agora se moverão suavemente
+        // Adiciona os ï¿½cones que agora se moverï¿½o suavemente
         timelineUI.AdicionarOuMoverIconeDuplo(executor, turnoDeExecucao, turnoRecuperacaoFinal, executor.Icon);
 
-        Debug.Log($"{executor.EntityName} começou preparar {habilidade.skillName}");
+        Debug.Log($"{executor.EntityName} comeï¿½ou preparar {habilidade.skillName}");
     }
 
     void UpdateRecovery()
@@ -302,13 +304,13 @@ IEnumerator AskForActionsCoroutine()
 
             BattleDecision decision = ((EnemyEntity)entity).GetAction(GetAllEntities());
             if (decision.skill != null)
-                // MODIFICADO: Espera o enfileiramento e possíveis animações de transição suave terminar
+                // MODIFICADO: Espera o enfileiramento e possï¿½veis animaï¿½ï¿½es de transiï¿½ï¿½o suave terminar
                 yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
         }
 
         foreach (var entity in Allies)
         {
-            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Não atua"); continue; }
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Nï¿½o atua"); continue; }
 
             ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
 
@@ -317,7 +319,7 @@ IEnumerator AskForActionsCoroutine()
             BattleDecision decision = ((CharEntity)entity).ObterDecisaoFinal();
             if (decision.skill != null)
             {
-                // MODIFICADO: Espera o enfileiramento e possíveis animações de transição suave terminar
+                // MODIFICADO: Espera o enfileiramento e possï¿½veis animaï¿½ï¿½es de transiï¿½ï¿½o suave terminar
                 yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
             }
         }
@@ -329,17 +331,21 @@ IEnumerator AskForActionsCoroutine()
         bool allAlliesDead = allies.All(a => !a.IsAlive);
         if (allEnemiesDead)
         {
-            Debug.Log("Vitória!");
+            if (GameManager.Instance != null)
+                GameManager.Instance.emCombate = false;
+            Debug.Log("Vitï¿½ria!");
         }
         else if (allAlliesDead)
         {
+            if (GameManager.Instance != null)
+                GameManager.Instance.emCombate = false;
             Debug.Log("Derrota...");
         }
     }
 
     #endregion
 
-    #region UTILITÁRIOS
+    #region UTILITï¿½RIOS
     void InstanciarSombra(Vector3 posicaoChao)
     {
         GameObject sombra = new GameObject("Sombra");
@@ -364,7 +370,7 @@ IEnumerator AskForActionsCoroutine()
     {
         float tempoMapeado = 0f;
         Color corOriginal = Color.white;
-        // Tom avermelhado/branco brilhante usando a propriedade de coloração nativa do SpriteRenderer
+        // Tom avermelhado/branco brilhante usando a propriedade de coloraï¿½ï¿½o nativa do SpriteRenderer
         Color corBrancaBrilhante = new Color(5f, 5f, 5f, 1f);
 
         while (tempoMapeado < duracaoTotal)
@@ -380,10 +386,10 @@ IEnumerator AskForActionsCoroutine()
     }
     #endregion
 
-    #region MOTOR DE PREVISÃO VISUAL (GIZMOS NO EDITOR)
+    #region MOTOR DE PREVISï¿½O VISUAL (GIZMOS NO EDITOR)
     private void OnDrawGizmos()
     {
-        // Se o jogo já estiver rodando, não precisamos desenhar a previsão por cima dos heróis reais
+        // Se o jogo jï¿½ estiver rodando, nï¿½o precisamos desenhar a previsï¿½o por cima dos herï¿½is reais
         if (Application.isPlaying) return;
 
         // --- 1. DESENHO DOS ALIADOS (Lado Direito) ---
@@ -393,7 +399,7 @@ IEnumerator AskForActionsCoroutine()
         Vector3 baseAliados = centroChaoAliados - new Vector3(0, alturaTotalColunaAliados / 2, 0);
         Gizmos.DrawLine(topoAliados, baseAliados);
 
-        // Simula o spawn de uma equipe de até 3 aliados para teste visual
+        // Simula o spawn de uma equipe de atï¿½ 3 aliados para teste visual
         int testeAliadosCount = 3;
         for (int i = 0; i < testeAliadosCount; i++)
         {
@@ -411,7 +417,7 @@ IEnumerator AskForActionsCoroutine()
 
         for (int col = 0; col < 3; col++)
         {
-            // Define uma cor para cada coluna: Frente (Verde), Meio (Amarelo), Trás (Vermelho)
+            // Define uma cor para cada coluna: Frente (Verde), Meio (Amarelo), Trï¿½s (Vermelho)
             if (col == 0) Gizmos.color = Color.green;
             else if (col == 1) Gizmos.color = Color.yellow;
             else Gizmos.color = Color.red;
@@ -429,10 +435,10 @@ IEnumerator AskForActionsCoroutine()
                 float posY = centroChaoInimigos.y + (alturaTotalColunaInimigos / 2) - (stepY * (i + 1));
                 Vector3 posPrevisaoInimigo = new Vector3(posX, posY, 0);
 
-                // Desenha um cubo aramado representando o inimigo no chão
+                // Desenha um cubo aramado representando o inimigo no chï¿½o
                 Gizmos.DrawWireCube(posPrevisaoInimigo, new Vector3(0.5f, 0.5f, 0));
 
-                // Desenha uma caixinha extra flutuante para checar visualmente o "Offset Voador" na coluna de trás (como teste)
+                // Desenha uma caixinha extra flutuante para checar visualmente o "Offset Voador" na coluna de trï¿½s (como teste)
                 if (col == 2 && i == 0)
                 {
                     Gizmos.color = Color.magenta;

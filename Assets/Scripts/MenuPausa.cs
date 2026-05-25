@@ -22,7 +22,7 @@ public class MenuPausa : MonoBehaviour
         {
             if (pausado)
                 Fechar();
-            else
+            else if (GameManager.Instance == null || !GameManager.Instance.emCombate)
                 Abrir();
         }
     }

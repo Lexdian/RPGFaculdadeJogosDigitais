@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     [Header("Localização")]
     public string cidadeAtual = "Kran-Tor";
 
+    [Header("Estado do Jogo")]
+    public bool emCombate = false;
+
     private void Awake()
     {
         if (Instance == null)
