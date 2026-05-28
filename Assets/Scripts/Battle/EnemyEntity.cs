@@ -47,6 +47,8 @@ public class EnemyEntity : BattleEntity
 
         CurrentHP -= danoFinal;
 
+        PopDamage(danoFinal, DamageType.Normal);
+
         Debug.Log($"{EntityName} recebeu {danoFinal} dano físico");
 
         if (CurrentHP <= 0)
@@ -61,6 +63,8 @@ public class EnemyEntity : BattleEntity
         int danoFinal = Mathf.Max(1, amount - DefesaMagica);
 
         CurrentHP -= danoFinal;
+
+        PopDamage(danoFinal, DamageType.Normal);
 
         Debug.Log($"{EntityName} recebeu {danoFinal} dano mágico");
 

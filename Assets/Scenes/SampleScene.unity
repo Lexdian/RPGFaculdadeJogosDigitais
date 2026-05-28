@@ -198680,7 +198680,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000ff247b03f3d881ca
+  m_ApplyToSortingLayers: 00000000ff247b03f3d881cacddb2e6c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -528024,7 +528024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -260.00012, y: -0.013000488}
+  m_AnchoredPosition: {x: -260.00024, y: -0.012939453}
   m_SizeDelta: {x: -549.01, y: -27.904}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135924623

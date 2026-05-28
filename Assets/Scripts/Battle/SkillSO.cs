@@ -13,7 +13,6 @@ public class SkillSO : ScriptableObject
     [Header("Identidade")]
     public string skillName;
     [TextArea(2, 3)] public string description;
-    public Sprite icon; // Ícone para o menu de batalha
 
     [Header("Regras de Alvo e Tipo")]
     public TipoAlvo alvo;
@@ -36,8 +35,8 @@ public class SkillSO : ScriptableObject
 
     [Header("Efeitos Visuais e Sonoros")]
     public string gatilhoAnimacao = "CastSkill"; // Nome do Trigger no Animator do personagem
-    public GameObject efeitoVisualPrefab; // Prefab de partículas (ex: fogo estourando no inimigo)
     public AudioClip somExecucao;
+    public GameObject prefabEfeitoVisual; // O prefab que tem o script EfeitoMagia
 
     /// <summary>
     /// Nosso "Construtor" customizado e seguro para o Unity.

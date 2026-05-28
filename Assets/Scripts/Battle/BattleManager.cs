@@ -218,6 +218,10 @@ public class BattleManager : MonoBehaviour
             piscarCoroutine = StartCoroutine(FlashWhiteCoroutine(srExecutor, 0.4f));
         }
 
+        action.executor.CurrentMP -= action.habilidade.custoMana;
+
+        yield return StartCoroutine(BattleAnimationManager.Instance.ExecutarAnimacaoMagia(action.habilidade, action.executor, action.alvo[0]));
+
         // 2. Remove o �cone dele da barra IMEDIATAMENTE quando ele come�a a atuar
         timelineUI.RemoverInconeAcao(action.executor);
 

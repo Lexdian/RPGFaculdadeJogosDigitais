@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillSO
   skillName: Chamas
   description: 
-  icon: {fileID: 0}
   alvo: 0
   categoria: 1
   tipoDano: 1
-  elemento: 1
+  prioridade: 0
   custoMana: 2
   poderBase: 15
   chanceAcerto: 1
   turnosParaExecutar: 2
   turnosRecuperacao: 1
   gatilhoAnimacao: CastSkill
-  efeitoVisualPrefab: {fileID: 0}
   somExecucao: {fileID: 0}
+  prefabEfeitoVisual: {fileID: 262907797353622864, guid: 5e917ba1f51c75c4a9022f9643980b7f, type: 3}

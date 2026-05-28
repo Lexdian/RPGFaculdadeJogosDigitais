@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93030899}
   - component: {fileID: 93030898}
+  - component: {fileID: 93030900}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -249,6 +250,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93030900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93030897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a7577f689642b478e32c5c1aa2a3e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleAnimationManager
 --- !u!1 &149143621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +2943,9 @@ MonoBehaviour:
   prefabIconePreview: {fileID: 892916443936016719, guid: 261a349b795a7344fb879873a708cc48, type: 3}
   corAcao: {r: 1, g: 0.92624086, b: 0.4292453, a: 0.5882353}
   corRest: {r: 0.5613208, g: 0.7811963, b: 1, a: 0.5882353}
+  corMascaraEscolha: {r: 0, g: 0.5, b: 1, a: 1}
+  duracaoMovimentoIcones: 0.6
+  tipoTransicao: 6
 --- !u!1 &1773734510
 GameObject:
   m_ObjectHideFlags: 0

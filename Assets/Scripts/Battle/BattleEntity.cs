@@ -141,6 +141,7 @@ public abstract class BattleEntity : MonoBehaviour
     public virtual void Heal(int amount)
     {
         CurrentHP = Mathf.Min(CurrentHP + amount, MaxHP);
+        PopDamage(amount, DamageType.Heal);
 
         Debug.Log($"{EntityName} curou {amount} HP");
     }
@@ -148,6 +149,17 @@ public abstract class BattleEntity : MonoBehaviour
     protected virtual void Die()
     {
         Debug.Log($"{EntityName} morreu!");
+    }
+
+    private int GetAltura()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        return spriteRenderer != null ? (int)spriteRenderer.bounds.size.y : 1;
+    }
+
+    public void PopDamage(int danoFinal, DamageType damageType) 
+    {
+        PopupDamage.Create(new Vector3(transform.position.x, transform.position.y + GetAltura(), transform.position.z), danoFinal, damageType);
     }
 
     public abstract void TakeFisicalDamage(BattleEntity dealer, int amount);
