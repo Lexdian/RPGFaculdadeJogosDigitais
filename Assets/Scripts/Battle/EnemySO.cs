@@ -21,8 +21,10 @@ public class EnemySO : ScriptableObject
     public int ataqueMagico;
     public int defesaFisica;
     public int defesaMagica;
+    public int velocidade;
+    public int precisao;
     public int evasao;
-    public int agilidade;
+    public int chanceCritico;
 
     public int xpReward;
 

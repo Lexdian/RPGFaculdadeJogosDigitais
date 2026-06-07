@@ -5,11 +5,16 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using System.Linq;
+using System;
 
 public class MenuFocadoNoPlayer : MonoBehaviour
 {
     private enum EstadoMenu { Principal, Skills, SelecaoAlvo }
     private EstadoMenu estadoAtual = EstadoMenu.Principal;
+
+    // NOVO: Controle de qual grupo de entidades estamos mirando no momento
+    private enum AlvoTime { Inimigos, Aliados }
+    private AlvoTime timeAlvoAtual = AlvoTime.Inimigos;
 
     [Header("Configurações de Posição")]
     public CharEntity playerAtual;
@@ -21,8 +26,8 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     public RectTransform botaoItens;
     public RectTransform botaoEspecial;
 
-    [Header("Referência da Seta de Alvo")]
-    public SetaAlvoUI setaIndicadora;
+    [Header("Referência do Gerenciador de Setas")]
+    public GerenciadorSetasUI gerenciadorSetas;
 
     [Header("Habilidades")]
     public GameObject painelHabilidades;
@@ -38,11 +43,14 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     public BattleManager battleManager;
     public BarraProgresso barraProgresso;
 
-    private Camera cam;
-    private RectTransform rectTransform;
+    [SerializeField] private Camera cam;
+    [SerializeField] private RectTransform rectTransform;
 
     private List<BattleEntity> listaDeEntidades;
+
+    // VARIÁVEIS MODIFICADAS: Agora controlamos listas separadas de entidades vivas
     private List<BattleEntity> inimigosVivos = new List<BattleEntity>();
+    private List<BattleEntity> aliadosVivos = new List<BattleEntity>();
     private int indiceAlvoAtual = 0;
 
     private List<SkillSO> habilidadesDoPlayer = new List<SkillSO>();
@@ -54,7 +62,6 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     private bool animando = false;
     private GameObject ultimoBotaoFocado;
 
-    // Guardas de posições originais do menu aberto para o recuo perfeito
     private readonly Vector2 posOriginalAtacar = new Vector2(0, 50);
     private readonly Vector2 posOriginalFugir = new Vector2(0, -50);
     private readonly Vector2 posOriginalItens = new Vector2(-100, 0);
@@ -62,13 +69,10 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     void Awake()
     {
-        cam = Camera.main;
-        rectTransform = GetComponent<RectTransform>();
-
         botaoAtacar.GetComponent<Button>().onClick.AddListener(ClicouAtacar);
         botaoEspecial.GetComponent<Button>().onClick.AddListener(ClicouEspecial);
 
-        if (setaIndicadora != null) setaIndicadora.Esconder();
+        if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
         EsconderMenu();
     }
@@ -84,7 +88,6 @@ public class MenuFocadoNoPlayer : MonoBehaviour
             }
             else if (focado != null && focado != botaoEspecial.gameObject)
             {
-                // Limpa o preview se estiver focado em Fugir ou Itens por exemplo
                 LimparPreview();
             }
         }
@@ -102,7 +105,7 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         gameObject.SetActive(true);
         animando = true;
 
-        if (setaIndicadora != null) setaIndicadora.Esconder();
+        if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
 
         LimparPreview();
@@ -116,10 +119,9 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         if (playerAtual == null || animando) return;
 
         habilidadeSelecionadaParaAtacar = playerAtual.AtaqueBasico;
-        ultimoBotaoFocado = botaoAtacar.gameObject; // Salva que viemos do botão atacar
+        ultimoBotaoFocado = botaoAtacar.gameObject;
 
         animando = true;
-        // AJUSTE 1: Contrair os botões também ao escolher o ataque básico
         AnimarRecuoBotoesPrincipal(() =>
         {
             animando = false;
@@ -156,20 +158,24 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     private void IniciarSelecaoDeAlvo()
     {
+        // Separa dinamicamente quem são os inimigos e quem são os aliados (vivos)
         inimigosVivos = listaDeEntidades.Where(e => e is EnemyEntity && e.IsAlive).ToList();
+        aliadosVivos = listaDeEntidades.Where(e => e is CharEntity && e.IsAlive).ToList();
 
-        if (inimigosVivos.Count == 0)
+        if (inimigosVivos.Count == 0 && aliadosVivos.Count == 0)
         {
-            // Se não houver inimigos, desfaz o recuo para não travar o menu
             AnimarRetornoBotoesPrincipal(null);
             return;
         }
 
         EventSystem.current.SetSelectedGameObject(null);
-
         estadoAtual = EstadoMenu.SelecaoAlvo;
+
+        // MODIFICADO: Reseta para mirar nos inimigos por padrão ao abrir a seleção
+        timeAlvoAtual = AlvoTime.Inimigos;
         indiceAlvoAtual = 0;
-        setaIndicadora.MoverParaAlvo(inimigosVivos[indiceAlvoAtual]);
+
+        AtualizarSetasDeAlvo();
 
         if (habilidadeSelecionadaParaAtacar != null)
         {
@@ -177,9 +183,34 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         }
     }
 
+    private void AtualizarSetasDeAlvo()
+    {
+        if (gerenciadorSetas == null) return;
+
+        // Pega a lista correta baseado no time que estamos focando atualmente
+        List<BattleEntity> listaFocada = (timeAlvoAtual == AlvoTime.Inimigos) ? inimigosVivos : aliadosVivos;
+
+        if (listaFocada.Count == 0) return;
+
+        // Garante que o índice não estoure caso a lista de aliados seja menor que a de inimigos ao trocar
+        indiceAlvoAtual = Mathf.Clamp(indiceAlvoAtual, 0, listaFocada.Count - 1);
+
+        if (habilidadeSelecionadaParaAtacar != null && habilidadeSelecionadaParaAtacar.alvo == TipoAlvo.Grupo)
+        {
+            // Se for em área, coloca a seta em todos do time selecionado
+            gerenciadorSetas.MostrarSetasNosAlvos(listaFocada);
+        }
+        else
+        {
+            // Se for alvo único, coloca apenas no índice atual do time selecionado
+            List<BattleEntity> alvoUnico = new List<BattleEntity> { listaFocada[indiceAlvoAtual] };
+            gerenciadorSetas.MostrarSetasNosAlvos(alvoUnico);
+        }
+    }
+
     #endregion
 
-    #region PAGINAÇÃO DE HABILIDADES (JANELA DESLIZANTE)
+    #region PAGINAÇÃO DE HABILIDADES
 
     private void ConstruirJanelaBotoesHabilidade()
     {
@@ -214,10 +245,6 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
                     botoesHabilidadeInstanciados.Add(btnComponent);
                 }
-            }
-            else
-            {
-                Debug.LogError($"O prefabBotaoHabilidade não possui o script 'BotaoHabilidadeUI' anexado!");
             }
         }
     }
@@ -281,7 +308,7 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     #endregion
 
-    #region INTERFACE DE COMUNICAÇÃO COM BOTÕES (PREVIEWS)
+    #region INTERFACE DE COMUNICAÇÃO COM BOTÕES
 
     public void ModernizarBotaoFocado(GameObject botao)
     {
@@ -313,6 +340,28 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     #endregion
 
     #region EVENTOS DO NOVO INPUT SYSTEM
+
+    // NOVO MÉTODO: Vinculado à sua nova Action "Trocar" no Input System
+    public void OnInputTrocarAlvoTime(InputAction.CallbackContext context)
+    {
+        // Só executa se o botão for pressionado e estivermos escolhendo alvos
+        if (!context.performed || estadoAtual != EstadoMenu.SelecaoAlvo || animando) return;
+
+        // Inverte o time focado
+        if (timeAlvoAtual == AlvoTime.Inimigos)
+        {
+            // Só troca para aliados se houver algum aliado vivo na lista
+            if (aliadosVivos.Count > 0) timeAlvoAtual = AlvoTime.Aliados;
+        }
+        else
+        {
+            if (inimigosVivos.Count > 0) timeAlvoAtual = AlvoTime.Inimigos;
+        }
+
+        // Reseta o índice para o primeiro membro do novo grupo e atualiza o visual
+        indiceAlvoAtual = 0;
+        AtualizarSetasDeAlvo();
+    }
 
     public void OnInputConfirmar(InputAction.CallbackContext context)
     {
@@ -346,24 +395,19 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     {
         if (animando || !context.performed) return;
 
-        // AJUSTE 2: Tratamento correto ao cancelar a seleção de alvos
         if (estadoAtual == EstadoMenu.SelecaoAlvo)
         {
-            setaIndicadora.Esconder();
+            if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
 
-            // Se a habilidade selecionada NÃO for o ataque básico, significa que viemos do menu de Especial
             if (habilidadeSelecionadaParaAtacar != playerAtual.AtaqueBasico)
             {
                 estadoAtual = EstadoMenu.Skills;
                 painelHabilidades.SetActive(true);
-
-                // Reconstrói a janela para garantir que os botões existam fisicamente na UI
                 ConstruirJanelaBotoesHabilidade();
-                FocarHabilidadeVisualmente(); // Devolve o foco do ponteiro/EventSystem para a skill antiga
+                FocarHabilidadeVisualmente();
             }
             else
             {
-                // Se era o ataque básico, expande o menu principal de volta e foca no botão Atacar
                 animando = true;
                 AnimarRetornoBotoesPrincipal(() =>
                 {
@@ -396,15 +440,22 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
         if (estadoAtual == EstadoMenu.SelecaoAlvo)
         {
-            if (direcao.y > 0 || direcao.x > 0)
+            if (habilidadeSelecionadaParaAtacar != null && habilidadeSelecionadaParaAtacar.alvo == TipoAlvo.Grupo)
+                return;
+
+            // MODIFICADO: A navegação agora descobre o tamanho da lista focada no momento
+            List<BattleEntity> listaFocada = (timeAlvoAtual == AlvoTime.Inimigos) ? inimigosVivos : aliadosVivos;
+            if (listaFocada.Count <= 1) return;
+
+            if (direcao.y < 0 || direcao.x > 0)
             {
-                indiceAlvoAtual = (indiceAlvoAtual + 1) % inimigosVivos.Count;
-                setaIndicadora.MoverParaAlvo(inimigosVivos[indiceAlvoAtual]);
+                indiceAlvoAtual = (indiceAlvoAtual + 1) % listaFocada.Count;
+                AtualizarSetasDeAlvo();
             }
-            else if (direcao.y < 0 || direcao.x < 0)
+            else if (direcao.y > 0 || direcao.x < 0)
             {
-                indiceAlvoAtual = (indiceAlvoAtual - 1 + inimigosVivos.Count) % inimigosVivos.Count;
-                setaIndicadora.MoverParaAlvo(inimigosVivos[indiceAlvoAtual]);
+                indiceAlvoAtual = (indiceAlvoAtual - 1 + listaFocada.Count) % listaFocada.Count;
+                AtualizarSetasDeAlvo();
             }
             return;
         }
@@ -420,13 +471,26 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     private void ConfirmarAtaqueNoAlvo()
     {
-        BattleEntity alvoEscolhido = inimigosVivos[indiceAlvoAtual];
-
         BattleDecision decisao = new BattleDecision();
         decisao.skill = habilidadeSelecionadaParaAtacar;
-        decisao.targets = new BattleEntity[] { alvoEscolhido };
 
-        setaIndicadora.Esconder();
+        // MODIFICADO: Pega o grupo ativo no momento da confirmação
+        List<BattleEntity> listaFocada = (timeAlvoAtual == AlvoTime.Inimigos) ? inimigosVivos : aliadosVivos;
+
+        if (habilidadeSelecionadaParaAtacar != null && habilidadeSelecionadaParaAtacar.alvo == TipoAlvo.Grupo)
+        {
+            // Retorna o grupo inteiro focado (todos os inimigos OU todos os aliados)
+            decisao.targets = listaFocada.ToArray();
+        }
+        else
+        {
+            // Retorna apenas o indivíduo selecionado dentro do grupo atual
+            BattleEntity alvoEscolhido = listaFocada[indiceAlvoAtual];
+            decisao.targets = new BattleEntity[] { alvoEscolhido };
+        }
+
+        if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
+
         playerAtual.DefinirDecisao(decisao);
         EsconderMenu();
     }
@@ -500,6 +564,7 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     {
         animando = false;
         LimparPreview();
+        if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
         gameObject.SetActive(false);
     }

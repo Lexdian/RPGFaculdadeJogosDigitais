@@ -34,8 +34,10 @@ public abstract class BattleEntity : MonoBehaviour
     public int AtaqueMagico;
     public int Defesa;
     public int DefesaMagica;
+    public int Velocidade;
+    public int Precisao;
     public int Evasao;
-    public int Agilidade;
+    public int ChanceCritico;
 
     public List<SkillSO> Skills = new();
 
@@ -110,8 +112,17 @@ public abstract class BattleEntity : MonoBehaviour
     {
         if (Imunidades.Contains(tipo))
         {
-            Debug.Log($"{EntityName} � imune a {tipo}");
+            PopDamage(0, DamageType.Imune);
             return;
+        }
+        if(Random.Range(0, 100) < 25+dealer.Precisao - Evasao)
+        {
+            PopDamage(0, DamageType.Errou);
+            return;
+        }
+        if (Random.Range(0, 100) < ChanceCritico)
+        {
+            amount = Mathf.CeilToInt(amount * 1.5f);
         }
 
         if (Resistencias.Contains(tipo))

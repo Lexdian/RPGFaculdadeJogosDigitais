@@ -5,7 +5,9 @@ public enum DamageType
 {
     Normal,
     Critical,
-    Heal
+    Heal,
+    Imune,
+    Errou
 }
 public class PopupDamage : MonoBehaviour
 {
@@ -25,6 +27,14 @@ public class PopupDamage : MonoBehaviour
             case DamageType.Heal:
                 _textMesh.color = Color.green;
                 _textMesh.text = "+"+damageAmount.ToString();
+                break;
+            case DamageType.Imune:
+                _textMesh.color = Color.white;
+                _textMesh.text = "Imune";
+                break;
+            case DamageType.Errou:
+                _textMesh.color = Color.white;
+                _textMesh.text = "Errou";
                 break;
         }
     }

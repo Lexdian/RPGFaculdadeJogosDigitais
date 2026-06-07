@@ -34,16 +34,19 @@ public class CombatenteData
     public int GetForca()         => fichaBase.baseForca         + (fichaBase.perLevelUpgradeForca         * (nivelAtual - 1));
     public int GetInteligencia()  => fichaBase.baseInteligencia  + (fichaBase.perLevelUpgradeInteligencia  * (nivelAtual - 1));
     public int GetAgilidade()     => fichaBase.baseAgilidade     + (fichaBase.perLevelUpgradeAgilidade     * (nivelAtual - 1));
-    public int GetResiliencia() => fichaBase.baseResiliencia + (fichaBase.perLevelUpgradeResiliencia * (nivelAtual - 1)) + SomarBonus(e => e.bonusResiliencia);
-    public int GetSorte()       => fichaBase.baseSorte       + (fichaBase.perLevelUpgradeSorte       * (nivelAtual - 1)) + SomarBonus(e => e.bonusSorte); 
+    public int GetResiliencia() => fichaBase.baseResiliencia + (fichaBase.perLevelUpgradeResiliencia * (nivelAtual - 1));
+    public int GetSorte() => fichaBase.baseSorte + (fichaBase.perLevelUpgradeSorte * (nivelAtual - 1));
     
     public int GetMaxVidaTotal()       => GetMaxVida()      + SomarBonus(e => e.bonusVida);
     public int GetMaxManaTotal()       => GetMaxMana()      + SomarBonus(e => e.bonusMana);
-    public int GetForcaTotal()         => GetForca()        + SomarBonus(e => e.bonusForca);
-    public int GetInteligenciaTotal()  => GetInteligencia() + SomarBonus(e => e.bonusInteligencia);
-    public int GetAgilidadeTotal()     => GetAgilidade()    + SomarBonus(e => e.bonusAgilidade);
-    public int GetDefesaFisicaTotal() => SomarBonus(e => e.bonusDefesaFisica);
-    public int GetDefesaMagicaTotal() => SomarBonus(e => e.bonusDefesaMagica);
+    public int GetAtaqueFisico() => GetForca() + SomarBonus(e => e.bonusDanoFisico);
+    public int GetAtaqueMagico() => GetInteligencia() + SomarBonus(e => e.bonusDanoMagico);
+    public int GetDefesaFisicaTotal() => GetResiliencia() + SomarBonus(e => e.bonusDefesaFisica);
+    public int GetDefesaMagicaTotal() => GetInteligencia() + SomarBonus(e => e.bonusDefesaMagica);
+    public int GetEvasaoTotal() => (GetAgilidade()/2) + (GetSorte()/10) + SomarBonus(e => e.bonusEvasao);
+    public int GetChanceCriticoTotal() => (GetAgilidade()/10) + (GetSorte()/5) + SomarBonus(e => e.bonusChanceCritico);
+    public int GetVelocidadeTotal() => GetAgilidade() + SomarBonus(e => e.bonusVelocidade);
+    public int GetPrecisaoTotal() => GetAgilidade()+ SomarBonus(e => e.bonusPrecisao);
 
     public List<SkillSO> Skills = new();
 

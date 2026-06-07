@@ -20,14 +20,17 @@ public class CharEntity : BattleEntity
         MaxMP = data.GetMaxMana();
         CurrentMP = data.manaAtual;
 
-        Ataque = data.GetForca();
-        AtaqueMagico = data.GetInteligencia();
+        Ataque = data.GetAtaqueFisico();
+        AtaqueMagico = data.GetAtaqueMagico();
 
-        Defesa = data.GetResiliencia();
-        DefesaMagica = data.GetInteligencia();
+        Defesa = data.GetDefesaFisicaTotal();
+        DefesaMagica = data.GetDefesaMagicaTotal();
 
-        Evasao = data.GetAgilidade()/2;
-        Agilidade = data.GetAgilidade();
+        Velocidade = data.GetVelocidadeTotal();
+        Evasao = data.GetEvasaoTotal();
+        Precisao = data.GetPrecisaoTotal();
+
+        ChanceCritico = data.GetChanceCriticoTotal();
 
         Skills = data.Skills;
 
@@ -42,7 +45,12 @@ public class CharEntity : BattleEntity
 
         if (menuUI != null)
         {
+            Debug.LogWarning("MenuFocadoNoPlayer encontrado!");
             menuUI.FocarNoPlayer(this, todasAsEntidades);
+        }
+        else
+        {
+            Debug.LogWarning("MenuFocadoNoPlayer não encontrado! Defina a referência no BattleManager.");
         }
     }
 

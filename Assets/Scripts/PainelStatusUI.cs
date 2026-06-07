@@ -57,9 +57,9 @@ public class PainelStatusUI : MonoBehaviour
 
         txtHP.text    = $"HP {combatente.vidaAtual} / {combatente.GetMaxVidaTotal()}";
         txtMP.text    = $"MP {combatente.manaAtual} / {combatente.GetMaxManaTotal()}";
-        txtForca.text         = $"Força {combatente.GetForcaTotal()}";
-        txtInteligencia.text  = $"Inteligência {combatente.GetInteligenciaTotal()}";
-        txtAgilidade.text     = $"Agilidade {combatente.GetAgilidadeTotal()}";
+        txtForca.text         = $"Força {combatente.GetForca()}";
+        txtInteligencia.text  = $"Inteligência {combatente.GetInteligencia()}";
+        txtAgilidade.text     = $"Agilidade {combatente.GetAgilidade()}";
         txtResiliencia.text   = $"Resiliência {combatente.GetResiliencia()}";
         txtSorte.text         = $"Sorte {combatente.GetSorte()}";
 

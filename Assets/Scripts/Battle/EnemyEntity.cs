@@ -24,8 +24,11 @@ public class EnemyEntity : BattleEntity
         Defesa = data.defesaFisica;
         DefesaMagica = data.defesaMagica;
 
+        Velocidade = data.velocidade;
+        Precisao = data.precisao;
         Evasao = data.evasao;
-        Agilidade = data.agilidade;
+
+        ChanceCritico = data.chanceCritico;
 
         behavior = data.behavior;
 

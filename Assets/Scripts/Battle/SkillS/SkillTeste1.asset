@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ee6f8434f891848896ec0bc483faef, type: 3}
   m_Name: SkillTeste1
   m_EditorClassIdentifier: Assembly-CSharp::SkillSO
-  skillName: Terremoto
+  skillName: Chamas 2
   description: 
-  icon: {fileID: 0}
-  alvo: 0
-  categoria: 0
-  tipoDano: 0
-  prioridade: 0
+  alvo: 1
+  categoria: 1
+  tipoDano: 1
+  prioridade: 1
+  podeSerUsadaEmMortos: 0
   custoMana: 0
   poderBase: 0
   chanceAcerto: 1
-  turnosParaExecutar: 0
-  turnosRecuperacao: 0
+  turnosParaExecutar: 2
+  turnosRecuperacao: 3
   gatilhoAnimacao: CastSkill
-  efeitoVisualPrefab: {fileID: 0}
   somExecucao: {fileID: 0}
+  prefabEfeitoVisual: {fileID: 262907797353622864, guid: 5e917ba1f51c75c4a9022f9643980b7f, type: 3}

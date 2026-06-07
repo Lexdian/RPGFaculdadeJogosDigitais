@@ -124,6 +124,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Trocar",
+                    "type": "Button",
+                    "id": "ed2e02b1-52fc-4a16-b412-0bed2d5116e0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,6 +212,28 @@
                     "action": "Navegacao",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "da14a739-33b8-480e-b710-ebbb66c574a4",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trocar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "346473e7-b9af-4f46-bf5b-d101c0f279af",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Trocar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

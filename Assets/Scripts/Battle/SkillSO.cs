@@ -19,6 +19,7 @@ public class SkillSO : ScriptableObject
     public CategoriaHabilidade categoria;
     public TipoDano tipoDano;
     public Prioridade prioridade;
+    public bool podeSerUsadaEmMortos;
     public List<AbstactSkillEfect> efeitosExtras;
 
     [Header("Custos e Valores")]

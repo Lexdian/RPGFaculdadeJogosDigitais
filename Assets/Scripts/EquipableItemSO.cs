@@ -11,13 +11,18 @@ public class EquipableItemSO : ItemSO
     [Header("Bônus de Status")]
     public int bonusVida;
     public int bonusMana;
-    public int bonusForca;
-    public int bonusInteligencia;
-    public int bonusAgilidade;
-    public int bonusResiliencia;
-    public int bonusSorte;
+
+    [Header("Bônus de Ordem")]
+    public int bonusVelocidade;
+
+    [Header("Ataque")]
+    public int bonusDanoFisico;
+    public int bonusDanoMagico;
+    public int bonusChanceCritico;
+    public int bonusPrecisao;
 
     [Header("Defesa")]
     public int bonusDefesaFisica;
     public int bonusDefesaMagica;
+    public int bonusEvasao;
 }

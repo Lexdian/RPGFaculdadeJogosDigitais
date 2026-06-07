@@ -1,8 +1,10 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -30,9 +32,14 @@ public class BattleManager : MonoBehaviour
     public List<EnemyEntity> Enemies => enemies;
     public List<CharEntity> Allies => allies;
 
+    public Dictionary<BattleEntity, CharInfos> CharInfosMap = new Dictionary<BattleEntity, CharInfos>();
+
     [Header("Refer�ncias de UI")]
     public MenuFocadoNoPlayer menuUI;
     public BarraProgresso timelineUI;
+    public GameObject charInfoPrefab;
+    public RectTransform charInfosContainer;
+    public CaixaMensagem caixaMensagem;
 
     void Awake()
     {
@@ -44,6 +51,8 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(charInfosContainer);
+        charInfosContainer.GetComponent<VerticalLayoutGroup>().enabled = false;
         StartCoroutine(BattleLoop());
     }
 
@@ -151,6 +160,8 @@ public class BattleManager : MonoBehaviour
 
         CharEntity entity = go.AddComponent<CharEntity>();
         entity.Setup(dados);
+        
+        InstantiateCharInfoUI(dados, entity);
 
         allies.Add(entity);
 
@@ -158,6 +169,18 @@ public class BattleManager : MonoBehaviour
     }
     #endregion
 
+    #region Instantiate CharInfos
+    private void InstantiateCharInfoUI(CombatenteData data, BattleEntity entity)
+    {
+        GameObject infoGO = Instantiate(charInfoPrefab, charInfosContainer);
+        CharInfos charInfos = infoGO.GetComponent<CharInfos>();
+        if (charInfos != null)
+        {
+            charInfos.Sesup(data);
+            CharInfosMap.Add(entity, charInfos);
+        }
+    }
+    #endregion
     #region Pipeline de Batalha
 
     IEnumerator BattleLoop()
@@ -193,7 +216,7 @@ public class BattleManager : MonoBehaviour
         List<ActionData> actionsThisTurn =
             actionQueue
             .Where(a => a.turnoExecucao == currentTurn)
-            .OrderByDescending(a => a.executor.Agilidade)
+            .OrderByDescending(a => a.executor.Velocidade)
             .ToList();
 
         foreach (var action in actionsThisTurn)
@@ -205,7 +228,6 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    // MODIFICADO: Executa os efeitos visuais, aplica o dano e aguarda 1 segundo
     IEnumerator ExecuteActionCoroutine(ActionData action)
     {
         if (!action.executor.IsAlive) yield break;
@@ -216,26 +238,52 @@ public class BattleManager : MonoBehaviour
         if (srExecutor != null)
         {
             piscarCoroutine = StartCoroutine(FlashWhiteCoroutine(srExecutor, 0.4f));
+            yield return new WaitForSeconds(0.2f); // Aguarda um pouco para o efeito de piscar ser perceptível antes de aplicar a lógica
         }
 
-        action.executor.CurrentMP -= action.habilidade.custoMana;
-
-        yield return StartCoroutine(BattleAnimationManager.Instance.ExecutarAnimacaoMagia(action.habilidade, action.executor, action.alvo[0]));
-
-        // 2. Remove o �cone dele da barra IMEDIATAMENTE quando ele come�a a atuar
-        timelineUI.RemoverInconeAcao(action.executor);
-
-        // Aguarda a piscada terminar ligeiramente ou aplica o dano no meio do processo
-        yield return new WaitForSeconds(0.2f);
-
-        // 3. Aplica a l�gica de combate nos alvos
-        foreach (var alvo in action.alvo)
+        if (action.executor.CurrentMP < action.habilidade.custoMana)
         {
-            if (!alvo.IsAlive) continue;
-            alvo.ReceiveAction(action.executor, action.habilidade);
+            timelineUI.RemoverInconeAcao(action.executor);
+            StartCoroutine(caixaMensagem.ExibirMensagem($"{action.executor.EntityName} tentou usar {action.habilidade.skillName} mas não tinha mana suficiente!"));
         }
+        else {
+            action.executor.CurrentMP -= action.habilidade.custoMana;
+            BattleEntity[] alvosFinais = action.alvo;
+            if (!action.habilidade.podeSerUsadaEmMortos)
+            {
+                alvosFinais = alvosFinais.Where(e => e.IsAlive).ToArray();
+                if (alvosFinais.Length == 0)
+                {
+                    alvosFinais = new BattleEntity[] { GetAllEntities().Where(e => e.IsAlive).First() };
+                }
+            }
 
-        Debug.Log($"{action.executor.EntityName} usou {action.habilidade.skillName}");
+            StartCoroutine(caixaMensagem.ExibirMensagem($"{action.executor.EntityName} usou {action.habilidade.skillName}!"));
+
+            yield return StartCoroutine(BattleAnimationManager.Instance.ExecutarAnimacaoMagia(action.habilidade, action.executor, alvosFinais));
+
+            timelineUI.RemoverInconeAcao(action.executor);
+
+            yield return new WaitForSeconds(0.2f);
+
+            // 3. Aplica a l�gica de combate nos alvos
+            foreach (var alvo in alvosFinais)
+            {
+                alvo.ReceiveAction(action.executor, action.habilidade);
+            }
+
+            if (CharInfosMap.ContainsKey(action.executor))
+            {
+                yield return StartCoroutine(CharInfosMap[action.executor].UpdateInfos((CharEntity)action.executor));
+            }
+            for (int i = 0; i < alvosFinais.Length; i++)
+            {
+                if (CharInfosMap.ContainsKey(alvosFinais[i]))
+                {
+                    yield return StartCoroutine(CharInfosMap[alvosFinais[i]].UpdateInfos((CharEntity)alvosFinais[i]));
+                }
+            }
+        }
         action.executor.CurrentState = BattleState.Resting;
         action.executor.ReadyTurn = currentTurn + action.turnoRecuperacao;
 
@@ -243,7 +291,6 @@ public class BattleManager : MonoBehaviour
         if (piscarCoroutine != null) StopCoroutine(piscarCoroutine);
         if (srExecutor != null) srExecutor.color = Color.white;
 
-        // 4. D� o delay obrigat�rio de 1 segundo para o pr�ximo da lista poder atacar
         yield return new WaitForSeconds(1.0f);
     }
 
@@ -300,7 +347,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-IEnumerator AskForActionsCoroutine()
+    IEnumerator AskForActionsCoroutine()
     {
         foreach (var entity in Enemies)
         {
@@ -318,6 +365,8 @@ IEnumerator AskForActionsCoroutine()
 
             ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
 
+            CharInfosMap[entity].MoverParaEsquerda();
+
             yield return new WaitUntil(() => ((CharEntity)entity).DecididoNoTurno == true);
 
             BattleDecision decision = ((CharEntity)entity).ObterDecisaoFinal();
@@ -326,6 +375,8 @@ IEnumerator AskForActionsCoroutine()
                 // MODIFICADO: Espera o enfileiramento e poss�veis anima��es de transi��o suave terminar
                 yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
             }
+
+            CharInfosMap[entity].VoltarParaPosicaoInicial();
         }
     }
 
