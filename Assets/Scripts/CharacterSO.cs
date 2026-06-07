@@ -7,10 +7,10 @@ public class CharacterSO : ScriptableObject
     [Header("Identidade e Lore")]
     public string charName;
     public Sprite charPortrait; // Foto para menus/UI de turnos
+    public Sprite charBattle;
 
     [Header("Arte e Animações (Mundo vs Batalha)")]
     public RuntimeAnimatorController overworldAnimator; // O que você já usava no mapa
-    public RuntimeAnimatorController battleAnimator;    // O novo animator específico de combate
 
     [Header("Status Iniciais (Nível 1)")]
     public int baseVida;

@@ -143,17 +143,11 @@ public class BattleManager : MonoBehaviour
     {
         GameObject go = Instantiate(allyPrefab, posicao, Quaternion.identity);
 
-        var animador = go.GetComponent<Animator>();
-
-        if (animador != null)
-        {
-            animador.runtimeAnimatorController = dados.fichaBase.battleAnimator;
-        }
-
         var sr = go.GetComponent<SpriteRenderer>();
 
         if (sr != null)
         {
+            sr.sprite = dados.fichaBase.charBattle;
             sr.sortingOrder = 10 + order;
             sr.flipX = true;
         }

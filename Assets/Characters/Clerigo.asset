@@ -12,24 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
   m_Name: Clerigo
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
-  charName: 
-  charPortrait: {fileID: 0}
-  overworldAnimator: {fileID: 0}
-  battleAnimator: {fileID: 0}
-  baseVida: 0
-  baseMana: 0
-  baseForca: 0
-  baseInteligencia: 0
-  baseAgilidade: 0
-  baseResiliencia: 0
-  baseSorte: 0
-  perLevelUpgradeVida: 0
-  perLevelUpgradeMana: 0
-  perLevelUpgradeForca: 0
-  perLevelUpgradeInteligencia: 0
-  perLevelUpgradeAgilidade: 0
-  perLevelUpgradeResiliencia: 0
-  perLevelUpgradeSorte: 0
+  charName: Clea
+  charPortrait: {fileID: 4985562478739595470, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
+  charBattle: {fileID: 5241300866095031983, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
+  overworldAnimator: {fileID: 22100000, guid: 3afb0b205a9614b42b3092705f0d8ffe, type: 2}
+  baseVida: 50
+  baseMana: 10
+  baseForca: 5
+  baseInteligencia: 15
+  baseAgilidade: 10
+  baseResiliencia: 10
+  baseSorte: 10
+  perLevelUpgradeVida: 1
+  perLevelUpgradeMana: 1
+  perLevelUpgradeForca: 1
+  perLevelUpgradeInteligencia: 1
+  perLevelUpgradeAgilidade: 1
+  perLevelUpgradeResiliencia: 1
+  perLevelUpgradeSorte: 1
   xpBaseNecessario: 100
   curvaXPMultiplicador: 1.2
   habilidadesIniciais: []
