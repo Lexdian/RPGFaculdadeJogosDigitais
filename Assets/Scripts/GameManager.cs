@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,12 +34,19 @@ public class GameManager : MonoBehaviour
     [Header("Estado do Jogo")]
     public bool emCombate = false;
 
+
+    private Vector2 spawnPosition;
+    private bool precisaRecriarEquipe = false;
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
             inventarioGrupo = new Inventory(initialMaxSlots: 10);
             InicializarEquipe();
         }
@@ -46,6 +54,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void InicializarEquipe()
@@ -59,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        CreateTeam();
+        CreateTeam(Vector2.zero);
         InicializarItensTeste();
     }
 
@@ -72,18 +85,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CreateTeam()
+    private void CreateTeam(Vector2 position)
     {
         if (equipeAtual.Count == 0) return;
 
-        GameObject liderChar = Instantiate(lider, new Vector2(0, 0), Quaternion.identity);
-        liderChar.GetComponent<LiderCharacter>().Setup(equipeAtual[0].fichaBase.overworldAnimator);
+        GameObject liderChar = Instantiate(lider, position, Quaternion.identity);
+        liderChar.GetComponent<LiderCharacter>()
+                 .Setup(equipeAtual[0].fichaBase.overworldAnimator);
 
         for (int i = 1; i < equipeAtual.Count; i++)
         {
-            GameObject newChar = Instantiate(followers, new Vector2(0, 0), Quaternion.identity);
-            newChar.GetComponent<Character>().Setup(equipeAtual[i].fichaBase.overworldAnimator);
-            liderChar.GetComponent<LiderCharacter>().followers[i - 1] = newChar.GetComponent<Character>();
+            GameObject newChar = Instantiate(followers, position, Quaternion.identity);
+
+            newChar.GetComponent<Character>()
+                   .Setup(equipeAtual[i].fichaBase.overworldAnimator);
+
+            liderChar.GetComponent<LiderCharacter>()
+                     .followers[i - 1] = newChar.GetComponent<Character>();
+        }
+    }
+
+    public void MudarMapa(string nomeCena, string nomeLocal, Vector2 posicaoInicial)
+    {
+        cidadeAtual = nomeLocal;
+
+        spawnPosition = posicaoInicial;
+        precisaRecriarEquipe = true;
+
+        SceneManager.LoadScene(nomeCena);
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (precisaRecriarEquipe)
+        {
+            CreateTeam(spawnPosition);
+            precisaRecriarEquipe = false;
         }
     }
 }

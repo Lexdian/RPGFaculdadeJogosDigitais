@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class SceneTransition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string nomeCena; // Nome da cena para a qual o jogador será transportado
+    public string nomeLocal;
+    public Vector2 posicaoInicial;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            GameManager.Instance.MudarMapa(nomeCena, nomeLocal, posicaoInicial);
+        }
     }
 }

@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 4c59c4de42f630840ae37ed0fcadb677
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/CorredoresPrimeiroAndar.unity
+    guid: 5d5be674d88ef7547a0c20be1c84aee5
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/SalaTrono.unity
+    guid: 8dd599f11db371b4b87c94647b8dcd38
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
