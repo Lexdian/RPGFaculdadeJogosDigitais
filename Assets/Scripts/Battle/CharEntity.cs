@@ -66,6 +66,18 @@ public class CharEntity : BattleEntity
         return decisaoSelecionada;
     }
 
+    protected override void Die()
+    {
+        base.Die();
+
+        Data.vidaAtual = 0;
+        CurrentState = BattleState.Dead;
+
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.color = new Color(1f, 1f, 1f, 0.25f);
+    }
+
     public override void TakeFisicalDamage(BattleEntity dealer, int amount)
     {
         int danoFinal = Mathf.Max(1, amount - Defesa);

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CharInfos : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class CharInfos : MonoBehaviour
     private Image HPBar;
     [SerializeField]
     private Image MPBar;
+
+    [Header("Ícones de Status Effect")]
+    [Tooltip("Container (HorizontalLayoutGroup) onde os ícones de status serão instanciados.")]
+    [SerializeField] private Transform statusIconsContainer;
+    [Tooltip("Prefab de um Image simples para cada ícone de status.")]
+    [SerializeField] private GameObject statusIconPrefab;
 
     [Header("Configurações de Animação")]
     [SerializeField] private float distanciaMoverEsquerda = 155f;
@@ -135,7 +142,36 @@ public class CharInfos : MonoBehaviour
         hpAnterior = data.CurrentHP;
         mpAnterior = data.CurrentMP;
 
+        // Atualiza os ícones de status effect junto com as barras
+        AtualizarStatusIcons(data.statusAtivos);
+
         // ADICIONADO: Força a Coroutine a esperar TODA a sequência acima terminar antes de avançar
         yield return sequenciaUpdate.WaitForCompletion();
+    }
+
+    public void AtualizarStatusIcons(List<StatusEffectInstance> statusAtivos)
+    {
+        if (statusIconsContainer == null) return;
+
+        foreach (Transform filho in statusIconsContainer)
+            Destroy(filho.gameObject);
+
+        if (statusAtivos == null || statusAtivos.Count == 0) return;
+
+        foreach (var instancia in statusAtivos)
+        {
+            if (instancia.status == null || instancia.status.icon == null) continue;
+            if (statusIconPrefab == null) continue;
+
+            GameObject iconeGO = Instantiate(statusIconPrefab, statusIconsContainer);
+            var img = iconeGO.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = instancia.status.icon;
+                img.color = instancia.status is VenenoStatusSO ? new Color(0.6f, 0f, 0.8f)
+                          : instancia.status is AtordoamentoStatusSO ? new Color(1f, 0.9f, 0f)
+                          : Color.white;
+            }
+        }
     }
 }

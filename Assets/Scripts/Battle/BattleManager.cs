@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class BattleManager : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class BattleManager : MonoBehaviour
     public RectTransform charInfosContainer;
     public CaixaMensagem caixaMensagem;
 
+    [Header("Tela de Resultado")]
+    [SerializeField] private BattleResultUI telaResultado;
+
+    private bool batalhaEncerrada = false;
+
     void Awake()
     {
         if (GameManager.Instance != null)
@@ -55,6 +61,28 @@ public class BattleManager : MonoBehaviour
         charInfosContainer.GetComponent<VerticalLayoutGroup>().enabled = false;
         StartCoroutine(BattleLoop());
     }
+
+#if UNITY_EDITOR
+    // ─── ATALHO DE TESTE TEMPORÁRIO ─────────────────────────────────────────────
+    // F1 = abre a tela de Vitória / F2 = abre a tela de Derrota, sem precisar
+    // terminar a batalha de verdade. Só existe em builds do Editor.
+    // REMOVER depois de validar as telas de resultado.
+    void Update()
+    {
+        if (Keyboard.current == null || batalhaEncerrada) return;
+
+        if (Keyboard.current.f1Key.wasPressedThisFrame)
+        {
+            batalhaEncerrada = true;
+            StartCoroutine(MostrarResultadoCoroutine(vitoria: true));
+        }
+        else if (Keyboard.current.f2Key.wasPressedThisFrame)
+        {
+            batalhaEncerrada = true;
+            StartCoroutine(MostrarResultadoCoroutine(vitoria: false));
+        }
+    }
+#endif
 
     #region SPAWN DOS INIMIGOS
     void SpawnEnemies()
@@ -154,7 +182,7 @@ public class BattleManager : MonoBehaviour
 
         CharEntity entity = go.AddComponent<CharEntity>();
         entity.Setup(dados);
-        
+
         InstantiateCharInfoUI(dados, entity);
 
         allies.Add(entity);
@@ -189,8 +217,14 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log($"=========================TURNO {currentTurn}=========================");
 
-        // MODIFICADO: Agora espera a execu��o passo a passo das a��es com anima��o e delay
+        yield return StartCoroutine(TickStatusEfeitosCoroutine());
+
+        if (batalhaEncerrada) yield break;
+
         yield return StartCoroutine(ExecuteActionsCoroutine());
+
+        CheckBattleEnd();
+        if (batalhaEncerrada) yield break;
 
         UpdateRecovery();
 
@@ -198,11 +232,44 @@ public class BattleManager : MonoBehaviour
 
         CheckBattleEnd();
 
+        if (batalhaEncerrada) yield break;
+
         bool carregouSegmento = false;
         timelineUI.AtualizarProgressoTurno(() => carregouSegmento = true);
         yield return new WaitUntil(() => carregouSegmento);
 
         currentTurn++;
+    }
+    private IEnumerator TickStatusEfeitosCoroutine()
+    {
+        List<BattleEntity> todasEntidades = GetAllEntities();
+
+        foreach (var entity in todasEntidades)
+        {
+            if (!entity.IsAlive || entity.statusAtivos.Count == 0) continue;
+
+            string nomes = string.Join(", ", entity.statusAtivos.ConvertAll(s => s.status.effectName));
+            Debug.Log(" Nomes:" + nomes);
+            StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} sofre: {nomes}!"));
+
+            entity.TickAllStatus();
+
+            if (CharInfosMap.ContainsKey(entity))
+            {
+                yield return StartCoroutine(CharInfosMap[entity].UpdateInfos((CharEntity)entity));
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.6f);
+            }
+
+            if (!entity.IsAlive)
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} foi derrotado pelo efeito de status!"));
+                yield return new WaitForSeconds(0.5f);
+                CheckBattleEnd();
+            }
+        }
     }
 
     IEnumerator ExecuteActionsCoroutine()
@@ -347,6 +414,13 @@ public class BattleManager : MonoBehaviour
         {
             if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) continue;
 
+            if (entity.HasStatusEffect<AtordoamentoStatusSO>())
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} está atordoado e não pode agir!"));
+                yield return new WaitForSeconds(0.8f);
+                continue;
+            }
+
             BattleDecision decision = ((EnemyEntity)entity).GetAction(GetAllEntities());
             if (decision.skill != null)
                 // MODIFICADO: Espera o enfileiramento e poss�veis anima��es de transi��o suave terminar
@@ -355,7 +429,14 @@ public class BattleManager : MonoBehaviour
 
         foreach (var entity in Allies)
         {
-            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("N�o atua"); continue; }
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Não atua"); continue; }
+
+            if (entity.HasStatusEffect<AtordoamentoStatusSO>())
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} está atordoado e não pode agir!"));
+                yield return new WaitForSeconds(0.8f);
+                continue;
+            }
 
             ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
 
@@ -376,21 +457,62 @@ public class BattleManager : MonoBehaviour
 
     public void CheckBattleEnd()
     {
+        if (batalhaEncerrada) return;
+
         bool allEnemiesDead = enemies.All(e => !e.IsAlive);
         bool allAlliesDead = allies.All(a => !a.IsAlive);
         if (allEnemiesDead)
         {
+            batalhaEncerrada = true;
             if (GameManager.Instance != null)
                 GameManager.Instance.emCombate = false;
-            Debug.Log("Vit�ria!");
+            StartCoroutine(MostrarResultadoCoroutine(vitoria: true));
         }
         else if (allAlliesDead)
         {
+            batalhaEncerrada = true;
             if (GameManager.Instance != null)
                 GameManager.Instance.emCombate = false;
-            Debug.Log("Derrota...");
+            StartCoroutine(MostrarResultadoCoroutine(vitoria: false));
         }
     }
+
+    private IEnumerator MostrarResultadoCoroutine(bool vitoria)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        if (telaResultado == null)
+        {
+            Debug.LogError("[BattleManager] Referência 'Tela Resultado' não configurada no Inspector!");
+            yield break;
+        }
+
+        if (vitoria)
+        {
+            int xpTotal = CalcularXPTotal();
+            StartCoroutine(caixaMensagem.ExibirMensagem("Vitória!"));
+            yield return new WaitForSeconds(0.5f);
+            telaResultado.MostrarVitoria(xpTotal);
+        }
+        else
+        {
+            StartCoroutine(caixaMensagem.ExibirMensagem("Derrota..."));
+            yield return new WaitForSeconds(0.5f);
+            telaResultado.MostrarDerrota();
+        }
+    }
+
+    private int CalcularXPTotal()
+    {
+        int total = 0;
+        foreach (var enemy in enemies)
+        {
+            if (!enemy.IsAlive)
+                total += enemy.Data.xpReward;
+        }
+        return total;
+    }
+
 
     #endregion
 

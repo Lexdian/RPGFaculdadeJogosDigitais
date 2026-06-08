@@ -133,11 +133,8 @@ public class BattleArea : MonoBehaviour
                         EnemyGroup selectedGroup = GetRandomEnemyGroup();
 
                         Debug.Log("Selected group: " + selectedGroup);
-                        // Passa os dados para o GameManager
-                        GameManager.Instance.inimigosParaSpawnar = selectedGroup;
-
                         Debug.Log("Saindo do mapa para a batalha...");
-                        SceneManager.LoadScene("BattleScene");
+                        GameManager.Instance.IniciarBatalha(selectedGroup, collision.transform.position);
                     }
                 }
             }

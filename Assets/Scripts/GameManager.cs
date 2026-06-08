@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Estado do Jogo")]
     public bool emCombate = false;
+    private string cenaAnterior = "SampleScene";
 
 
     private Vector2 spawnPosition;
@@ -103,6 +104,38 @@ public class GameManager : MonoBehaviour
             liderChar.GetComponent<LiderCharacter>()
                      .followers[i - 1] = newChar.GetComponent<Character>();
         }
+    }
+
+    public void IniciarBatalha(EnemyGroup grupo, Vector2 posicaoJogador = default)
+    {
+        cenaAnterior = SceneManager.GetActiveScene().name;
+        inimigosParaSpawnar = grupo;
+        spawnPosition = posicaoJogador;
+        emCombate = true;
+        SceneManager.LoadScene("BattleScene");
+    }
+
+    public void VoltarDosCombate()
+    {
+        emCombate = false;
+        precisaRecriarEquipe = true;
+        SceneManager.LoadScene(cenaAnterior);
+    }
+
+    public void ResetarEquipeEVoltar()
+    {
+        foreach (var combatente in equipeAtual)
+        {
+            if (combatente == null) continue;
+            combatente.vidaAtual = combatente.GetMaxVidaTotal();
+            combatente.manaAtual = combatente.GetMaxManaTotal();
+        }
+
+        cenaAnterior = "SampleScene";
+        emCombate = false;
+        spawnPosition = Vector2.zero;
+        precisaRecriarEquipe = true;
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void MudarMapa(string nomeCena, string nomeLocal, Vector2 posicaoInicial)

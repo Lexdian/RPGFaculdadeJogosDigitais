@@ -7,7 +7,10 @@ public enum DamageType
     Critical,
     Heal,
     Imune,
-    Errou
+    Errou,
+    Veneno,      // Dano de envenenamento — roxo
+    Atordoado,   // Indicador de stun — amarelo
+    StatusBuff   // Indicador de buff aplicado — ciano
 }
 public class PopupDamage : MonoBehaviour
 {
@@ -18,15 +21,15 @@ public class PopupDamage : MonoBehaviour
         {
             case DamageType.Normal:
                 _textMesh.color = Color.white;
-                _textMesh.text = "-"+damageAmount.ToString();
+                _textMesh.text = "-" + damageAmount.ToString();
                 break;
             case DamageType.Critical:
                 _textMesh.color = Color.red;
-                _textMesh.text = "-"+damageAmount.ToString();
+                _textMesh.text = "-" + damageAmount.ToString();
                 break;
             case DamageType.Heal:
                 _textMesh.color = Color.green;
-                _textMesh.text = "+"+damageAmount.ToString();
+                _textMesh.text = "+" + damageAmount.ToString();
                 break;
             case DamageType.Imune:
                 _textMesh.color = Color.white;
@@ -35,6 +38,18 @@ public class PopupDamage : MonoBehaviour
             case DamageType.Errou:
                 _textMesh.color = Color.white;
                 _textMesh.text = "Errou";
+                break;
+            case DamageType.Veneno:
+                _textMesh.color = new Color(0.6f, 0f, 0.8f); // roxo
+                _textMesh.text = "-" + damageAmount.ToString();
+                break;
+            case DamageType.Atordoado:
+                _textMesh.color = new Color(1f, 0.9f, 0f); // amarelo
+                _textMesh.text = "Atordoado!";
+                break;
+            case DamageType.StatusBuff:
+                _textMesh.color = new Color(0f, 0.9f, 1f); // ciano
+                _textMesh.text = "Buff!";
                 break;
         }
     }

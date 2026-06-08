@@ -9,7 +9,7 @@ public class CaixaMensagem : MonoBehaviour
     [SerializeField] private CanvasGroup painelCanvasGroup;
     [SerializeField] private TextMeshProUGUI textoDaMensagem;
 
-    [Header("Configurações de Animação")]
+    [Header("ConfiguraÃ§Ãµes de AnimaÃ§Ã£o")]
     [SerializeField] private float duracaoFade = 0.25f;
     [SerializeField] private float tempoEsperaLeitura = 1.5f;
 
@@ -25,6 +25,12 @@ public class CaixaMensagem : MonoBehaviour
         textoDaMensagem.text = "";
     }
 
+    private void OnDestroy()
+    {
+        if (painelCanvasGroup != null)
+            painelCanvasGroup.DOKill();
+    }
+
     public IEnumerator ExibirMensagem(string mensagem)
     {
         yield return new WaitUntil(() => ativo == false);
@@ -32,23 +38,23 @@ public class CaixaMensagem : MonoBehaviour
     }
 
     /// <summary>
-    /// Exibe a mensagem de forma assíncrona/paralela usando o sistema de Sequences do DOTween.
+    /// Exibe a mensagem de forma assÃ­ncrona/paralela usando o sistema de Sequences do DOTween.
     /// </summary>
     private void MostrarMensagem(string mensagem)
     {
-        // Correção: usando 'return' em vez de 'break' para métodos void
+        // CorreÃ§Ã£o: usando 'return' em vez de 'break' para mÃ©todos void
         if (painelCanvasGroup == null || textoDaMensagem == null) return;
 
         ativo = true;
 
-        // Para e destrói qualquer sequência anterior que ainda esteja rodando nesta caixa
+        // Para e destrÃ³i qualquer sequï¿½ncia anterior que ainda esteja rodando nesta caixa
         painelCanvasGroup.DOKill();
 
         // 1. Define o texto completo IMEDIATAMENTE
         textoDaMensagem.text = mensagem;
         painelCanvasGroup.blocksRaycasts = true;
 
-        // Criamos uma sequência que vai gerenciar o tempo em paralelo
+        // Criamos uma sequÃªncia que vai gerenciar o tempo em paralelo
         Sequence sequenciaMensagem = DOTween.Sequence();
 
         // 2. APARECER: Adiciona o Fade In na linha do tempo
@@ -57,10 +63,10 @@ public class CaixaMensagem : MonoBehaviour
         // 3. ESPERAR: Adiciona uma pausa na linha do tempo com o painel aberto
         sequenciaMensagem.AppendInterval(tempoEsperaLeitura);
 
-        // 4. DESAPARECER: Adiciona o Fade Out logo após a pausa
+        // 4. DESAPARECER: Adiciona o Fade Out logo apÃ³s a pausa
         sequenciaMensagem.Append(painelCanvasGroup.DOFade(0f, duracaoFade));
 
-        // 5. LIMPEZA: Quando TODA a sequência terminar, desativa o raycast e limpa o texto
+        // 5. LIMPEZA: Quando TODA a sequÃªncia terminar, desativa o raycast e limpa o texto
         sequenciaMensagem.OnComplete(() => {
             painelCanvasGroup.blocksRaycasts = false;
             textoDaMensagem.text = "";

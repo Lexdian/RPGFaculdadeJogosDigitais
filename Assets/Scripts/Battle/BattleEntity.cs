@@ -60,7 +60,7 @@ public abstract class BattleEntity : MonoBehaviour
     {
         if (!status.IsStackable)
         {
-            var statusExistente = statusAtivos.Find(e => e.source == status);
+            var statusExistente = statusAtivos.Find(e => e.status == status);
             if (statusExistente != null)
             {
                 statusExistente.turnosRestantes = status.duracao;
@@ -75,13 +75,36 @@ public abstract class BattleEntity : MonoBehaviour
     }
     public void TickAllStatus()
     {
-        //Itera sobre todos os status e retira aqueles que tiverem acabado
         statusAtivos.RemoveAll(e => !e.Tick(this));
+        if (CurrentHP <= 0 && CurrentState != BattleState.Dead)
+            TriggerDeath();
+    }
+
+
+    public void TakeStatusDamage(int amount, DamageType popupType = DamageType.Normal)
+    {
+        int dano = Mathf.Max(1, amount);
+        CurrentHP = Mathf.Max(0, CurrentHP - dano);
+        PopDamage(dano, popupType);
+        if (CurrentHP <= 0 && CurrentState != BattleState.Dead)
+            TriggerDeath();
+    }
+
+    public bool HasStatusEffect<T>() where T : StatusEffectSO
+    {
+        return statusAtivos.Exists(e => e.status is T);
+    }
+
+    public void TriggerDeath()
+    {
+        CurrentHP = 0;
+        CurrentState = BattleState.Dead;
+        Die();
     }
 
     public void RemoveStatusEffect(StatusEffectSO status)
     {
-        var statusInstance = statusAtivos.Find(e => e.source == status);
+        var statusInstance = statusAtivos.Find(e => e.status == status);
         if (statusInstance != null)
         {
             status.OnExpire(this);
@@ -115,7 +138,7 @@ public abstract class BattleEntity : MonoBehaviour
             PopDamage(0, DamageType.Imune);
             return;
         }
-        if(Random.Range(0, 100) < 25+dealer.Precisao - Evasao)
+        if (Random.Range(0, 100) < 25 + dealer.Precisao - Evasao)
         {
             PopDamage(0, DamageType.Errou);
             return;
@@ -145,7 +168,7 @@ public abstract class BattleEntity : MonoBehaviour
 
         foreach (var efeito in skill.efeitosExtras)
         {
-            efeito.ApplyEffect(target, dealer, skill);
+            this.ApplyStatusEffect(efeito, dealer);
         }
     }
 
@@ -168,7 +191,7 @@ public abstract class BattleEntity : MonoBehaviour
         return spriteRenderer != null ? (int)spriteRenderer.bounds.size.y : 1;
     }
 
-    public void PopDamage(int danoFinal, DamageType damageType) 
+    public void PopDamage(int danoFinal, DamageType damageType)
     {
         PopupDamage.Create(new Vector3(transform.position.x, transform.position.y + GetAltura(), transform.position.z), danoFinal, damageType);
     }

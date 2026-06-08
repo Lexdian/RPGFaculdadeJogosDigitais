@@ -6,7 +6,7 @@ public class VenenoStatusSO : StatusEffectSO
 {
     public override void OnApply(BattleEntity target, BattleEntity source)
     {
-        Debug.Log($"{target} foi envenenado por {source}!");
+        Debug.Log($"{target.EntityName} foi envenenado por {source.name}!");
     }
 
     public override void OnExpire(BattleEntity target)
@@ -17,6 +17,6 @@ public class VenenoStatusSO : StatusEffectSO
     public override void OnTick(BattleEntity target, StatusEffectInstance instance)
     {
         target.TakeFisicalDamage(instance.source, valorDano);
-        Debug.Log($"{target} tomou: {valorDano} de dano de veneno!");
+        Debug.Log($"{target.EntityName} tomou: {valorDano} de dano de veneno!");
     }
 }
