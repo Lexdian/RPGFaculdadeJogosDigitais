@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   nomeCena: SalaTesouros
   nomeLocal: Sala de tesouros
-  posicaoInicial: {x: -0.5, y: -2}
+  posicaoInicial: {x: 0.5, y: -2}
 --- !u!61 &1233798106
 BoxCollider2D:
   m_ObjectHideFlags: 0

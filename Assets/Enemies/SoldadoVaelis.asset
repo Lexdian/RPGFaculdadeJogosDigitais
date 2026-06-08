@@ -22,7 +22,7 @@ MonoBehaviour:
   ataqueFisico: 8
   ataqueMagico: 5
   defesaFisica: 5
-  defesaMagica: 5
+  defesaMagica: 0
   velocidade: 10
   precisao: 5
   evasao: 0
