@@ -50,11 +50,11 @@ public class CharEntity : BattleEntity
         }
         else
         {
-            Debug.LogWarning("MenuFocadoNoPlayer não encontrado! Defina a referência no BattleManager.");
+            Debug.LogWarning("MenuFocadoNoPlayer nï¿½o encontrado! Defina a referï¿½ncia no BattleManager.");
         }
     }
 
-    // Função que a UI vai chamar de volta para entregar a decisão
+    // Funï¿½ï¿½o que a UI vai chamar de volta para entregar a decisï¿½o
     public void DefinirDecisao(BattleDecision decision)
     {
         decisaoSelecionada = decision;
@@ -66,7 +66,7 @@ public class CharEntity : BattleEntity
         return decisaoSelecionada;
     }
 
-    protected override void Die()
+    public override void Die()
     {
         base.Die();
 
@@ -86,7 +86,7 @@ public class CharEntity : BattleEntity
 
         PopDamage(danoFinal, DamageType.Normal);
 
-        Debug.Log($"{EntityName} recebeu {danoFinal} dano físico");
+        Debug.Log($"{EntityName} recebeu {danoFinal} dano fï¿½sico");
 
         if (CurrentHP <= 0)
         {
@@ -103,7 +103,7 @@ public class CharEntity : BattleEntity
 
         PopDamage(danoFinal, DamageType.Normal);
 
-        Debug.Log($"{EntityName} recebeu {danoFinal} dano mágico");
+        Debug.Log($"{EntityName} recebeu {danoFinal} dano mï¿½gico");
 
         if (CurrentHP <= 0)
         {
