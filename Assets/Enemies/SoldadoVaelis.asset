@@ -32,6 +32,7 @@ MonoBehaviour:
   recuperacao: 1
   tipoAlvo: 0
   dano: 0
+  prefabEfeitoVisual: {fileID: 5650459477724364217, guid: 43773d90b8fb4cc42a3eab6a5cbd68be, type: 3}
   Skills:
   - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
   behavior:

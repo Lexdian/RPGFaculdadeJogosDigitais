@@ -32,5 +32,6 @@ MonoBehaviour:
   perLevelUpgradeSorte: 5
   xpBaseNecessario: 100
   curvaXPMultiplicador: 1.2
+  prefabEfeitoVisualAtaqueBasico: {fileID: 5650459477724364217, guid: af86b88d3547edf4da39f6e10474e451, type: 3}
   habilidadesIniciais: []
   habilidadesPorNivel: []

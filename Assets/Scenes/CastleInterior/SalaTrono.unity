@@ -2075,9 +2075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   heroisDisponiveis:
   - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
+  - {fileID: 11400000, guid: cbf32d18ab79b4a4f976d3f573507222, type: 2}
+  - {fileID: 11400000, guid: a6350f286b0272a4884ed4dd29a8603a, type: 2}
+  - {fileID: 11400000, guid: 6a7639d41f8eb774db6e99aca98d3263, type: 2}
   equipeAtual: []
   inventarioGrupo:
     slots: []
