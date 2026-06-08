@@ -119,6 +119,240 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &309223500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1597483106}
+    m_Modifications:
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b3404df1a695b4cb483aebea42acc8ce, type: 2}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: moedas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: quantidadeItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: 'dialogAberto.Array.data[0]'
+      value: O pote esta vazio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195029530996710600, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_Name
+      value: Jarro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+--- !u!4 &309223501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+  m_PrefabInstance: {fileID: 309223500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &319272368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1597483106}
+    m_Modifications:
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b3404df1a695b4cb483aebea42acc8ce, type: 2}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: moedas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: quantidadeItem
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: 'dialogAberto.Array.data[0]'
+      value: O pote esta vazio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195029530996710600, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_Name
+      value: Jarro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+--- !u!4 &319272369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+  m_PrefabInstance: {fileID: 319272368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &455379706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1597483106}
+    m_Modifications:
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b3404df1a695b4cb483aebea42acc8ce, type: 2}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: moedas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: quantidadeItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: 'dialogAberto.Array.data[0]'
+      value: O pote esta vazio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195029530996710600, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_Name
+      value: Jarro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+--- !u!4 &455379707 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+  m_PrefabInstance: {fileID: 455379706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487571030
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +830,84 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &934134982
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1597483106}
+    m_Modifications:
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: b3404df1a695b4cb483aebea42acc8ce, type: 2}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: moedas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: quantidadeItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054110177047612009, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: 'dialogAberto.Array.data[0]'
+      value: O pote esta vazio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195029530996710600, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+      propertyPath: m_Name
+      value: Jarro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+--- !u!4 &934134983 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4917103295549268201, guid: d7649c5aa8f7fab449c30453a3cc3b66, type: 3}
+  m_PrefabInstance: {fileID: 934134982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1314329869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,7 +2948,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 455379707}
+  - {fileID: 309223501}
+  - {fileID: 319272369}
+  - {fileID: 934134983}
   m_Father: {fileID: 487571032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1597483107

@@ -4039,7 +4039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   nomeCena: CorredoresSegundoAndar
   nomeLocal: Segundo Andar
-  posicaoInicial: {x: -0.5, y: 19}
+  posicaoInicial: {x: -10.5, y: 1}
 --- !u!61 &1631060178
 BoxCollider2D:
   m_ObjectHideFlags: 0

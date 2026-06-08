@@ -16,13 +16,13 @@ MonoBehaviour:
   charPortrait: {fileID: -5900141351140952154, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
   charBattle: {fileID: -3946677830480133564, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
   overworldAnimator: {fileID: 22100000, guid: 164c543e0e1341a458c4832f3fd22172, type: 2}
-  baseVida: 50
-  baseMana: 10
-  baseForca: 25
+  baseVida: 40
+  baseMana: 5
+  baseForca: 15
   baseInteligencia: 20
-  baseAgilidade: 15
-  baseResiliencia: 25
-  baseSorte: 10
+  baseAgilidade: 25
+  baseResiliencia: 15
+  baseSorte: 20
   perLevelUpgradeVida: 5
   perLevelUpgradeMana: 5
   perLevelUpgradeForca: 5

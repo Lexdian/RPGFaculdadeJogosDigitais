@@ -16,8 +16,8 @@ MonoBehaviour:
   charPortrait: {fileID: 4985562478739595470, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
   charBattle: {fileID: 5241300866095031983, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
   overworldAnimator: {fileID: 22100000, guid: 3afb0b205a9614b42b3092705f0d8ffe, type: 2}
-  baseVida: 50
-  baseMana: 10
+  baseVida: 35
+  baseMana: 20
   baseForca: 5
   baseInteligencia: 15
   baseAgilidade: 10
@@ -33,5 +33,7 @@ MonoBehaviour:
   xpBaseNecessario: 100
   curvaXPMultiplicador: 1.2
   prefabEfeitoVisualAtaqueBasico: {fileID: 5650459477724364217, guid: af86b88d3547edf4da39f6e10474e451, type: 3}
-  habilidadesIniciais: []
+  habilidadesIniciais:
+  - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
+  - {fileID: 11400000, guid: c2c063d76087bde4dab62869720a8738, type: 2}
   habilidadesPorNivel: []

@@ -17,9 +17,9 @@ MonoBehaviour:
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
   tamanho: 0
   isVoador: 0
-  vida: 30
+  vida: 20
   mana: 0
-  ataqueFisico: 15
+  ataqueFisico: 10
   ataqueMagico: 0
   defesaFisica: 5
   defesaMagica: 0

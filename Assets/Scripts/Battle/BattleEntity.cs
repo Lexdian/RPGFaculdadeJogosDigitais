@@ -138,7 +138,7 @@ public abstract class BattleEntity : MonoBehaviour
             PopDamage(0, DamageType.Imune);
             return;
         }
-        if (Random.Range(0, 100) < 25 + dealer.Precisao - Evasao)
+        if (Random.Range(0, 100) < 10 + dealer.Precisao - Evasao)
         {
             PopDamage(0, DamageType.Errou);
             return;
