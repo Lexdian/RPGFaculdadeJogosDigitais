@@ -14,13 +14,13 @@ public struct EnemyGroup
     [Range(1, 5)]
     public int rarity;
 
-    // A validação agora deve checar cada array individualmente
+    // A validaï¿½ï¿½o agora deve checar cada array individualmente
     public bool IsValid(out string error)
     {
         error = "";
         return ValidarColuna(colunaFrente, "Frente", out error) &&
                ValidarColuna(colunaMeio, "Meio", out error) &&
-               ValidarColuna(colunaTras, "Trás", out error);
+               ValidarColuna(colunaTras, "Trï¿½s", out error);
     }
 
     private bool ValidarColuna(EnemySO[] coluna, string nome, out string error)
@@ -33,7 +33,7 @@ public struct EnemyGroup
 
         if (temGrande && temPequeno)
         {
-            error = $"Coluna {nome} mista! Não pode ter grandes e pequenos juntos.";
+            error = $"Coluna {nome} mista! Nï¿½o pode ter grandes e pequenos juntos.";
             return false;
         }
 
@@ -61,7 +61,7 @@ public class BattleArea : MonoBehaviour
 
     public int EncounterChance = 20;
     private float encounterTimer = 0f;
-    private float nextEncounterThreshold = 2f; // Tempo mínimo entre tentativas
+    private float nextEncounterThreshold = 2f; // Tempo mï¿½nimo entre tentativas
 
     private void Awake()
     {
@@ -133,8 +133,11 @@ public class BattleArea : MonoBehaviour
                         EnemyGroup selectedGroup = GetRandomEnemyGroup();
 
                         Debug.Log("Selected group: " + selectedGroup);
-                        // Passa os dados para o GameManager
                         GameManager.Instance.inimigosParaSpawnar = selectedGroup;
+                        GameManager.Instance.SalvarEstadoPreCombate(
+                            SceneManager.GetActiveScene().name,
+                            collision.transform.position
+                        );
 
                         Debug.Log("Saindo do mapa para a batalha...");
                         SceneManager.LoadScene("BattleScene");

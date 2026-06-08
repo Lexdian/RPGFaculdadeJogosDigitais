@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     [Header("Estado do Jogo")]
     public bool emCombate = false;
 
+    [Header("Modo Apresentação")]
+    public bool modoApresentacao = false;
+
+    private string cenaAnterior;
+    private Vector2 posicaoAnteriorCombate;
 
     private Vector2 spawnPosition;
     private bool precisaRecriarEquipe = false;
@@ -103,6 +108,18 @@ public class GameManager : MonoBehaviour
             liderChar.GetComponent<LiderCharacter>()
                      .followers[i - 1] = newChar.GetComponent<Character>();
         }
+    }
+
+    public void SalvarEstadoPreCombate(string cena, Vector2 posicao)
+    {
+        cenaAnterior = cena;
+        posicaoAnteriorCombate = posicao;
+    }
+
+    public void VoltarDeCombate()
+    {
+        emCombate = false;
+        MudarMapa(cenaAnterior, cidadeAtual, posicaoAnteriorCombate);
     }
 
     public void MudarMapa(string nomeCena, string nomeLocal, Vector2 posicaoInicial)

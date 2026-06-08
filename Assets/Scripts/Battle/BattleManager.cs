@@ -25,6 +25,7 @@ public class BattleManager : MonoBehaviour
 
     private List<ActionData> actionQueue = new List<ActionData>();
     private int currentTurn = 0;
+    private bool batalhaEncerrada = false;
 
     private List<EnemyEntity> enemies = new();
     private List<CharEntity> allies = new();
@@ -178,24 +179,32 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator BattleLoop()
     {
-        while (currentTurn < 10)
+        while (!batalhaEncerrada)
         {
             yield return StartCoroutine(MainPipelineCoroutine());
         }
+        yield return StartCoroutine(EncerrarBatalha());
+    }
+
+    IEnumerator EncerrarBatalha()
+    {
+        yield return new WaitForSeconds(2f);
+        if (GameManager.Instance != null)
+            GameManager.Instance.VoltarDeCombate();
     }
 
     public IEnumerator MainPipelineCoroutine()
     {
         Debug.Log($"=========================TURNO {currentTurn}=========================");
 
-        // MODIFICADO: Agora espera a execu��o passo a passo das a��es com anima��o e delay
         yield return StartCoroutine(ExecuteActionsCoroutine());
 
         UpdateRecovery();
 
-        yield return StartCoroutine(AskForActionsCoroutine());
-
         CheckBattleEnd();
+        if (batalhaEncerrada) yield break;
+
+        yield return StartCoroutine(AskForActionsCoroutine());
 
         bool carregouSegmento = false;
         timelineUI.AtualizarProgressoTurno(() => carregouSegmento = true);
@@ -379,14 +388,14 @@ public class BattleManager : MonoBehaviour
         bool allAlliesDead = allies.All(a => !a.IsAlive);
         if (allEnemiesDead)
         {
-            if (GameManager.Instance != null)
-                GameManager.Instance.emCombate = false;
-            Debug.Log("Vit�ria!");
+            batalhaEncerrada = true;
+            StartCoroutine(caixaMensagem.ExibirMensagem("Vitória!"));
+            Debug.Log("Vitória!");
         }
         else if (allAlliesDead)
         {
-            if (GameManager.Instance != null)
-                GameManager.Instance.emCombate = false;
+            batalhaEncerrada = true;
+            StartCoroutine(caixaMensagem.ExibirMensagem("Derrota..."));
             Debug.Log("Derrota...");
         }
     }
