@@ -29,3 +29,5 @@ public abstract class StatusEffectSO : ScriptableObject
 
     public virtual bool IsStackable => false;
 }
+
+//Alterar para uma lista de SkillsSO

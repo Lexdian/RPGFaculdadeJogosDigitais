@@ -20,7 +20,7 @@ public class SkillSO : ScriptableObject
     public TipoDano tipoDano;
     public Prioridade prioridade;
     public bool podeSerUsadaEmMortos;
-    public List<AbstactSkillEfect> efeitosExtras;
+    public List<StatusEffectSO> efeitosExtras;
 
     [Header("Custos e Valores")]
     public int custoMana;
@@ -63,7 +63,7 @@ public class SkillSO : ScriptableObject
         novaSkill.prioridade = Prioridade.Inimigos;
 
         // Inicializações padrão para evitar NullReference comuns
-        novaSkill.efeitosExtras = new List<AbstactSkillEfect>();
+        novaSkill.efeitosExtras = new List<StatusEffectSO>();
         novaSkill.chanceAcerto = 1f;
         novaSkill.gatilhoAnimacao = "CastSkill";
 

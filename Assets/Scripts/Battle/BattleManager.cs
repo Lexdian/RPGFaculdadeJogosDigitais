@@ -154,7 +154,7 @@ public class BattleManager : MonoBehaviour
 
         CharEntity entity = go.AddComponent<CharEntity>();
         entity.Setup(dados);
-        
+
         InstantiateCharInfoUI(dados, entity);
 
         allies.Add(entity);
@@ -189,7 +189,10 @@ public class BattleManager : MonoBehaviour
     {
         Debug.Log($"=========================TURNO {currentTurn}=========================");
 
-        // MODIFICADO: Agora espera a execu��o passo a passo das a��es com anima��o e delay
+        // STEP 0: Aplica tick de todos os status effects ativos (veneno, stun, buffs, etc.)
+        yield return StartCoroutine(TickStatusEfeitosCoroutine());
+
+        // MODIFICADO: Agora espera a execução passo a passo das ações com animação e delay
         yield return StartCoroutine(ExecuteActionsCoroutine());
 
         UpdateRecovery();
@@ -203,6 +206,37 @@ public class BattleManager : MonoBehaviour
         yield return new WaitUntil(() => carregouSegmento);
 
         currentTurn++;
+    }
+    private IEnumerator TickStatusEfeitosCoroutine()
+    {
+        List<BattleEntity> todasEntidades = GetAllEntities();
+
+        foreach (var entity in todasEntidades)
+        {
+            if (!entity.IsAlive || entity.statusAtivos.Count == 0) continue;
+
+            string nomes = string.Join(", ", entity.statusAtivos.ConvertAll(s => s.status.effectName));
+            Debug.Log(" Nomes:" + nomes);
+            StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} sofre: {nomes}!"));
+
+            entity.TickAllStatus();
+
+            if (CharInfosMap.ContainsKey(entity))
+            {
+                yield return StartCoroutine(CharInfosMap[entity].UpdateInfos((CharEntity)entity));
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.6f);
+            }
+
+            if (!entity.IsAlive)
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} foi derrotado pelo efeito de status!"));
+                yield return new WaitForSeconds(0.5f);
+                CheckBattleEnd();
+            }
+        }
     }
 
     IEnumerator ExecuteActionsCoroutine()
@@ -347,6 +381,13 @@ public class BattleManager : MonoBehaviour
         {
             if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) continue;
 
+            if (entity.HasStatusEffect<AtordoamentoStatusSO>())
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} está atordoado e não pode agir!"));
+                yield return new WaitForSeconds(0.8f);
+                continue;
+            }
+
             BattleDecision decision = ((EnemyEntity)entity).GetAction(GetAllEntities());
             if (decision.skill != null)
                 // MODIFICADO: Espera o enfileiramento e poss�veis anima��es de transi��o suave terminar
@@ -355,7 +396,14 @@ public class BattleManager : MonoBehaviour
 
         foreach (var entity in Allies)
         {
-            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("N�o atua"); continue; }
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Não atua"); continue; }
+
+            if (entity.HasStatusEffect<AtordoamentoStatusSO>())
+            {
+                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} está atordoado e não pode agir!"));
+                yield return new WaitForSeconds(0.8f);
+                continue;
+            }
 
             ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
 

@@ -18,6 +18,8 @@ MonoBehaviour:
   categoria: 1
   tipoDano: 1
   prioridade: 0
+  efeitosExtras:
+  - {fileID: 11400000, guid: b0ed8b3db5ac7a940991086e8232a86a, type: 2}
   custoMana: 2
   poderBase: 15
   chanceAcerto: 1
