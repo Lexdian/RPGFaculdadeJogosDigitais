@@ -23,6 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CastleInterior/QuartoRei.unity
     guid: b58634b973252974096a8d877c88c80b
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/Biblioteca.unity
+    guid: cfee4a4e06260404ab45308de56a519e
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/QuartoPrincipe.unity
+    guid: 520e40c510c82cb4e9abdb818dfd5ac6
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/Enfermaria.unity
+    guid: b3d266367100d8247b1d5756cc70c63b
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/SalaTesouros.unity
+    guid: 8e3e255a6acaee949bd9c7d49674453b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b557245476a2a104bbba7cc743760e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  nomeCena: SalaTrono
-  nomeLocal: Sala do Trono
-  posicaoInicial: {x: -0.5, y: -21}
+  nomeCena: Biblioteca
+  nomeLocal: Biblioteca
+  posicaoInicial: {x: 0.5, y: -2}
 --- !u!61 &111788916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -481,74 +481,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167574567036031265, guid: 6f8f4cd2af374ed40bccd22d651cf4c6, type: 3}
   m_PrefabInstance: {fileID: 259502041}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &269253656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 269253658}
-  - component: {fileID: 269253657}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &269253657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269253656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5043614d3e416cc4ebfe05431d78e1e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  heroisDisponiveis:
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  - {fileID: 11400000, guid: 9b295ce39558abe41883e4ec389f1d0b, type: 2}
-  equipeAtual: []
-  inventarioGrupo:
-    slots: []
-  lider: {fileID: 1368177340675395054, guid: 5216425816de3b84db15f8c5e0e72ca7, type: 3}
-  followers: {fileID: 9114771076354539930, guid: 6d92b7893a3f87f4e9ded893155a58bd, type: 3}
-  inimigosParaSpawnar:
-    colunaFrente: []
-    colunaMeio: []
-    colunaTras: []
-    rarity: 0
-  itensTeste:
-  - {fileID: 11400000, guid: b3404df1a695b4cb483aebea42acc8ce, type: 2}
-  - {fileID: 11400000, guid: a3a41d0d6a08442a48917b96528eed85, type: 2}
-  - {fileID: 11400000, guid: 3319c4bfcd3a54a40a84b9e22963a737, type: 2}
-  - {fileID: 11400000, guid: 5397eb9673cd04d7298d3e0a843763c8, type: 2}
-  - {fileID: 11400000, guid: d61b7c5f9e1864cb68701cf4ad29579c, type: 2}
-  gold: 0
-  cidadeAtual: Kran-Tor
-  emCombate: 0
---- !u!4 &269253658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269253656}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &423143744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1894,9 +1826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b557245476a2a104bbba7cc743760e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  nomeCena: SalaTrono
-  nomeLocal: Sala do Trono
-  posicaoInicial: {x: -0.5, y: -21}
+  nomeCena: Enfermaria
+  nomeLocal: Enfermaria
+  posicaoInicial: {x: 0.5, y: -2}
 --- !u!61 &1233798106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13416,7 +13348,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 191148367}
-  - {fileID: 269253658}
   - {fileID: 1453365618}
   - {fileID: 2055956484}
   - {fileID: 1636066157}
