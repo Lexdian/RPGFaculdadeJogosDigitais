@@ -6,23 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/CastleInterior/SalaTrono.unity
+    guid: 8dd599f11db371b4b87c94647b8dcd38
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 4c59c4de42f630840ae37ed0fcadb677
   - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
     path: Assets/Scenes/CastleInterior/CorredoresPrimeiroAndar.unity
     guid: 5d5be674d88ef7547a0c20be1c84aee5
-  - enabled: 1
-    path: Assets/Scenes/CastleInterior/SalaTrono.unity
-    guid: 8dd599f11db371b4b87c94647b8dcd38
   - enabled: 1
     path: Assets/Scenes/CastleInterior/CorredoresSegundoAndar.unity
     guid: a22cecef8fdd2104f8553870982cad97
   - enabled: 1
     path: Assets/Scenes/CastleInterior/QuartoRei.unity
     guid: b58634b973252974096a8d877c88c80b
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/Biblioteca.unity
+    guid: cfee4a4e06260404ab45308de56a519e
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/QuartoPrincipe.unity
+    guid: 520e40c510c82cb4e9abdb818dfd5ac6
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/Enfermaria.unity
+    guid: b3d266367100d8247b1d5756cc70c63b
+  - enabled: 1
+    path: Assets/Scenes/CastleInterior/SalaTesouros.unity
+    guid: 8e3e255a6acaee949bd9c7d49674453b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

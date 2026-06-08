@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
+  m_Name: Ladrao
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
+  charName: Kaelen Lithun
+  charPortrait: {fileID: -5900141351140952154, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
+  charBattle: {fileID: -3946677830480133564, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
+  overworldAnimator: {fileID: 22100000, guid: 164c543e0e1341a458c4832f3fd22172, type: 2}
+  baseVida: 50
+  baseMana: 10
+  baseForca: 25
+  baseInteligencia: 20
+  baseAgilidade: 15
+  baseResiliencia: 25
+  baseSorte: 10
+  perLevelUpgradeVida: 5
+  perLevelUpgradeMana: 5
+  perLevelUpgradeForca: 5
+  perLevelUpgradeInteligencia: 5
+  perLevelUpgradeAgilidade: 5
+  perLevelUpgradeResiliencia: 5
+  perLevelUpgradeSorte: 5
+  xpBaseNecessario: 100
+  curvaXPMultiplicador: 1.2
+  habilidadesIniciais: []
+  habilidadesPorNivel: []

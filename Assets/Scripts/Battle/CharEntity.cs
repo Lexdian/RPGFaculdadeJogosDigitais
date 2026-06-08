@@ -36,7 +36,7 @@ public class CharEntity : BattleEntity
 
         Icon = data.fichaBase.charPortrait;
 
-        AtaqueBasico = SkillSO.AtaqueBasico(1, 1, TipoAlvo.Unico, TipoDano.Normal);
+        AtaqueBasico = SkillSO.AtaqueBasico(1, 1, TipoAlvo.Unico, TipoDano.Normal, data.fichaBase.prefabEfeitoVisualAtaqueBasico);
     }
 
     public void EscoolherAcaoDoPlayer(List<BattleEntity> todasAsEntidades, MenuFocadoNoPlayer menuUI)

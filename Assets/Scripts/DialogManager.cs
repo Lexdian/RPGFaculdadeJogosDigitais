@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
     [Header("UI Components")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nomeLabel;
 
     private PlayerInput playerInput;
 
@@ -30,10 +31,11 @@ public class DialogManager : MonoBehaviour
         GameObject.DontDestroyOnLoad(gameObject);
     }
 
-    public void StartDialog(GameObject actor, string[] dialog)
+    public void StartDialog(GameObject actor, string[] dialog, string nome)
     {
         dialoguePanel.SetActive(true);
         playerInput = actor.GetComponent<PlayerInput>();
+        nomeLabel.text = nome;
 
         // Troca o mapa de input para "Dialogue"
         // Isso desativa o movimento automaticamente se "Move" não estiver no mapa Dialogue

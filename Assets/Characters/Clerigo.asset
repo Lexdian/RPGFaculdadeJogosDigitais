@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
   m_Name: Clerigo
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
-  charName: Clea
+  charName: Evelyne
   charPortrait: {fileID: 4985562478739595470, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
   charBattle: {fileID: 5241300866095031983, guid: ce515e9724e8213498e4817de1cca13e, type: 3}
   overworldAnimator: {fileID: 22100000, guid: 3afb0b205a9614b42b3092705f0d8ffe, type: 2}

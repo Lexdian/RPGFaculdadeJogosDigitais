@@ -180,7 +180,7 @@ public abstract class BattleEntity : MonoBehaviour
         Debug.Log($"{EntityName} curou {amount} HP");
     }
 
-    protected virtual void Die()
+    public virtual void Die()
     {
         Debug.Log($"{EntityName} morreu!");
     }

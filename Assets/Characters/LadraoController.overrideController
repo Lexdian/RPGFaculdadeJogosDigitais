@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LadraoController
+  m_Controller: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c798cc59bc948d74e95c09777e51367c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 09880bacc44e9c4458ffdc61b3319653, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a20ff954648819d45869985c840fde87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c18bf38b822439a4f8654d890c95d219, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 204f42c85f02c3f43ab355c94dc80593, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5e8cc3a97312db94c87591bef722a287, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d2492e64765e792468c68267bd89df8d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 426cfc710e9d9fe409622bc05190afad, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 354d41d98f30a8042bc687d80f8b8cb5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8d84b08f2df22244b9dda2514992505e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cd87b80b094ce0747b82534810e18083, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 48163d8b6e76ec742bc321730f6d5428, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8c1bca276edd9f54698707742726ec45, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ffd4fc7fd786532468643bd2ae445848, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 22d3110f7a1eff14a8d31ef618c65cbb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e9a0c0830a1f5194da508c326764a242, type: 2}

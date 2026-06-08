@@ -46,7 +46,9 @@ public class SkillSO : ScriptableObject
         int delay,
         int recuperacao,
         TipoAlvo tipoAlvo,
-        TipoDano dano)
+        TipoDano dano,
+        GameObject prefabEfeitoVisual = null
+        )
     {
         // 1. Instancia corretamente na memória do Unity
         SkillSO novaSkill = ScriptableObject.CreateInstance<SkillSO>();
@@ -66,6 +68,8 @@ public class SkillSO : ScriptableObject
         novaSkill.efeitosExtras = new List<StatusEffectSO>();
         novaSkill.chanceAcerto = 1f;
         novaSkill.gatilhoAnimacao = "CastSkill";
+
+        novaSkill.prefabEfeitoVisual = prefabEfeitoVisual;
 
         return novaSkill;
     }
