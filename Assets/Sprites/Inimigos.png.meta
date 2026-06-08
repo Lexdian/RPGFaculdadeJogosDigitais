@@ -1,0 +1,3304 @@
+fileFormatVersion: 2
+guid: e71c0286ad056f144a2d1c8874173774
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3631824607590335112
+    second: Inimigos_0
+  - first:
+      213: -6793099604854764323
+    second: Inimigos_1
+  - first:
+      213: -5398260873738328499
+    second: Inimigos_2
+  - first:
+      213: -7228962292652476738
+    second: Inimigos_3
+  - first:
+      213: 3025689956108884919
+    second: Inimigos_4
+  - first:
+      213: 321311165897262008
+    second: Inimigos_5
+  - first:
+      213: 5570862027433773830
+    second: Inimigos_6
+  - first:
+      213: 6612300223514286273
+    second: Inimigos_7
+  - first:
+      213: 1811123792282656331
+    second: Inimigos_8
+  - first:
+      213: -7019646221145868324
+    second: Inimigos_9
+  - first:
+      213: 4361369303340817801
+    second: Inimigos_10
+  - first:
+      213: -4173620735618473065
+    second: Inimigos_11
+  - first:
+      213: -5048091995339331947
+    second: Inimigos_12
+  - first:
+      213: 8319885966683821155
+    second: Inimigos_13
+  - first:
+      213: 3735853452547731275
+    second: Inimigos_14
+  - first:
+      213: 3995723015040195041
+    second: Inimigos_15
+  - first:
+      213: 2563399647636991917
+    second: Inimigos_16
+  - first:
+      213: 1330819501523951445
+    second: Inimigos_17
+  - first:
+      213: -4394553445606907451
+    second: Inimigos_18
+  - first:
+      213: 3687108275037189157
+    second: Inimigos_19
+  - first:
+      213: 5183626451140821261
+    second: Inimigos_20
+  - first:
+      213: 6685841229999852154
+    second: Inimigos_21
+  - first:
+      213: -2297422969178576116
+    second: Inimigos_22
+  - first:
+      213: 637962564109671721
+    second: Inimigos_23
+  - first:
+      213: -4255616663129345996
+    second: Inimigos_24
+  - first:
+      213: -670252833732603531
+    second: Inimigos_25
+  - first:
+      213: 2328193268533677698
+    second: Inimigos_26
+  - first:
+      213: 8287363021645692158
+    second: Inimigos_27
+  - first:
+      213: 5454351132051429600
+    second: Inimigos_28
+  - first:
+      213: -5703765760958678550
+    second: Inimigos_29
+  - first:
+      213: -5798217625852163141
+    second: Inimigos_30
+  - first:
+      213: -1537434992947356717
+    second: Inimigos_31
+  - first:
+      213: -7900215615624994865
+    second: Inimigos_32
+  - first:
+      213: -922181650906070734
+    second: Inimigos_33
+  - first:
+      213: -4727903168273491190
+    second: Inimigos_34
+  - first:
+      213: -575985771357473281
+    second: Inimigos_35
+  - first:
+      213: -986808331064550884
+    second: Inimigos_36
+  - first:
+      213: -6712879945669966882
+    second: Inimigos_37
+  - first:
+      213: 8653866011683433659
+    second: Inimigos_38
+  - first:
+      213: 5499945620128449067
+    second: Inimigos_39
+  - first:
+      213: 4060384680108452916
+    second: Inimigos_40
+  - first:
+      213: 132265402371859641
+    second: Inimigos_41
+  - first:
+      213: -6391994871492616001
+    second: Inimigos_42
+  - first:
+      213: 8439370642373777271
+    second: Inimigos_43
+  - first:
+      213: -5467693182617428184
+    second: Inimigos_44
+  - first:
+      213: -466036638356707675
+    second: Inimigos_45
+  - first:
+      213: 8551414460195063442
+    second: Inimigos_46
+  - first:
+      213: -8041459417651805975
+    second: Inimigos_47
+  - first:
+      213: -7814218662575887452
+    second: Inimigos_48
+  - first:
+      213: 3501874259481213911
+    second: Inimigos_49
+  - first:
+      213: -710424808715571892
+    second: Inimigos_50
+  - first:
+      213: 2101562759019815480
+    second: Inimigos_51
+  - first:
+      213: 1720900746682162789
+    second: Inimigos_52
+  - first:
+      213: 6756193025830330251
+    second: Inimigos_53
+  - first:
+      213: -5541494467860661190
+    second: Inimigos_54
+  - first:
+      213: 6244321197002845590
+    second: Inimigos_55
+  - first:
+      213: 5904853508133539630
+    second: Inimigos_56
+  - first:
+      213: 8792523458932287619
+    second: Inimigos_57
+  - first:
+      213: 1086674617314394769
+    second: Inimigos_58
+  - first:
+      213: -2945792054318736716
+    second: Inimigos_59
+  - first:
+      213: -463883636689689962
+    second: Inimigos_60
+  - first:
+      213: -1178693647726206273
+    second: Inimigos_61
+  - first:
+      213: -1956940171457172286
+    second: Inimigos_62
+  - first:
+      213: -8229131188161449319
+    second: Inimigos_63
+  - first:
+      213: -856706306298963884
+    second: Inimigos_64
+  - first:
+      213: -6752499512408043033
+    second: Inimigos_65
+  - first:
+      213: -7922383828934017287
+    second: Inimigos_66
+  - first:
+      213: 8994684989856186612
+    second: Inimigos_67
+  - first:
+      213: -7907928942305290466
+    second: Inimigos_68
+  - first:
+      213: -7080231833281496090
+    second: Inimigos_69
+  - first:
+      213: 7026666154352455916
+    second: Inimigos_70
+  - first:
+      213: -8502227520037754900
+    second: Inimigos_71
+  - first:
+      213: -3902076474473680288
+    second: Inimigos_72
+  - first:
+      213: -6014422920954927629
+    second: Inimigos_73
+  - first:
+      213: 21231695375045021
+    second: Inimigos_74
+  - first:
+      213: -3665504725662888509
+    second: Inimigos_75
+  - first:
+      213: -1674621287561120057
+    second: Inimigos_76
+  - first:
+      213: -235192626073023131
+    second: Inimigos_77
+  - first:
+      213: 8304138266826223234
+    second: Inimigos_78
+  - first:
+      213: -4759461972851965601
+    second: Inimigos_79
+  - first:
+      213: -5562476184026400164
+    second: Inimigos_80
+  - first:
+      213: -7131953998291127850
+    second: Inimigos_81
+  - first:
+      213: 8003017455497844062
+    second: Inimigos_82
+  - first:
+      213: 8616592736779102780
+    second: Inimigos_83
+  - first:
+      213: -4867931362356999101
+    second: Inimigos_84
+  - first:
+      213: -1032556573007467805
+    second: Inimigos_85
+  - first:
+      213: -3323279192574154291
+    second: Inimigos_86
+  - first:
+      213: -2499542235602794262
+    second: Inimigos_87
+  - first:
+      213: -4629159960489715931
+    second: Inimigos_88
+  - first:
+      213: -4888280155745940524
+    second: Inimigos_89
+  - first:
+      213: -8035453338074495763
+    second: Inimigos_90
+  - first:
+      213: -5109744279341971767
+    second: Inimigos_91
+  - first:
+      213: 234292376739339375
+    second: Inimigos_92
+  - first:
+      213: -3111883186398164759
+    second: Inimigos_93
+  - first:
+      213: 9213624986063475879
+    second: Inimigos_94
+  - first:
+      213: 5060664080825632373
+    second: Inimigos_95
+  - first:
+      213: 2794754199950078483
+    second: Inimigos_96
+  - first:
+      213: -3133453926552886039
+    second: Inimigos_97
+  - first:
+      213: -5501965050389112275
+    second: Inimigos_98
+  - first:
+      213: -7463795597704108210
+    second: Inimigos_99
+  - first:
+      213: 1578934746734926043
+    second: Inimigos_100
+  - first:
+      213: -4892947915817978796
+    second: Inimigos_101
+  - first:
+      213: 2658122393008577829
+    second: Inimigos_102
+  - first:
+      213: 2042379976624446952
+    second: Inimigos_103
+  - first:
+      213: -4383933118772487842
+    second: Inimigos_104
+  - first:
+      213: -8856584924683354933
+    second: Inimigos_105
+  - first:
+      213: -9132029821532103011
+    second: Inimigos_106
+  - first:
+      213: -2104185110787140767
+    second: Inimigos_107
+  - first:
+      213: -7866808320852710131
+    second: Inimigos_108
+  - first:
+      213: -301198003057624829
+    second: Inimigos_109
+  - first:
+      213: -5296744861832208498
+    second: Inimigos_110
+  - first:
+      213: -6853645512001677892
+    second: Inimigos_111
+  - first:
+      213: -8103167023949542927
+    second: Inimigos_112
+  - first:
+      213: 8793515475513449564
+    second: Inimigos_113
+  - first:
+      213: -7330202460717931078
+    second: Inimigos_114
+  - first:
+      213: -7698336652344305752
+    second: Inimigos_115
+  - first:
+      213: -3764475153126762016
+    second: Inimigos_116
+  - first:
+      213: -2555583900389209165
+    second: Inimigos_117
+  - first:
+      213: -4460810514447443249
+    second: Inimigos_118
+  - first:
+      213: 808610365137725740
+    second: Inimigos_119
+  - first:
+      213: -3527820245400061350
+    second: Inimigos_120
+  - first:
+      213: 4397583160308436441
+    second: Inimigos_121
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Inimigos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d3e0af2ca299dc0800000000000000
+      internalID: -3631824607590335112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 632
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc09c896ef0ab1a0800000000000000
+      internalID: -6793099604854764323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 632
+        width: 63
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46efe726568515b0800000000000000
+      internalID: -5398260873738328499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb671c378119dab90800000000000000
+      internalID: -7228962292652476738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 633
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bb565afbf86df920800000000000000
+      internalID: 3025689956108884919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_5
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 632
+        width: 24
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b34ca19dc6857400800000000000000
+      internalID: 321311165897262008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_6
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b07ed8f7daf4d40800000000000000
+      internalID: 5570862027433773830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_7
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c81ec2150c93cb50800000000000000
+      internalID: 6612300223514286273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_8
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 632
+        width: 40
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e144b4e77622910800000000000000
+      internalID: 1811123792282656331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_9
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7ffab14f4359e90800000000000000
+      internalID: -7019646221145868324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 632
+        width: 26
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d1ceb1642b68c30800000000000000
+      internalID: 4361369303340817801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_11
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 633
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793a142cd025416c0800000000000000
+      internalID: -4173620735618473065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_12
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5966e40831391f9b0800000000000000
+      internalID: -5048091995339331947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_13
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 632
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36452ffb43c267370800000000000000
+      internalID: 8319885966683821155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_14
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 632
+        width: 24
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f2604fbea68d330800000000000000
+      internalID: 3735853452547731275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_15
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 632
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9d25479e8a37730800000000000000
+      internalID: 3995723015040195041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_16
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 632
+        width: 48
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafa3c6e566039320800000000000000
+      internalID: 2563399647636991917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_17
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 632
+        width: 56
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f5f702945087210800000000000000
+      internalID: 1330819501523951445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567
+        width: 63
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1a120bce86303c0800000000000000
+      internalID: -4394553445606907451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 567
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524bef5e07d3b2330800000000000000
+      internalID: 3687108275037189157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_20
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 567
+        width: 64
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0141941bc0ffe740800000000000000
+      internalID: 5183626451140821261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_21
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 567
+        width: 47
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a4dc2fc21e8cc50800000000000000
+      internalID: 6685841229999852154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_22
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 567
+        width: 38
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ba9475bf9ed10e0800000000000000
+      internalID: -2297422969178576116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_23
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 567
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d11cd629f7ad800800000000000000
+      internalID: 637962564109671721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 567
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43031fd213301f4c0800000000000000
+      internalID: -4255616663129345996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_25
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 567
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5715baf4998c2b6f0800000000000000
+      internalID: -670252833732603531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_26
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 567
+        width: 16
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ec76341776f4020800000000000000
+      internalID: 2328193268533677698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_27
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 567
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc36e582c0a20370800000000000000
+      internalID: 8287363021645692158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_28
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 567
+        width: 48
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8dc2ac47fb1bb40800000000000000
+      internalID: 5454351132051429600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_29
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 567
+        width: 40
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9b500a24728d0b0800000000000000
+      internalID: -5703765760958678550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_30
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 567
+        width: 38
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb4ca02ac7988fa0800000000000000
+      internalID: -5798217625852163141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_31
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 567
+        width: 48
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db1e14050fe9aae0800000000000000
+      internalID: -1537434992947356717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_32
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 567
+        width: 24
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf9da531cbcc5290800000000000000
+      internalID: -7900215615624994865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_33
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 567
+        width: 32
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2314c57aca0c333f0800000000000000
+      internalID: -922181650906070734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b5d923e1d136eb0800000000000000
+      internalID: -4727903168273491190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_35
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 502
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5fe8e1effa108f0800000000000000
+      internalID: -575985771357473281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_36
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 502
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a508d1d072e42f0800000000000000
+      internalID: -986808331064550884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_37
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 505
+        width: 53
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed38f7a714f07d2a0800000000000000
+      internalID: -6712879945669966882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_38
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 505
+        width: 53
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbca7389945b81870800000000000000
+      internalID: 8653866011683433659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_39
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 505
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22c8bbc66bb35c40800000000000000
+      internalID: 5499945620128449067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_40
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 502
+        width: 32
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c6d4d8a52695830800000000000000
+      internalID: 4060384680108452916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_41
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 503
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4e274cea6e5d100800000000000000
+      internalID: 132265402371859641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_42
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 502
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb06096d7821b47a0800000000000000
+      internalID: -6391994871492616001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_43
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 502
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7779c82b2eaae1570800000000000000
+      internalID: 8439370642373777271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_44
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 502
+        width: 62
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f534df40ade14b0800000000000000
+      internalID: -5467693182617428184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_45
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 502
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a66e66852e4889f0800000000000000
+      internalID: -466036638356707675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_46
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 529
+        width: 4
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296c01be42abca670800000000000000
+      internalID: 8551414460195063442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_47
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 502
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0052fd34ff66090800000000000000
+      internalID: -8041459417651805975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_48
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 502
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abafe327815e8390800000000000000
+      internalID: -7814218662575887452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_49
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 502
+        width: 51
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db3674d518299030800000000000000
+      internalID: 3501874259481213911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 437
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d22e486601426f0800000000000000
+      internalID: -710424808715571892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_51
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 437
+        width: 64
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832e09cd1304a2d10800000000000000
+      internalID: 2101562759019815480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_52
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 437
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ed1b38c1ed1e710800000000000000
+      internalID: 1720900746682162789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_53
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 437
+        width: 32
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8f969ad2c1d2cd50800000000000000
+      internalID: 6756193025830330251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_54
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 437
+        width: 55
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c7f5e3428a813b0800000000000000
+      internalID: -5541494467860661190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_55
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 437
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69debca7b0948a650800000000000000
+      internalID: 6244321197002845590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_56
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 437
+        width: 48
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fc40bfaf042f150800000000000000
+      internalID: 5904853508133539630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_57
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 437
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388a2f84081550a70800000000000000
+      internalID: 8792523458932287619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_58
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 437
+        width: 63
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19245779ec4a41f00800000000000000
+      internalID: 1086674617314394769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_59
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 437
+        width: 48
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bad92cebb17e17d0800000000000000
+      internalID: -2945792054318736716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_60
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 437
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692aef94a44ff89f0800000000000000
+      internalID: -463883636689689962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_61
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 438
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb225445f5074afe0800000000000000
+      internalID: -1178693647726206273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_62
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 437
+        width: 56
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc6a99484d87d4e0800000000000000
+      internalID: -1956940171457172286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_63
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 438
+        width: 48
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9927c8fb8c04ccd80800000000000000
+      internalID: -8229131188161449319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 64
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4589638472e5c14f0800000000000000
+      internalID: -856706306298963884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_65
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 332
+        width: 24
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e19be0487d4a42a0800000000000000
+      internalID: -6752499512408043033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_66
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 332
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9feb616d1e90e0290800000000000000
+      internalID: -7922383828934017287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_67
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 332
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f08ae6a75a83dc70800000000000000
+      internalID: 8994684989856186612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_68
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 332
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e17dcd46684614290800000000000000
+      internalID: -7907928942305290466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_69
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 332
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebf7d909a6fdbd90800000000000000
+      internalID: -7080231833281496090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_70
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 332
+        width: 40
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0307573abb38160800000000000000
+      internalID: 7026666154352455916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_71
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 332
+        width: 55
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce769940e15020a80800000000000000
+      internalID: -8502227520037754900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_72
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 332
+        width: 64
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062769cde1a09d9c0800000000000000
+      internalID: -3902076474473680288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_73
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 332
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5a38b183a788ca0800000000000000
+      internalID: -6014422920954927629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_74
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 332
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d911fcc4d1e6b4000800000000000000
+      internalID: 21231695375045021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_75
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 359
+        width: 4
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd09586fd2812dc0800000000000000
+      internalID: -3665504725662888509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_76
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 333
+        width: 32
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6bc9dbfcc82c8e0800000000000000
+      internalID: -1674621287561120057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_77
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 332
+        width: 30
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d402d7d8d6cbcf0800000000000000
+      internalID: -235192626073023131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_78
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 332
+        width: 30
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ea7e7a1c93e3370800000000000000
+      internalID: 8304138266826223234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_79
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 332
+        width: 48
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51cd2a6d8ef2fdb0800000000000000
+      internalID: -4759461972851965601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_80
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 332
+        width: 61
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a3983c16d1ec2b0800000000000000
+      internalID: -5562476184026400164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 271
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d13e6110a5360d90800000000000000
+      internalID: -7131953998291127850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_82
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 267
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55133659fd601f60800000000000000
+      internalID: 8003017455497844062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_83
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 270
+        width: 53
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3aede10179449770800000000000000
+      internalID: 8616592736779102780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_84
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 267
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c4ab3a732a17cb0800000000000000
+      internalID: -4867931362356999101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_85
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 267
+        width: 63
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea256f744f9ba1f0800000000000000
+      internalID: -1032556573007467805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_86
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 267
+        width: 64
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9ab2d8e2751e1d0800000000000000
+      internalID: -3323279192574154291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_87
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 267
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae84fc17497df4dd0800000000000000
+      internalID: -2499542235602794262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_88
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 270
+        width: 62
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5279c82da8be1cfb0800000000000000
+      internalID: -4629159960489715931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_89
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 267
+        width: 47
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db0c2af817592cb0800000000000000
+      internalID: -4888280155745940524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_90
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 267
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4c7de33c55c7090800000000000000
+      internalID: -8035453338074495763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_91
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 267
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6ccb886aa8619b0800000000000000
+      internalID: -5109744279341971767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_92
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 267
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c5121ecaf504300800000000000000
+      internalID: 234292376739339375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_93
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 267
+        width: 32
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e80a3cbabe50d4d0800000000000000
+      internalID: -3111883186398164759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_94
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 267
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a41af3eb1f5ddf70800000000000000
+      internalID: 9213624986063475879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 64
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576c0314b271b3640800000000000000
+      internalID: 5060664080825632373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_96
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 170
+        width: 47
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3123e8a3326f8c620800000000000000
+      internalID: 2794754199950078483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_97
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 170
+        width: 88
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e423cb614cb384d0800000000000000
+      internalID: -3133453926552886039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_98
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 170
+        width: 64
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a51f4ffe715a3b0800000000000000
+      internalID: -5501965050389112275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_99
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 170
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47e8b2e2754b6890800000000000000
+      internalID: -7463795597704108210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_100
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 170
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd818ae59c089e510800000000000000
+      internalID: 1578934746734926043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_101
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 172
+        width: 64
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4547e256bc1c81cb0800000000000000
+      internalID: -4892947915817978796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_102
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 170
+        width: 56
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52d99ccab3c83e420800000000000000
+      internalID: 2658122393008577829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_103
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 170
+        width: 48
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed121b84cdf75c10800000000000000
+      internalID: 2042379976624446952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_104
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 170
+        width: 56
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59de783e042923c0800000000000000
+      internalID: -4383933118772487842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_105
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 170
+        width: 56
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc3b296fe6171580800000000000000
+      internalID: -8856584924683354933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_106
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 172
+        width: 46
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e1e49c243844180800000000000000
+      internalID: -9132029821532103011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_107
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 47
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163ddd94ace6cc2e0800000000000000
+      internalID: -2104185110787140767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_108
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 73
+        width: 64
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0dac77238b73d290800000000000000
+      internalID: -7866808320852710131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_109
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 73
+        width: 96
+        height: 95
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30971b4130ee1dbf0800000000000000
+      internalID: -301198003057624829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_110
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 73
+        width: 64
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f9d9c8c9e2e76b0800000000000000
+      internalID: -5296744861832208498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_111
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 73
+        width: 64
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb590b018b5f2e0a0800000000000000
+      internalID: -6853645512001677892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_112
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 73
+        width: 47
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f904dd2684cb8f80800000000000000
+      internalID: -8103167023949542927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_113
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 73
+        width: 39
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c11e42cb7d80a70800000000000000
+      internalID: 8793515475513449564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_114
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 608
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5a635f2b3e54a90800000000000000
+      internalID: -7330202460717931078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_115
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 0
+        width: 6
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7d5ab2a930a2590800000000000000
+      internalID: -7698336652344305752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_116
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 608
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e958141bc5e1cbc0800000000000000
+      internalID: -3764475153126762016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_117
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 36
+        width: 15
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb089f8bfdb88cd0800000000000000
+      internalID: -2555583900389209165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_118
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 36
+        width: 40
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca5804b8740812c0800000000000000
+      internalID: -4460810514447443249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_119
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 29
+        width: 12
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29abb7c7d2c83b00800000000000000
+      internalID: 808610365137725740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_120
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 29
+        width: 28
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a7f719d2aaa0fc0800000000000000
+      internalID: -3527820245400061350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inimigos_121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 576
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd8c6cb59a570d30800000000000000
+      internalID: 4397583160308436441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 676909320c0054341b2fe9f9bed0ea2d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Inimigos_0: -3631824607590335112
+      Inimigos_1: -6793099604854764323
+      Inimigos_10: 4361369303340817801
+      Inimigos_100: 1578934746734926043
+      Inimigos_101: -4892947915817978796
+      Inimigos_102: 2658122393008577829
+      Inimigos_103: 2042379976624446952
+      Inimigos_104: -4383933118772487842
+      Inimigos_105: -8856584924683354933
+      Inimigos_106: -9132029821532103011
+      Inimigos_107: -2104185110787140767
+      Inimigos_108: -7866808320852710131
+      Inimigos_109: -301198003057624829
+      Inimigos_11: -4173620735618473065
+      Inimigos_110: -5296744861832208498
+      Inimigos_111: -6853645512001677892
+      Inimigos_112: -8103167023949542927
+      Inimigos_113: 8793515475513449564
+      Inimigos_114: -7330202460717931078
+      Inimigos_115: -7698336652344305752
+      Inimigos_116: -3764475153126762016
+      Inimigos_117: -2555583900389209165
+      Inimigos_118: -4460810514447443249
+      Inimigos_119: 808610365137725740
+      Inimigos_12: -5048091995339331947
+      Inimigos_120: -3527820245400061350
+      Inimigos_121: 4397583160308436441
+      Inimigos_13: 8319885966683821155
+      Inimigos_14: 3735853452547731275
+      Inimigos_15: 3995723015040195041
+      Inimigos_16: 2563399647636991917
+      Inimigos_17: 1330819501523951445
+      Inimigos_18: -4394553445606907451
+      Inimigos_19: 3687108275037189157
+      Inimigos_2: -5398260873738328499
+      Inimigos_20: 5183626451140821261
+      Inimigos_21: 6685841229999852154
+      Inimigos_22: -2297422969178576116
+      Inimigos_23: 637962564109671721
+      Inimigos_24: -4255616663129345996
+      Inimigos_25: -670252833732603531
+      Inimigos_26: 2328193268533677698
+      Inimigos_27: 8287363021645692158
+      Inimigos_28: 5454351132051429600
+      Inimigos_29: -5703765760958678550
+      Inimigos_3: -7228962292652476738
+      Inimigos_30: -5798217625852163141
+      Inimigos_31: -1537434992947356717
+      Inimigos_32: -7900215615624994865
+      Inimigos_33: -922181650906070734
+      Inimigos_34: -4727903168273491190
+      Inimigos_35: -575985771357473281
+      Inimigos_36: -986808331064550884
+      Inimigos_37: -6712879945669966882
+      Inimigos_38: 8653866011683433659
+      Inimigos_39: 5499945620128449067
+      Inimigos_4: 3025689956108884919
+      Inimigos_40: 4060384680108452916
+      Inimigos_41: 132265402371859641
+      Inimigos_42: -6391994871492616001
+      Inimigos_43: 8439370642373777271
+      Inimigos_44: -5467693182617428184
+      Inimigos_45: -466036638356707675
+      Inimigos_46: 8551414460195063442
+      Inimigos_47: -8041459417651805975
+      Inimigos_48: -7814218662575887452
+      Inimigos_49: 3501874259481213911
+      Inimigos_5: 321311165897262008
+      Inimigos_50: -710424808715571892
+      Inimigos_51: 2101562759019815480
+      Inimigos_52: 1720900746682162789
+      Inimigos_53: 6756193025830330251
+      Inimigos_54: -5541494467860661190
+      Inimigos_55: 6244321197002845590
+      Inimigos_56: 5904853508133539630
+      Inimigos_57: 8792523458932287619
+      Inimigos_58: 1086674617314394769
+      Inimigos_59: -2945792054318736716
+      Inimigos_6: 5570862027433773830
+      Inimigos_60: -463883636689689962
+      Inimigos_61: -1178693647726206273
+      Inimigos_62: -1956940171457172286
+      Inimigos_63: -8229131188161449319
+      Inimigos_64: -856706306298963884
+      Inimigos_65: -6752499512408043033
+      Inimigos_66: -7922383828934017287
+      Inimigos_67: 8994684989856186612
+      Inimigos_68: -7907928942305290466
+      Inimigos_69: -7080231833281496090
+      Inimigos_7: 6612300223514286273
+      Inimigos_70: 7026666154352455916
+      Inimigos_71: -8502227520037754900
+      Inimigos_72: -3902076474473680288
+      Inimigos_73: -6014422920954927629
+      Inimigos_74: 21231695375045021
+      Inimigos_75: -3665504725662888509
+      Inimigos_76: -1674621287561120057
+      Inimigos_77: -235192626073023131
+      Inimigos_78: 8304138266826223234
+      Inimigos_79: -4759461972851965601
+      Inimigos_8: 1811123792282656331
+      Inimigos_80: -5562476184026400164
+      Inimigos_81: -7131953998291127850
+      Inimigos_82: 8003017455497844062
+      Inimigos_83: 8616592736779102780
+      Inimigos_84: -4867931362356999101
+      Inimigos_85: -1032556573007467805
+      Inimigos_86: -3323279192574154291
+      Inimigos_87: -2499542235602794262
+      Inimigos_88: -4629159960489715931
+      Inimigos_89: -4888280155745940524
+      Inimigos_9: -7019646221145868324
+      Inimigos_90: -8035453338074495763
+      Inimigos_91: -5109744279341971767
+      Inimigos_92: 234292376739339375
+      Inimigos_93: -3111883186398164759
+      Inimigos_94: 9213624986063475879
+      Inimigos_95: 5060664080825632373
+      Inimigos_96: 2794754199950078483
+      Inimigos_97: -3133453926552886039
+      Inimigos_98: -5501965050389112275
+      Inimigos_99: -7463795597704108210
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

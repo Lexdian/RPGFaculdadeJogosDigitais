@@ -10,22 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08e62af642af45847a72db9346605206, type: 3}
-  m_Name: Zumbi
+  m_Name: SoldadoVaelis
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
-  enemyName: Zumbi
-  enemySprite: {fileID: -6690086926033566117, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
+  enemyName: Soldade de Vaelis
+  enemySprite: {fileID: 8287363021645692158, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
   tamanho: 0
   isVoador: 0
   vida: 50
-  mana: 0
-  ataqueFisico: 0
-  ataqueMagico: 0
-  defesaFisica: 0
-  defesaMagica: 0
+  mana: 50
+  ataqueFisico: 10
+  ataqueMagico: 5
+  defesaFisica: 5
+  defesaMagica: 5
+  velocidade: 10
+  precisao: 5
   evasao: 0
-  agilidade: 2
-  xpReward: 0
+  chanceCritico: 10
+  xpReward: 100
   delay: 1
   recuperacao: 1
   tipoAlvo: 0
@@ -33,9 +35,10 @@ MonoBehaviour:
   Skills:
   - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
   behavior:
-    rid: -2
+    rid: 3421949763313467475
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 3421949763313467475
+      type: {class: RandomBehavior, ns: , asm: Assembly-CSharp}
+      data: 
