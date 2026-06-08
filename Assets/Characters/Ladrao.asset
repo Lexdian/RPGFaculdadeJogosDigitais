@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
   m_Name: Ladrao
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
-  charName: Cedric
-  charPortrait: {fileID: 3495343697079484691, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
-  charBattle: {fileID: 5142981455446808332, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
-  overworldAnimator: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  charName: Kaelen Lithun
+  charPortrait: {fileID: -5900141351140952154, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
+  charBattle: {fileID: -3946677830480133564, guid: 4730bd6ec06509d42a7452273e65161b, type: 3}
+  overworldAnimator: {fileID: 22100000, guid: 164c543e0e1341a458c4832f3fd22172, type: 2}
   baseVida: 50
   baseMana: 10
   baseForca: 25
@@ -32,7 +32,5 @@ MonoBehaviour:
   perLevelUpgradeSorte: 5
   xpBaseNecessario: 100
   curvaXPMultiplicador: 1.2
-  habilidadesIniciais:
-  - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
-  - {fileID: 11400000, guid: c2c063d76087bde4dab62869720a8738, type: 2}
+  habilidadesIniciais: []
   habilidadesPorNivel: []

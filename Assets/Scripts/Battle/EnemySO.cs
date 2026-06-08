@@ -34,6 +34,7 @@ public class EnemySO : ScriptableObject
     public int recuperacao;
     public TipoAlvo tipoAlvo;
     public TipoDano dano;
+    public GameObject prefabEfeitoVisual;
 
     public List<SkillSO> Skills = new();
 

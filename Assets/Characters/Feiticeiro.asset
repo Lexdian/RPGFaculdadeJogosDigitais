@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
   m_Name: Feiticeiro
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
-  charName: Cedric
-  charPortrait: {fileID: 3495343697079484691, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
-  charBattle: {fileID: 5142981455446808332, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
-  overworldAnimator: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  charName: Zephyr Alkahdar
+  charPortrait: {fileID: 1741048415150578655, guid: 375dc9120922226479290d243c035408, type: 3}
+  charBattle: {fileID: 6685392725015261700, guid: 375dc9120922226479290d243c035408, type: 3}
+  overworldAnimator: {fileID: 22100000, guid: 2261f025f65983043b5ab359ee5f4662, type: 2}
   baseVida: 50
   baseMana: 10
   baseForca: 25

@@ -36,7 +36,7 @@ public class EnemyEntity : BattleEntity
 
         Icon = data.enemyIcon;
 
-        AtaqueBasico = SkillSO.AtaqueBasico(data.delay, data.recuperacao, data.tipoAlvo, data.dano);
+        AtaqueBasico = SkillSO.AtaqueBasico(data.delay, data.recuperacao, data.tipoAlvo, data.dano, data.prefabEfeitoVisual);
     }
 
     public BattleDecision GetAction(List<BattleEntity> allEntities)
@@ -76,5 +76,10 @@ public class EnemyEntity : BattleEntity
             CurrentHP = 0;
             Die();
         }
+    }
+    public override void Die()
+    {
+        base.Die();
+        gameObject.SetActive(false);
     }
 }

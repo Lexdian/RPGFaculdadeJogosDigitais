@@ -36,6 +36,7 @@ public class CharacterSO : ScriptableObject
 
     [Header("Combate e Habilidades")]
     // Referências para ScriptableObjects de habilidades que o herói conhece desde o início
+    public GameObject prefabEfeitoVisualAtaqueBasico;
     public List<SkillSO> habilidadesIniciais; 
     
     // Lista de habilidades aprendidas por nível (Estrutura explicada abaixo)
