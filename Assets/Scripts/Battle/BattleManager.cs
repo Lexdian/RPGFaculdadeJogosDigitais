@@ -149,7 +149,6 @@ public class BattleManager : MonoBehaviour
         {
             sr.sprite = dados.fichaBase.charBattle;
             sr.sortingOrder = 10 + order;
-            sr.flipX = true;
         }
 
         CharEntity entity = go.AddComponent<CharEntity>();

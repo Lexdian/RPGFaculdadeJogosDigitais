@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3674144d0fdc8ce408928de84353ce2f, type: 3}
+  m_Name: Feiticeiro
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSO
+  charName: Cedric
+  charPortrait: {fileID: 3495343697079484691, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
+  charBattle: {fileID: 5142981455446808332, guid: 457bd1923de4b3448bfa720d411dfaf8, type: 3}
+  overworldAnimator: {fileID: 9100000, guid: d625c2751ad67624bb122ec5f4b7c362, type: 2}
+  baseVida: 50
+  baseMana: 10
+  baseForca: 25
+  baseInteligencia: 20
+  baseAgilidade: 15
+  baseResiliencia: 25
+  baseSorte: 10
+  perLevelUpgradeVida: 5
+  perLevelUpgradeMana: 5
+  perLevelUpgradeForca: 5
+  perLevelUpgradeInteligencia: 5
+  perLevelUpgradeAgilidade: 5
+  perLevelUpgradeResiliencia: 5
+  perLevelUpgradeSorte: 5
+  xpBaseNecessario: 100
+  curvaXPMultiplicador: 1.2
+  habilidadesIniciais:
+  - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
+  - {fileID: 11400000, guid: c2c063d76087bde4dab62869720a8738, type: 2}
+  habilidadesPorNivel: []
