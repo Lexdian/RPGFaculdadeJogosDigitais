@@ -351,6 +351,7 @@ Transform:
   m_Children:
   - {fileID: 533856547}
   - {fileID: 2121028395}
+  - {fileID: 1682016326}
   - {fileID: 1899534143}
   - {fileID: 1601747782}
   - {fileID: 1360653873}
@@ -481,6 +482,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167574567036031265, guid: 6f8f4cd2af374ed40bccd22d651cf4c6, type: 3}
   m_PrefabInstance: {fileID: 259502041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &263059377
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.367615
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5621661
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &269253656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1113,120 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &596829617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.543321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3853042
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &675245875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.6085467
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4554778
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &976850254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1383,291 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167574567036031265, guid: 6f8f4cd2af374ed40bccd22d651cf4c6, type: 3}
   m_PrefabInstance: {fileID: 984595420}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &992359576
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.3988113
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5835037
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &1037332046
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5757244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.393087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &1087649137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.430329
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.385304
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &1120365199
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5757244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.45585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &1221531130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.4201555
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.434513
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &1233798104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,6 +4133,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167574567036031265, guid: 6f8f4cd2af374ed40bccd22d651cf4c6, type: 3}
   m_PrefabInstance: {fileID: 1507799682}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1597928079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5117177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5408285
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &1601747781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,6 +7002,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1682016325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1682016326}
+  - component: {fileID: 1682016327}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1682016326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682016325}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17446776, y: 1.4404314, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 191148367}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682016327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682016325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 2
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.2770114, g: 0.30863687, b: 0.7830189, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000ff247b03f3d881cacddb2e6c
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1709055834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6595,6 +7193,120 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1848850619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.430347
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -19.50713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+--- !u!1001 &1858196050
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.484168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.37175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &1899534142
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,6 +8876,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1980915166
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.54331
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -19.549807
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016316413710155473, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266622699930823439, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
+      propertyPath: m_Name
+      value: Freeform Light 2D (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10a095d841887d741814d0ab6cb4f9bd, type: 3}
 --- !u!1 &2002060629
 GameObject:
   m_ObjectHideFlags: 0
@@ -12337,3 +13106,15 @@ SceneRoots:
   - {fileID: 976850257}
   - {fileID: 111788917}
   - {fileID: 1709055837}
+  - {fileID: 1037332046}
+  - {fileID: 1858196050}
+  - {fileID: 1120365199}
+  - {fileID: 1221531130}
+  - {fileID: 675245875}
+  - {fileID: 1597928079}
+  - {fileID: 992359576}
+  - {fileID: 263059377}
+  - {fileID: 1848850619}
+  - {fileID: 1980915166}
+  - {fileID: 596829617}
+  - {fileID: 1087649137}

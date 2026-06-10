@@ -36,29 +36,48 @@ public class BattleManager : MonoBehaviour
     public Dictionary<BattleEntity, CharInfos> CharInfosMap = new Dictionary<BattleEntity, CharInfos>();
 
     [Header("Refer�ncias de UI")]
+    public CanvasGroup CanvasGroup;
     public MenuFocadoNoPlayer menuUI;
     public BarraProgresso timelineUI;
     public GameObject charInfoPrefab;
     public RectTransform charInfosContainer;
     public CaixaMensagem caixaMensagem;
 
+    public Texture2D texturaTeste; // Apenas para teste rápido de aplicação de textura no vidro, pode ser removida depois
+
     [Header("Tela de Resultado")]
     [SerializeField] private BattleResultUI telaResultado;
+
+    [Header("Referência do Cubo 3D")]
+    public GlassShatter cuboMaterialAlvo;
 
     private bool batalhaEncerrada = false;
 
     void Awake()
     {
+        CanvasGroup.alpha = 0;
+        CanvasGroup.interactable = false;
         if (GameManager.Instance != null)
             GameManager.Instance.emCombate = true;
         SpawnEnemies();
         SpawnAllies();
+        AplicarTexturaNoCubo(GameManager.Instance != null ? GameManager.Instance.lastTexture : texturaTeste);
     }
 
-    void Start()
+    // Mudamos de 'void Start' para 'IEnumerator Start' 
+    // O Unity entende isso nativamente e sabe como rodar como Coroutine
+    IEnumerator Start()
     {
         LayoutRebuilder.ForceRebuildLayoutImmediate(charInfosContainer);
         charInfosContainer.GetComponent<VerticalLayoutGroup>().enabled = false;
+        if (cuboMaterialAlvo != null)
+        {
+            Debug.Log("Iniciando efeito de estilhaçamento do vidro...");
+            yield return StartCoroutine(cuboMaterialAlvo.ShatterCoroutine(cuboMaterialAlvo.transform.position));
+        }
+        CanvasGroup.alpha = 1;
+        CanvasGroup.interactable = true;
+        // Agora sim! O loop da batalha só começa DEPOIS que o vidro quebrou e sumiu.
         StartCoroutine(BattleLoop());
     }
 
@@ -554,6 +573,28 @@ public class BattleManager : MonoBehaviour
         }
 
         sr.color = corOriginal;
+    }
+
+    /// <summary>
+    /// Apenas aplica a Texture2D no material do vidro sem quebrá-lo.
+    /// </summary>
+    public void AplicarTexturaNoCubo(Texture2D textura)
+    {
+        if (cuboMaterialAlvo != null)
+        {
+            cuboMaterialAlvo.AplicarTextura(textura);
+        }
+    }
+    /// <summary>
+    /// Dispara o efeito de estilhaçar a tela de vidro.
+    /// </summary>
+    public void EstourarTelaDeVidro()
+    {
+        if (cuboMaterialAlvo != null)
+        {
+            // Como o método do vidro é um IEnumerator, precisamos iniciá-lo via Coroutine aqui
+            StartCoroutine(cuboMaterialAlvo.ShatterCoroutine(cuboMaterialAlvo.transform.position));
+        }
     }
     #endregion
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO; // Adicionado para manipulação de arquivos físicos
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,9 +36,11 @@ public class GameManager : MonoBehaviour
     public bool emCombate = false;
     private string cenaAnterior = "SampleScene";
 
-
     private Vector2 spawnPosition;
     private bool precisaRecriarEquipe = false;
+
+    // Mudado para 'public set' para que possamos manipular ou ler externamente se necessário
+    public Texture2D lastTexture { get; private set; }
 
     private void Awake()
     {
@@ -112,7 +115,45 @@ public class GameManager : MonoBehaviour
         inimigosParaSpawnar = grupo;
         spawnPosition = posicaoJogador;
         emCombate = true;
+
+        // 1. Captura a imagem normalmente para uso em tempo de execução
+        lastTexture = CapturarImagemDaCamera(Camera.main);
+
+        // 2. Salva a cópia física em formato PNG dentro do seu projeto para análise pós-jogo
+        SalvarTexturaEmDisco(lastTexture);
+
         SceneManager.LoadScene("BattleScene");
+    }
+
+    /// <summary>
+    /// Converte a textura capturada em um arquivo PNG real dentro da pasta Assets do projeto.
+    /// </summary>
+    private void SalvarTexturaEmDisco(Texture2D textura)
+    {
+        if (textura == null) return;
+
+        try
+        {
+            // Transforma os pixels da textura em uma array de bytes formatada em PNG
+            byte[] bytesPng = textura.EncodeToPNG();
+
+            // Define o caminho para a raiz da pasta Assets do seu projeto Unity
+            string caminhoArquivo = Path.Combine(Application.dataPath, "UltimaCapturaBatalha.png");
+
+            // Grava o arquivo fisicamente no SSD/HD
+            File.WriteAllBytes(caminhoArquivo, bytesPng);
+
+            Debug.Log($"[GameManager] Textura de teste salva com sucesso em: {caminhoArquivo}");
+
+#if UNITY_EDITOR
+            // Força o editor da Unity a atualizar as pastas para o arquivo aparecer nos Assets imediatamente
+            UnityEditor.AssetDatabase.Refresh();
+#endif
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[GameManager] Erro ao tentar gravar o PNG em disco: {e.Message}");
+        }
     }
 
     public void VoltarDosCombate()
@@ -147,6 +188,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(nomeCena);
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (precisaRecriarEquipe)
@@ -154,5 +196,32 @@ public class GameManager : MonoBehaviour
             CreateTeam(spawnPosition);
             precisaRecriarEquipe = false;
         }
+    }
+
+    public Texture2D CapturarImagemDaCamera(Camera cameraAlvo, int largura = 1920, int altura = 1080)
+    {
+        if (cameraAlvo == null)
+        {
+            Debug.LogError("Nenhuma câmera foi passada para a captura!");
+            return null;
+        }
+
+        RenderTexture rt = new RenderTexture(largura, altura, 24);
+        RenderTexture anterior = cameraAlvo.targetTexture;
+
+        cameraAlvo.targetTexture = rt;
+        cameraAlvo.Render();
+
+        RenderTexture.active = rt;
+
+        Texture2D texturaFinal = new Texture2D(largura, altura, TextureFormat.RGB24, false);
+        texturaFinal.ReadPixels(new Rect(0, 0, largura, altura), 0, 0);
+        texturaFinal.Apply();
+
+        cameraAlvo.targetTexture = anterior;
+        RenderTexture.active = null;
+        Destroy(rt);
+
+        return texturaFinal;
     }
 }
