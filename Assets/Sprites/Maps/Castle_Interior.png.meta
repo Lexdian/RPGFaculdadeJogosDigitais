@@ -113,15 +113,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Castle_Interior_0
+      name: porta_grade_abert
       rect:
         serializedVersion: 2
         x: 32
         y: 496
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4825,13 +4825,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Castle_Interior_228
+      name: calabouso_interior
       rect:
         serializedVersion: 2
         x: 48
-        y: 240
+        y: 224
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4847,13 +4847,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Castle_Interior_229
+      name: porta_calabouso_aberta
       rect:
         serializedVersion: 2
         x: 64
-        y: 240
+        y: 224
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4891,13 +4891,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Castle_Interior_231
+      name: porta_grade
       rect:
         serializedVersion: 2
         x: 96
-        y: 240
+        y: 224
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4913,13 +4913,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Castle_Interior_232
+      name: porta_grade_aberta
       rect:
         serializedVersion: 2
         x: 112
-        y: 240
+        y: 224
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7355,15 +7355,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Castle_Interior_343
+      name: grade
       rect:
         serializedVersion: 2
         x: 128
         y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -10362,7 +10362,6 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Castle_Interior_0: 8559073551008079393
       Castle_Interior_1: 1360053468
       Castle_Interior_10: 576800059
       Castle_Interior_100: 165364131
@@ -10506,12 +10505,8 @@ TextureImporter:
       Castle_Interior_225: 2052980541
       Castle_Interior_226: 2038143760
       Castle_Interior_227: 971283630
-      Castle_Interior_228: 240489931
-      Castle_Interior_229: -817617136
       Castle_Interior_23: -1188814245
       Castle_Interior_230: 1897571998
-      Castle_Interior_231: 657972743
-      Castle_Interior_232: -446553951
       Castle_Interior_233: 1522597151
       Castle_Interior_234: 889784965
       Castle_Interior_235: -2094857227
@@ -10634,7 +10629,6 @@ TextureImporter:
       Castle_Interior_340: -1038941545
       Castle_Interior_341: -882346892
       Castle_Interior_342: -1502492127
-      Castle_Interior_343: 2113693772
       Castle_Interior_344: 1033173200
       Castle_Interior_345: 212401345
       Castle_Interior_346: 88026840
@@ -10841,6 +10835,13 @@ TextureImporter:
       Castle_Interior_97: 1082765992
       Castle_Interior_98: 1126133838
       Castle_Interior_99: -1554216512
+      calabouso_interior: 240489931
+      e: 8559073551008079393
+      grade: 2113693772
+      porta_calabouso_aberta: -817617136
+      porta_grade: 657972743
+      porta_grade_abert: 8559073551008079393
+      porta_grade_aberta: -446553951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
