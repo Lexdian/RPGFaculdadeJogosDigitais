@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08e62af642af45847a72db9346605206, type: 3}
-  m_Name: Behemont
+  m_Name: Morcego
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
-  enemyName: Behemont
-  enemySprite: {fileID: -4995984504450341590, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
+  enemyName: Morcego
+  enemySprite: {fileID: 5454351132051429600, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
-  tamanho: 1
+  tamanho: 0
   isVoador: 0
-  vida: 500
-  mana: 50
-  ataqueFisico: 0
+  vida: 20
+  mana: 0
+  ataqueFisico: 10
   ataqueMagico: 0
-  defesaFisica: 0
+  defesaFisica: 5
   defesaMagica: 0
-  velocidade: 0
-  precisao: 0
-  evasao: 0
-  chanceCritico: 0
-  xpReward: 0
+  velocidade: 15
+  precisao: 10
+  evasao: 2
+  chanceCritico: 15
+  xpReward: 50
   delay: 1
   recuperacao: 1
   tipoAlvo: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
   Skills:
   - {fileID: 11400000, guid: 88bfc8a62f558fd4cab36a4ca33625cb, type: 2}
   behavior:
-    rid: 7064404512904314956
+    rid: 3421949763313467476
   references:
     version: 2
     RefIds:
-    - rid: 7064404512904314956
+    - rid: 3421949763313467476
       type: {class: RandomBehavior, ns: , asm: Assembly-CSharp}
       data: 

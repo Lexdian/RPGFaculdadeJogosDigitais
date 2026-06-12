@@ -226,7 +226,7 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator BattleLoop()
     {
-        while (currentTurn < 10)
+        while (!batalhaEncerrada)
         {
             yield return StartCoroutine(MainPipelineCoroutine());
         }
@@ -238,20 +238,16 @@ public class BattleManager : MonoBehaviour
 
         yield return StartCoroutine(TickStatusEfeitosCoroutine());
 
+        CheckBattleEnd();
         if (batalhaEncerrada) yield break;
 
         yield return StartCoroutine(ExecuteActionsCoroutine());
 
-        CheckBattleEnd();
         if (batalhaEncerrada) yield break;
 
         UpdateRecovery();
 
         yield return StartCoroutine(AskForActionsCoroutine());
-
-        CheckBattleEnd();
-
-        if (batalhaEncerrada) yield break;
 
         bool carregouSegmento = false;
         timelineUI.AtualizarProgressoTurno(() => carregouSegmento = true);
@@ -304,7 +300,20 @@ public class BattleManager : MonoBehaviour
             // Executa a a��o do personagem atual e aguarda os efeitos/anima��es terminarem
             yield return StartCoroutine(ExecuteActionCoroutine(action));
 
+            foreach (BattleEntity b in action.alvo)
+            {
+                if (!b.IsAlive)
+                {
+                    EntityDied(b);
+                }
+            }
+            if (!action.executor.IsAlive)
+                EntityDied(action.executor);
             actionQueue.Remove(action);
+
+            CheckBattleEnd();
+            if (batalhaEncerrada) yield break;
+
         }
     }
 
@@ -500,6 +509,8 @@ public class BattleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
+
+
         if (telaResultado == null)
         {
             Debug.LogError("[BattleManager] Referência 'Tela Resultado' não configurada no Inspector!");
@@ -512,6 +523,13 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(caixaMensagem.ExibirMensagem("Vitória!"));
             yield return new WaitForSeconds(0.5f);
             telaResultado.MostrarVitoria(xpTotal);
+            int aliadosVivos = Allies.Where(c => c.IsAlive).Count();
+            int xpCada = xpTotal / aliadosVivos;
+            foreach (CharEntity c in Allies)
+            {
+                if(c.IsAlive)
+                    c.EndUpdate(xpCada);
+            }
         }
         else
         {
@@ -595,6 +613,12 @@ public class BattleManager : MonoBehaviour
             // Como o método do vidro é um IEnumerator, precisamos iniciá-lo via Coroutine aqui
             StartCoroutine(cuboMaterialAlvo.ShatterCoroutine(cuboMaterialAlvo.transform.position));
         }
+    }
+
+    private void EntityDied(BattleEntity b)
+    {
+        actionQueue.Remove(actionQueue.Where(a => a.executor == b).FirstOrDefault());
+        timelineUI.RemoverIcone(b);
     }
     #endregion
 

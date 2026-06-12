@@ -39,6 +39,13 @@ public class CharEntity : BattleEntity
         AtaqueBasico = SkillSO.AtaqueBasico(1, 1, TipoAlvo.Unico, TipoDano.Normal, data.fichaBase.prefabEfeitoVisualAtaqueBasico);
     }
 
+    public void EndUpdate(int xp)
+    {
+        Data.vidaAtual = CurrentHP;
+        Data.manaAtual = CurrentMP;
+        Data.GanharXp(xp);
+    }
+
     public void EscoolherAcaoDoPlayer(List<BattleEntity> todasAsEntidades, MenuFocadoNoPlayer menuUI)
     {
         DecididoNoTurno = false;

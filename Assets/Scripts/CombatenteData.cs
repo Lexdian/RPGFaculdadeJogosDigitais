@@ -101,4 +101,67 @@ public class CombatenteData
             if (equip != null) total += selector(equip);
         return total;
     }
+
+    public void GanharXp(int xp)
+    {
+        // O XP atual só aumenta, nunca diminui!
+        this.xpAtual += xp;
+
+        // Pega a meta total de XP acumulada necessária para o próximo nível
+        int metaTotalProximoNivel = GetXpTotalNecessariaParaNivel(this.nivelAtual + 1);
+
+        // Enquanto o XP atual for maior ou igual à meta total do próximo nível, ele upa
+        while (this.xpAtual >= metaTotalProximoNivel)
+        {
+            this.nivelAtual++;
+            Debug.Log($"{fichaBase.charName} subiu para o nível {this.nivelAtual}!");
+
+            // APRENDIZADO DE SKILLS: Checa se o novo nível libera alguma habilidade
+            ChecarNovasHabilidades();
+
+            // CURA COMPLETA (Opcional): Restaura os status dinâmicos
+            this.vidaAtual = GetMaxVidaTotal();
+            this.manaAtual = GetMaxManaTotal();
+
+            // Atualiza a meta para o próximo nível após o upgrade (ex: se era o 2, agora checa a meta do 3)
+            metaTotalProximoNivel = GetXpTotalNecessariaParaNivel(this.nivelAtual + 1);
+        }
+    }
+
+    /// <summary>
+    /// Calcula quanta XP CUMULATIVA TOTAL o herói precisa ter desde o nível 1 para atingir o nível alvo.
+    /// </summary>
+    public int GetXpTotalNecessariaParaNivel(int nivelAlvo)
+    {
+        if (nivelAlvo <= 1) return 0;
+
+        int xpAcumuladaTotal = 0;
+
+        // Soma os requisitos de todos os níveis anteriores para descobrir o valor total cumulativo
+        for (int i = 1; i < nivelAlvo; i++)
+        {
+            // Requisito de "degrau" entre o nível i e o nível i+1
+            float degrauXP = fichaBase.xpBaseNecessario * Mathf.Pow(fichaBase.curvaXPMultiplicador, i - 1);
+            xpAcumuladaTotal += Mathf.RoundToInt(degrauXP);
+        }
+
+        return xpAcumuladaTotal;
+    }
+
+    /// <summary>
+    /// Varre a lista de habilidades por nível do CharacterSO e adiciona à ficha se atingir o requisito.
+    /// </summary>
+    private void ChecarNovasHabilidades()
+    {
+        if (fichaBase.habilidadesPorNivel == null) return;
+
+        foreach (var vinculo in fichaBase.habilidadesPorNivel)
+        {
+            if (this.nivelAtual >= vinculo.nivelNecessario && !Skills.Contains(vinculo.habilidade))
+            {
+                Skills.Add(vinculo.habilidade);
+                Debug.Log($"{fichaBase.charName} aprendeu a habilidade: {vinculo.habilidade.skillName}!");
+            }
+        }
+    }
 }
