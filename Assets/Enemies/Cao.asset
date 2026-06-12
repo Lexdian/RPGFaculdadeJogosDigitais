@@ -27,7 +27,7 @@ MonoBehaviour:
   precisao: 10
   evasao: 2
   chanceCritico: 15
-  xpReward: 50
+  xpReward: 20
   delay: 1
   recuperacao: 1
   tipoAlvo: 0

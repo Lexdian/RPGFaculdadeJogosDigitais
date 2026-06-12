@@ -22,7 +22,7 @@ public class CardItem : MonoBehaviour
         if (slot.item.icon != null)
             imgIcone.sprite = slot.item.icon;
 
-        btnUsar.gameObject.SetActive(slot.item is ConsumableItemSO);
+        btnUsar.gameObject.SetActive(slot.item is ConsumableItemSO && ((ConsumableItemSO)slot.item).podeUsarNoMenu);
         btnEquipar.gameObject.SetActive(slot.item is EquipableItemSO);
 
         painelSelecao = FindObjectOfType<PainelSelecaoPersonagemUI>(true);

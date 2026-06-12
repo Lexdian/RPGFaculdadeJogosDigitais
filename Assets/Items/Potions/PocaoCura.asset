@@ -18,12 +18,7 @@ MonoBehaviour:
   category: 0
   stackable: 1
   maxStack: 99
-  curaVida: 0
-  curaMana: 0
-  bonusForca: 0
-  bonusInteligencia: 0
-  bonusAgilidade: 0
-  bonusResiliencia: 0
-  bonusSorte: 0
-  temporario: 0
-  duracaoSegundos: 0
+  podeUsarNoMenu: 1
+  podeUsarEmBatalha: 1
+  efeitos:
+  - {fileID: 11400000, guid: c2aa865f59ef0d04683ea2cb99814b5f, type: 2}
