@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CastleInterior/SalaoNobre.unity
     guid: 8092e39ced85b994e9e34a2ac8382334
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CastleInterior/Calaboucos.unity
     guid: 19d625129f5e50d44a02547e933d19a5
   - enabled: 1
@@ -47,6 +47,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CastleInterior/SalaDeArmas.unity
     guid: 5856c48f803485f409a00492a74b14c6
+  - enabled: 1
+    path: Assets/Scenes/Calabouso/Calabouso1.unity
+    guid: 565ab5633cc763e44b0cbcbdad3654cb
+  - enabled: 1
+    path: Assets/Scenes/Calabouso/Calabouso2.unity
+    guid: 39e8e44bd11ea9b49b8b7005508efbde
+  - enabled: 1
+    path: Assets/Scenes/Calabouso/Calabouso3.unity
+    guid: 64a7f72eb77fd0843ad82e7c0e57ec25
+  - enabled: 1
+    path: Assets/Scenes/Calabouso/Calabouso4.unity
+    guid: f47503aa23074d04cb720c109c9a7a6d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
