@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Morcego
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   enemyName: Morcego
-  enemySprite: {fileID: 5454351132051429600, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
+  enemySprite: {fileID: 1173376228278083065, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
   tamanho: 0
-  isVoador: 0
+  isVoador: 1
   vida: 20
   mana: 0
   ataqueFisico: 10

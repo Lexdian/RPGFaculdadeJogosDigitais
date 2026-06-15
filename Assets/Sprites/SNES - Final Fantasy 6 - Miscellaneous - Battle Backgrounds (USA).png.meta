@@ -133,7 +133,7 @@ TextureImporter:
         width: 256
         height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -142,6 +142,72 @@ TextureImporter:
       bones: []
       spriteID: 6c9286a3e1389bec0800000000000000
       internalID: -3550662665352762938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 6 - Miscellaneous - Battle Backgrounds (USA)_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1640
+        width: 256
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d96cc03c7e29f94c8f132b391f7d71d
+      internalID: 8268019796001287991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 6 - Miscellaneous - Battle Backgrounds (USA)_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 872
+        width: 256
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea1b91cc8344b34584f06489566ef53
+      internalID: 233197825925116623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Final Fantasy 6 - Miscellaneous - Battle Backgrounds (USA)_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 616
+        width: 256
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e35e7e23b4fbda44a52ad6b5d07eaf1
+      internalID: -1069795642269701809
       vertices: []
       indices: 
       edges: []

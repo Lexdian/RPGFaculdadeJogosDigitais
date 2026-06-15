@@ -13,6 +13,15 @@ public class PortaCalabouso : MonoBehaviour
     private bool estaAberta = false;
     private bool jogadorPerto = false;
 
+    public MaterialItemSO chave;
+
+    private AudioSource audioSource;
+    public AudioClip Open;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (jogadorPerto && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
@@ -39,10 +48,19 @@ public class PortaCalabouso : MonoBehaviour
 
     private void InteragirComPorta()
     {
+        if(chave != null && !GameManager.Instance.inventarioGrupo.HasItem(chave) && !estaAberta)
+        {
+            Debug.Log("Você precisa da chave para abrir esta porta!");
+            return;
+        }
         estaAberta = !estaAberta; 
 
         doorRenderer.sprite = estaAberta ? spriteAberta : spriteFechada;
 
         colisorParede.enabled = !estaAberta; 
+        if (audioSource != null && Open != null && estaAberta)
+        {
+            audioSource.PlayOneShot(Open);
+        }
     }
 }

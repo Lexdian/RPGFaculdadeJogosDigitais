@@ -649,6 +649,7 @@ MonoBehaviour:
   gold: 0
   cidadeAtual: Kran-Tor
   emCombate: 0
+  musicaMapa: {fileID: 0}
 --- !u!4 &269253658
 Transform:
   m_ObjectHideFlags: 0
@@ -7530,7 +7531,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 89d4c6ec5e5890b47af89514596f2dc2, type: 2}
     colunaTras: []
     rarity: 1
-  EncounterChance: 0
+  EncounterChance: 10
 --- !u!61 &1709055836
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -25,6 +25,9 @@ public class BattleResultUI : MonoBehaviour
     [SerializeField] private Button botaoContinuar;
     [SerializeField] private Button botaoVoltarAoInicio;
 
+    [SerializeField]
+    private ResultadoBatalhaPersonagens[] resultadosPersonagens;
+
     private bool aguardandoConfirmacao = false;
 
     private void Awake()
@@ -72,15 +75,24 @@ public class BattleResultUI : MonoBehaviour
               .SetEase(curvaEntrada)
               .OnComplete(() =>
               {
+                  UpdateDadosPersonagens();
                   botaoParaFocar?.Select();
                   aguardandoConfirmacao = true;
               });
     }
 
-    public void MostrarVitoria(int xpTotal)
+    public void MostrarVitoria(int xpTotal, CombatenteData[] dadosPersonagens)
     {
         if (textoXP != null)
             textoXP.text = $"XP Obtido: {xpTotal}";
+
+        for (int i = 0; i < resultadosPersonagens.Length; i++)
+        {
+            if (i < dadosPersonagens.Length)
+            {
+                resultadosPersonagens[i].Setup(dadosPersonagens[i]);
+            }
+        }
 
         StartCoroutine(AnimarResultado(painelVitoria, botaoContinuar));
     }
@@ -98,5 +110,12 @@ public class BattleResultUI : MonoBehaviour
     public void BotaoVoltarAoInicio()
     {
         GameManager.Instance.ResetarEquipeEVoltar();
+    }
+    public void UpdateDadosPersonagens()
+    {
+        foreach (var resultado in resultadosPersonagens)
+        {
+            resultado.IniciarAnimacaoXP();
+        }
     }
 }

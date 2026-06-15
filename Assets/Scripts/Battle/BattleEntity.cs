@@ -168,7 +168,7 @@ public abstract class BattleEntity : MonoBehaviour
 
         foreach (var efeito in skill.efeitosExtras)
         {
-            this.ApplyStatusEffect(efeito, dealer);
+            efeito?.Invoke(target);
         }
     }
 

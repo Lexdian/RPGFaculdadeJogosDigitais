@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     // Mudado para 'public set' para que possamos manipular ou ler externamente se necessário
     public Texture2D lastTexture { get; private set; }
 
+    public AudioClip musicaMapa;
+
     private void Awake()
     {
         if (Instance == null)
@@ -161,6 +163,7 @@ public class GameManager : MonoBehaviour
         emCombate = false;
         precisaRecriarEquipe = true;
         SceneManager.LoadScene(cenaAnterior);
+        AudioManager.Instance.PlayMusicWithFade(musicaMapa);
     }
 
     public void ResetarEquipeEVoltar()
@@ -179,7 +182,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    public void MudarMapa(string nomeCena, string nomeLocal, Vector2 posicaoInicial)
+    public void MudarMapa(string nomeCena, string nomeLocal, Vector2 posicaoInicial, AudioClip musica = null)
     {
         cidadeAtual = nomeLocal;
 
@@ -187,6 +190,12 @@ public class GameManager : MonoBehaviour
         precisaRecriarEquipe = true;
 
         SceneManager.LoadScene(nomeCena);
+
+        if (musica != null)
+        {
+            musicaMapa = musica;
+            AudioManager.Instance.PlayMusicWithFade(musica);
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

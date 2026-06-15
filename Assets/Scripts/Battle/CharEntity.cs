@@ -1,9 +1,18 @@
+using Cinemachine;
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharEntity : BattleEntity
 {
     public CombatenteData Data;
+
+    [Header("Câmera Cinemachine")]
+    [SerializeField] private CinemachineVirtualCamera minhaVirtualCamera;
+
+    public CinemachineVirtualCamera MinhaCamera => minhaVirtualCamera;
+
+    public bool TemAcaoSelecionada { get; private set; }
 
     public bool DecididoNoTurno { get; private set; }
     private BattleDecision decisaoSelecionada;
@@ -41,7 +50,7 @@ public class CharEntity : BattleEntity
 
     public void EndUpdate(int xp)
     {
-        Data.vidaAtual = CurrentHP;
+        Data.vidaAtual = Mathf.Max(1, CurrentHP);
         Data.manaAtual = CurrentMP;
         Data.GanharXp(xp);
     }
@@ -61,15 +70,25 @@ public class CharEntity : BattleEntity
         }
     }
 
+    public void SelecionandoAcao()
+    {
+        TemAcaoSelecionada = false;
+    }
+    public void SelecionandoAlvo()
+    {
+        TemAcaoSelecionada = true;
+    }
     // Fun��o que a UI vai chamar de volta para entregar a decis�o
     public void DefinirDecisao(BattleDecision decision)
     {
         decisaoSelecionada = decision;
         DecididoNoTurno = true; // Libera o BattleManager para continuar
+        TemAcaoSelecionada = false; // Fecha a UI de escolha de alvo
     }
 
     public BattleDecision ObterDecisaoFinal()
     {
+        DecididoNoTurno = false;
         return decisaoSelecionada;
     }
 
@@ -116,6 +135,18 @@ public class CharEntity : BattleEntity
         {
             CurrentHP = 0;
             Die();
+        }
+    }
+    public void DefinirOpacidade(float alphaAlvo, float duracao = 0.25f)
+    {
+        // Se o personagem estiver morto, não mexemos na transparência dele
+        if (CurrentState == BattleState.Dead) return;
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            // Altera suavemente o Alpha do Sprite sem perder a cor original (RGB)
+            sr.DOFade(alphaAlvo, duracao);
         }
     }
 }

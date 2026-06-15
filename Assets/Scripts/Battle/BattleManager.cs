@@ -53,6 +53,8 @@ public class BattleManager : MonoBehaviour
 
     private bool batalhaEncerrada = false;
 
+    public AudioClip battleMusic;
+
     void Awake()
     {
         CanvasGroup.alpha = 0;
@@ -68,6 +70,7 @@ public class BattleManager : MonoBehaviour
     // O Unity entende isso nativamente e sabe como rodar como Coroutine
     IEnumerator Start()
     {
+        AudioManager.Instance.PlayMusicWithFade(battleMusic, fadeDuration: 2.0f, targetVolume: 0.1f);
         LayoutRebuilder.ForceRebuildLayoutImmediate(charInfosContainer);
         charInfosContainer.GetComponent<VerticalLayoutGroup>().enabled = false;
         if (cuboMaterialAlvo != null)
@@ -138,7 +141,7 @@ public class BattleManager : MonoBehaviour
                 posicaoFinal.y += offsetVoadorY;
             }
 
-            InstanciarInimigo(data, posicaoFinal, i + (indexColuna * 3));
+            InstanciarInimigo(data, posicaoFinal, -total + i);
         }
     }
 
@@ -151,7 +154,7 @@ public class BattleManager : MonoBehaviour
         if (sr != null)
         {
             sr.sprite = data.enemySprite;
-            sr.sortingOrder = 10 + order;
+            sr.sortingOrder = order;
         }
 
         EnemyEntity entity = go.AddComponent<EnemyEntity>();
@@ -182,7 +185,9 @@ public class BattleManager : MonoBehaviour
 
             Vector3 posicaoFinal = new Vector3(centroChaoAliados.x, posY, 0);
 
-            InstanciarAliado(dadosAliado, posicaoFinal, i);
+            Debug.Log($"Ordem final para aliado {-totalAliados + i}");
+
+            InstanciarAliado(dadosAliado, posicaoFinal, -totalAliados + i);
         }
     }
 
@@ -195,11 +200,11 @@ public class BattleManager : MonoBehaviour
         if (sr != null)
         {
             sr.sprite = dados.fichaBase.charBattle;
-            sr.sortingOrder = 10 + order;
+            sr.sortingOrder = order;
             sr.flipX = false;
         }
 
-        CharEntity entity = go.AddComponent<CharEntity>();
+        CharEntity entity = go.GetComponent<CharEntity>();
         entity.Setup(dados);
 
         InstantiateCharInfoUI(dados, entity);
@@ -457,25 +462,67 @@ public class BattleManager : MonoBehaviour
 
         foreach (var entity in Allies)
         {
-            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) { Debug.LogWarning("Não atua"); continue; }
+            if (!entity.IsAlive || entity.CurrentState != BattleState.WaitingAction) continue;
 
-            if (entity.HasStatusEffect<AtordoamentoStatusSO>())
-            {
-                StartCoroutine(caixaMensagem.ExibirMensagem($"{entity.EntityName} está atordoado e não pode agir!"));
-                yield return new WaitForSeconds(0.8f);
-                continue;
-            }
+            CharEntity playerChar = (CharEntity)entity;
 
-            ((CharEntity)entity).EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
-
+            playerChar.EscoolherAcaoDoPlayer(GetAllEntities(), menuUI);
             CharInfosMap[entity].MoverParaEsquerda();
 
-            yield return new WaitUntil(() => ((CharEntity)entity).DecididoNoTurno == true);
+            bool primeiraTransicaoFeita = false;
 
-            BattleDecision decision = ((CharEntity)entity).ObterDecisaoFinal();
+            while (!playerChar.DecididoNoTurno)
+            {
+                // ====================================================================
+                // SE O JOGADOR ESTÁ NA TELA DE AÇÃO: ZOOM NO HERÓI
+                // ====================================================================
+                if (!playerChar.TemAcaoSelecionada)
+                {
+                    if (playerChar.MinhaCamera != null && playerChar.MinhaCamera.Priority != 11)
+                    {
+                        playerChar.MinhaCamera.Priority = 11;
+
+                        // NOVO: Foca visualmente no herói atual e esmaece os outros
+                        AplicarEfeitoTransparencia(playerChar);
+
+                        if (!primeiraTransicaoFeita)
+                        {
+                            yield return new WaitForSeconds(0.8f);
+                            primeiraTransicaoFeita = true;
+                        }
+                    }
+
+                    yield return new WaitUntil(() => playerChar.TemAcaoSelecionada || playerChar.DecididoNoTurno);
+                }
+
+                // ====================================================================
+                // SE O JOGADOR AVANÇOU PARA OS ALVOS: CÂMERA AFASTADA
+                // ====================================================================
+                if (playerChar.TemAcaoSelecionada && !playerChar.DecididoNoTurno)
+                {
+                    if (playerChar.MinhaCamera != null && playerChar.MinhaCamera.Priority != 1)
+                    {
+                        playerChar.MinhaCamera.Priority = 1;
+
+                        // NOVO: Como a câmera se afastou para o campo, todos voltam a ficar 100% visíveis
+                        ResetarTransparenciaDeTodos();
+                    }
+
+                    yield return new WaitUntil(() => !playerChar.TemAcaoSelecionada || playerChar.DecididoNoTurno);
+                }
+            }
+
+            // ====================================================================
+            // FINALIZAÇÃO DO TURNO
+            // ====================================================================
+            if (playerChar.MinhaCamera != null) playerChar.MinhaCamera.Priority = 1;
+
+            // NOVO: Garante o reset de visibilidade caso ele confirme a ação direto do menu
+            ResetarTransparenciaDeTodos();
+
+            BattleDecision decision = playerChar.ObterDecisaoFinal();
             if (decision.skill != null)
             {
-                // MODIFICADO: Espera o enfileiramento e poss�veis anima��es de transi��o suave terminar
                 yield return StartCoroutine(QueueActionCoroutine(entity, decision.targets, decision.skill));
             }
 
@@ -522,12 +569,13 @@ public class BattleManager : MonoBehaviour
             int xpTotal = CalcularXPTotal();
             StartCoroutine(caixaMensagem.ExibirMensagem("Vitória!"));
             yield return new WaitForSeconds(0.5f);
-            telaResultado.MostrarVitoria(xpTotal);
+            CombatenteData[] dadosPersonagens = Allies.Select(a => a.Data).ToArray();
+            telaResultado.MostrarVitoria(xpTotal, dadosPersonagens);
             int aliadosVivos = Allies.Where(c => c.IsAlive).Count();
             int xpCada = xpTotal / aliadosVivos;
             foreach (CharEntity c in Allies)
             {
-                if(c.IsAlive)
+                if (c.IsAlive)
                     c.EndUpdate(xpCada);
             }
         }
@@ -619,6 +667,35 @@ public class BattleManager : MonoBehaviour
     {
         actionQueue.Remove(actionQueue.Where(a => a.executor == b).FirstOrDefault());
         timelineUI.RemoverIcone(b);
+    }
+    private void AplicarEfeitoTransparencia(CharEntity heroiFocado)
+    {
+        // Passa por absolutamente todas as entidades da batalha
+        foreach (var entidade in GetAllEntities())
+        {
+            if (entidade is CharEntity aliado)
+            {
+                if (aliado == heroiFocado)
+                    aliado.DefinirOpacidade(1f); // Herói ativo fica 100% visível
+                else
+                    aliado.DefinirOpacidade(0.3f); // Outros aliados ficam transparentes
+            }
+            else if (entidade is EnemyEntity inimigo)
+            {
+                // Opcional: Se quiser que os inimigos também fiquem um pouco transparentes
+                // enquanto você escolhe a ação no menu principal:
+                // inimigo.DefinirOpacidade(0.3f); 
+            }
+        }
+    }
+
+    private void ResetarTransparenciaDeTodos()
+    {
+        foreach (var entidade in GetAllEntities())
+        {
+            if (entidade is CharEntity aliado) aliado.DefinirOpacidade(1f);
+            // if (entidade is EnemyEntity inimigo) inimigo.DefinirOpacidade(1f);
+        }
     }
     #endregion
 

@@ -9,7 +9,7 @@ using System;
 
 public class MenuFocadoNoPlayer : MonoBehaviour
 {
-    private enum EstadoMenu { Principal, Skills, SelecaoAlvo }
+    private enum EstadoMenu { Principal, Skills, Itens, SelecaoAlvo }
     private EstadoMenu estadoAtual = EstadoMenu.Principal;
 
     // NOVO: Controle de qual grupo de entidades estamos mirando no momento
@@ -33,6 +33,11 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     public GameObject painelHabilidades;
     public Transform containerBotoesHabilidades;
     public GameObject prefabBotaoHabilidade;
+
+    [Header("Itens")]
+    public GameObject painelItens;
+    public Transform containerBotoesItens;
+    public GameObject prefabBotaoItem;
 
     [Header("Configurações da Animação")]
     public float duracaoAnimacao = 0.25f;
@@ -59,21 +64,36 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     private int indiceSkillTopoJanela = 0;
     private SkillSO habilidadeSelecionadaParaAtacar;
 
+    private List<ConsumableItemSO> itensDisponiveis = new List<ConsumableItemSO>();
+    private List<Button> botoesItensInstanciados = new List<Button>();
+    private int indiceItemFocadoGlobal = 0;
+    private int indiceItemTopoJanela = 0;
+    private ConsumableItemSO itemSelecionadoParaUsar;
+
     private bool animando = false;
     private GameObject ultimoBotaoFocado;
 
-    private readonly Vector2 posOriginalAtacar = new Vector2(0, 50);
-    private readonly Vector2 posOriginalFugir = new Vector2(0, -50);
-    private readonly Vector2 posOriginalItens = new Vector2(-100, 0);
-    private readonly Vector2 posOriginalEspecial = new Vector2(100, 0);
+    private readonly Vector2 posOriginalAtacar = new Vector2(0, 100);
+    private readonly Vector2 posOriginalFugir = new Vector2(0, -100);
+    private readonly Vector2 posOriginalItens = new Vector2(-150, 0);
+    private readonly Vector2 posOriginalEspecial = new Vector2(150, 0);
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip navigationSound;
+    public AudioClip buttonCancelSound;
+    public AudioClip buttonClickSound;
 
     void Awake()
     {
         botaoAtacar.GetComponent<Button>().onClick.AddListener(ClicouAtacar);
         botaoEspecial.GetComponent<Button>().onClick.AddListener(ClicouEspecial);
+        botaoItens.GetComponent<Button>().onClick.AddListener(ClicouItens);
+        audioSource = GetComponent<AudioSource>();
 
         if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
+        if (painelItens != null) painelItens.SetActive(false);
         EsconderMenu();
     }
 
@@ -86,11 +106,18 @@ public class MenuFocadoNoPlayer : MonoBehaviour
             {
                 AtualizarPreviewDaSkill(playerAtual.AtaqueBasico);
             }
-            else if (focado != null && focado != botaoEspecial.gameObject)
+            else if (focado != null)
             {
                 LimparPreview();
             }
         }
+        UpdateMenuPosition();
+    }
+
+    void UpdateMenuPosition()
+    {
+        Vector3 posicaoTela = cam.WorldToScreenPoint(playerAtual.transform.position + offset);
+        rectTransform.position = posicaoTela;
     }
 
     public void FocarNoPlayer(CharEntity novoPlayer, List<BattleEntity> entidadesDaBatalha)
@@ -99,14 +126,14 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         listaDeEntidades = entidadesDaBatalha;
         estadoAtual = EstadoMenu.Principal;
 
-        Vector3 posicaoTela = cam.WorldToScreenPoint(playerAtual.transform.position + offset);
-        rectTransform.position = posicaoTela;
+        UpdateMenuPosition();
 
         gameObject.SetActive(true);
         animando = true;
 
         if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
+        if (painelItens != null) painelItens.SetActive(false);
 
         LimparPreview();
         AnimarEntradaBotoes();
@@ -158,6 +185,7 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     private void IniciarSelecaoDeAlvo()
     {
+        playerAtual.SelecionandoAlvo();
         // Separa dinamicamente quem são os inimigos e quem são os aliados (vivos)
         inimigosVivos = listaDeEntidades.Where(e => e is EnemyEntity && e.IsAlive).ToList();
         aliadosVivos = listaDeEntidades.Where(e => e is CharEntity && e.IsAlive).ToList();
@@ -172,7 +200,12 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         estadoAtual = EstadoMenu.SelecaoAlvo;
 
         // MODIFICADO: Reseta para mirar nos inimigos por padrão ao abrir a seleção
-        timeAlvoAtual = AlvoTime.Inimigos;
+        if(habilidadeSelecionadaParaAtacar != null && habilidadeSelecionadaParaAtacar.prioridade == Prioridade.Inimigos)
+        {
+            timeAlvoAtual = AlvoTime.Inimigos;
+        }
+        else
+            timeAlvoAtual = AlvoTime.Aliados;
         indiceAlvoAtual = 0;
 
         AtualizarSetasDeAlvo();
@@ -365,6 +398,8 @@ public class MenuFocadoNoPlayer : MonoBehaviour
 
     public void OnInputConfirmar(InputAction.CallbackContext context)
     {
+
+        audioSource.PlayOneShot(buttonClickSound);
         if (animando || !context.performed) return;
 
         if (estadoAtual == EstadoMenu.SelecaoAlvo)
@@ -383,6 +418,16 @@ public class MenuFocadoNoPlayer : MonoBehaviour
             return;
         }
 
+        if(estadoAtual == EstadoMenu.Itens)
+        {
+            int slotFisicoParaFocar = indiceItemFocadoGlobal - indiceItemTopoJanela;
+            if (slotFisicoParaFocar >= 0 && slotFisicoParaFocar < botoesItensInstanciados.Count)
+            {
+                botoesItensInstanciados[slotFisicoParaFocar].onClick.Invoke();
+            }
+            return;
+        }
+
         GameObject objetoFocado = EventSystem.current.currentSelectedGameObject;
         if (objetoFocado != null)
         {
@@ -395,18 +440,13 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     {
         if (animando || !context.performed) return;
 
+        audioSource.PlayOneShot(buttonCancelSound);
+
         if (estadoAtual == EstadoMenu.SelecaoAlvo)
         {
             if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
 
-            if (habilidadeSelecionadaParaAtacar != playerAtual.AtaqueBasico)
-            {
-                estadoAtual = EstadoMenu.Skills;
-                painelHabilidades.SetActive(true);
-                ConstruirJanelaBotoesHabilidade();
-                FocarHabilidadeVisualmente();
-            }
-            else
+            if (habilidadeSelecionadaParaAtacar == playerAtual.AtaqueBasico)
             {
                 animando = true;
                 AnimarRetornoBotoesPrincipal(() =>
@@ -415,6 +455,23 @@ public class MenuFocadoNoPlayer : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(ultimoBotaoFocado);
                 });
             }
+            else if(itemSelecionadoParaUsar != null)
+            {
+                estadoAtual = EstadoMenu.Itens;
+                painelItens.SetActive(true);
+                itemSelecionadoParaUsar = null;
+                ConstruirJanelaBotoesItem();
+                FocarItemVisualmente();
+            }
+            else
+            {
+                estadoAtual = EstadoMenu.Skills;
+                painelHabilidades.SetActive(true);
+                habilidadeSelecionadaParaAtacar = null;
+                ConstruirJanelaBotoesHabilidade();
+                FocarHabilidadeVisualmente();
+            }
+            playerAtual.SelecionandoAcao();
             return;
         }
 
@@ -430,11 +487,25 @@ public class MenuFocadoNoPlayer : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(ultimoBotaoFocado);
             });
         }
+
+        if(estadoAtual == EstadoMenu.Itens)
+        {
+            animando = true;
+            painelItens.SetActive(false);
+            LimparPreview();
+            AnimarRetornoBotoesPrincipal(() =>
+            {
+                estadoAtual = EstadoMenu.Principal;
+                EventSystem.current.SetSelectedGameObject(ultimoBotaoFocado);
+            });
+        }
     }
 
     public void OnInputNavegacao(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+
+        audioSource.PlayOneShot(navigationSound);
 
         Vector2 direcao = context.ReadValue<Vector2>();
 
@@ -465,6 +536,12 @@ public class MenuFocadoNoPlayer : MonoBehaviour
             if (direcao.y < 0) NavegarHabilidades(1);
             else if (direcao.y > 0) NavegarHabilidades(-1);
         }
+
+        if (estadoAtual == EstadoMenu.Itens)
+        {
+            if (direcao.y < 0) NavegarItens(1);
+            else if (direcao.y > 0) NavegarItens(-1);
+        }
     }
 
     #endregion
@@ -472,7 +549,13 @@ public class MenuFocadoNoPlayer : MonoBehaviour
     private void ConfirmarAtaqueNoAlvo()
     {
         BattleDecision decisao = new BattleDecision();
+        if (itemSelecionadoParaUsar != null)
+        {
+            habilidadeSelecionadaParaAtacar = SkillSO.CriarItem(itemSelecionadoParaUsar);
+            GameManager.Instance.inventarioGrupo.TryRemove(itemSelecionadoParaUsar);
+        }
         decisao.skill = habilidadeSelecionadaParaAtacar;
+
 
         // MODIFICADO: Pega o grupo ativo no momento da confirmação
         List<BattleEntity> listaFocada = (timeAlvoAtual == AlvoTime.Inimigos) ? inimigosVivos : aliadosVivos;
@@ -492,6 +575,9 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
 
         playerAtual.DefinirDecisao(decisao);
+
+        habilidadeSelecionadaParaAtacar = null;
+        itemSelecionadoParaUsar = null;
         EsconderMenu();
     }
 
@@ -567,5 +653,151 @@ public class MenuFocadoNoPlayer : MonoBehaviour
         if (gerenciadorSetas != null) gerenciadorSetas.LimparSetas();
         if (painelHabilidades != null) painelHabilidades.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    public void ClicouItens()
+    {
+        if (playerAtual == null || animando) return;
+
+        if (GameManager.Instance != null && GameManager.Instance.inventarioGrupo != null)
+        {
+            itensDisponiveis = GameManager.Instance.inventarioGrupo.Slots
+                .Where(slot => slot.item is ConsumableItemSO)
+                .Select(slot => slot.item as ConsumableItemSO)
+                .Where(item => item.podeUsarEmBatalha)
+                .ToList();
+        }
+        else
+        {
+            itensDisponiveis = new List<ConsumableItemSO>();
+        }
+
+        if (itensDisponiveis.Count == 0)
+        {
+            Debug.LogWarning("Nenhum item consumível disponível para uso em batalha!");
+            return;
+        }
+
+        ultimoBotaoFocado = EventSystem.current.currentSelectedGameObject;
+        estadoAtual = EstadoMenu.Itens;
+        indiceItemFocadoGlobal = 0;
+        indiceItemTopoJanela = 0;
+
+        animando = true;
+        AnimarRecuoBotoesPrincipal(() =>
+        {
+            animando = false;
+            painelItens.SetActive(true);
+            ConstruirJanelaBotoesItem();
+            FocarItemVisualmente();
+        });
+    }
+
+    // 3. Atualize o construtor da janela para passar o item correto para o botão:
+    private void ConstruirJanelaBotoesItem()
+    {
+        foreach (var b in botoesItensInstanciados) if (b != null) Destroy(b.gameObject);
+        botoesItensInstanciados.Clear();
+
+        int quantidadeParaRenderizar = Mathf.Min(3, itensDisponiveis.Count);
+
+        for (int i = 0; i < quantidadeParaRenderizar; i++)
+        {
+            int indexGlobalDoItem = indiceItemTopoJanela + i;
+            if (indexGlobalDoItem >= itensDisponiveis.Count) break;
+
+            ConsumableItemSO item = itensDisponiveis[indexGlobalDoItem];
+
+            GameObject btnGO = Instantiate(prefabBotaoItem, containerBotoesItens);
+            BotaoItemUI botaoUI = btnGO.GetComponent<BotaoItemUI>();
+
+            if (botaoUI != null)
+            {
+                int quantidade = GameManager.Instance.inventarioGrupo.Slots
+                    .Where(slot => slot.item == item)
+                    .Sum(slot => slot.quantity);
+                botaoUI.Setup(item, quantidade); // Passa o ConsumableItemSO e a quantidade
+                Button btnComponent = botaoUI.componenteBotao;
+
+                if (btnComponent != null)
+                {
+                    Navigation nav = btnComponent.navigation;
+                    nav.mode = Navigation.Mode.None;
+                    btnComponent.navigation = nav;
+
+                    int slotFisico = i;
+                    btnComponent.onClick.AddListener(() => ClicouNoBotaoItem(slotFisico));
+
+                    botoesItensInstanciados.Add(btnComponent);
+                }
+            }
+        }
+    }
+
+    private void NavegarItens(int direcao)
+    {
+        int totalItems = itensDisponiveis.Count;
+        if (totalItems <= 1) return;
+
+        indiceItemFocadoGlobal += direcao;
+
+        if (indiceItemFocadoGlobal >= totalItems)
+        {
+            indiceItemFocadoGlobal = 0;
+            indiceItemTopoJanela = 0;
+            ConstruirJanelaBotoesItem();
+        }
+        else if (indiceItemFocadoGlobal < 0)
+        {
+            indiceItemFocadoGlobal = totalItems - 1;
+            indiceItemTopoJanela = Mathf.Max(0, totalItems - 3);
+            ConstruirJanelaBotoesItem();
+        }
+        else
+        {
+            if (indiceItemFocadoGlobal >= indiceItemTopoJanela + 3)
+            {
+                indiceItemTopoJanela++;
+                ConstruirJanelaBotoesItem();
+            }
+            else if (indiceItemFocadoGlobal < indiceItemTopoJanela)
+            {
+                indiceItemTopoJanela--;
+                ConstruirJanelaBotoesItem();
+            }
+        }
+
+        FocarItemVisualmente();
+    }
+
+    private void FocarItemVisualmente()
+    {
+        if (botoesItensInstanciados.Count == 0) return;
+
+        int slotFisicoParaFocar = indiceItemFocadoGlobal - indiceItemTopoJanela;
+        if (slotFisicoParaFocar >= 0 && slotFisicoParaFocar < botoesItensInstanciados.Count)
+        {
+            botoesItensInstanciados[slotFisicoParaFocar].Select();
+        }
+    }
+
+    private void ClicouNoBotaoItem(int slotFisico)
+    {
+        int indexGlobal = indiceItemTopoJanela + slotFisico;
+        itemSelecionadoParaUsar = itensDisponiveis[indexGlobal];
+
+        painelItens.SetActive(false);
+        IniciarSelecaoDeAlvo();
+    }
+
+    public void AtualizarPreviewDoItem(ConsumableItemSO item)
+    {
+        if (barraProgresso == null || playerAtual == null || item == null) return;
+
+        int turnoBase = playerAtual.ReadyTurn;
+        int turnoAcao = turnoBase + 1;
+        int turnoRecuperacao = turnoAcao+1;
+
+        barraProgresso.MostrarPrevisaoTurno(playerAtual, turnoAcao, turnoRecuperacao, playerAtual.Data.fichaBase.charPortrait);
     }
 }

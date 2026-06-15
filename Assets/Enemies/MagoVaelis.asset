@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagoVaelis
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   enemyName: Mago de Vaelis
-  enemySprite: {fileID: 8287363021645692158, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
+  enemySprite: {fileID: -6683747249939331413, guid: fdad310394ad4f643ac50bfa77accedf, type: 3}
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
   tamanho: 0
   isVoador: 0

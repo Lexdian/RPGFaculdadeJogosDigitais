@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fantasma
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   enemyName: Fantasma
-  enemySprite: {fileID: 5454351132051429600, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
+  enemySprite: {fileID: 8439370642373777271, guid: e71c0286ad056f144a2d1c8874173774, type: 3}
   enemyIcon: {fileID: -7374511411038730434, guid: 8ca9b40669d9cc246a2d763e17055fdc, type: 3}
   tamanho: 0
   isVoador: 0

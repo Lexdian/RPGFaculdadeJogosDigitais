@@ -817,7 +817,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 89d4c6ec5e5890b47af89514596f2dc2, type: 2}
     colunaTras: []
     rarity: 1
-  EncounterChance: 100
+  EncounterChance: 10
 --- !u!61 &448777078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2090,9 +2090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b557245476a2a104bbba7cc743760e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  nomeCena: SalaTrono
-  nomeLocal: Sala do Trono
-  posicaoInicial: {x: -0.5, y: -21}
+  nomeCena: Calabouso1
+  nomeLocal: "Calabou\xE7os"
+  posicaoInicial: {x: 2.5, y: 9.5}
 --- !u!61 &976850256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4956,16 +4956,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -12, y: -27, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -11, y: -27, z: 0}
     second:
       serializedVersion: 2
@@ -5061,16 +5051,6 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 14, y: -27, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6900,8 +6880,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 773e9e294d3a2ed478ec6625ab63323a, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: f132ef2eebdbd9541a37236fb178c636, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 43b64b783d751e74087a00e3b76991c6, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: ae72fb0d7cda9b446ad6e08a82095234, type: 2}
   m_TileSpriteArray:
@@ -6917,12 +6897,12 @@ Tilemap:
     m_Data: {fileID: 154573966, guid: 1c656fa80d175684798c14dc10933388, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 1692544460, guid: 1c656fa80d175684798c14dc10933388, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 471107237, guid: 1c656fa80d175684798c14dc10933388, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 184116746, guid: 1c656fa80d175684798c14dc10933388, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 201
+  - m_RefCount: 199
     m_Data:
       e00: 1
       e01: 0
@@ -6941,7 +6921,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 201
+  - m_RefCount: 199
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7184,14 +7164,6 @@ CompositeCollider2D:
         Y: -64375000
       - X: 70000000
         Y: -64375000
-    - - X: 70000000
-        Y: -110000000
-      - X: 60000000
-        Y: -110000000
-      - X: 60000000
-        Y: -124375000
-      - X: 70000000
-        Y: -124375000
     - - X: -30000000
         Y: -110000000
       - X: -40000000
@@ -7201,13 +7173,13 @@ CompositeCollider2D:
       - X: -30000000
         Y: -124375000
     - - X: 70000000
-        Y: -170000000
+        Y: -110000000
       - X: 60000000
-        Y: -170000000
+        Y: -110000000
       - X: 60000000
-        Y: -184375008
+        Y: -124375000
       - X: 70000000
-        Y: -184375008
+        Y: -124375000
     - - X: -30000000
         Y: -170000000
       - X: -40000000
@@ -7215,6 +7187,14 @@ CompositeCollider2D:
       - X: -40000000
         Y: -184375008
       - X: -30000000
+        Y: -184375008
+    - - X: 70000000
+        Y: -170000000
+      - X: 60000000
+        Y: -170000000
+      - X: 60000000
+        Y: -184375008
+      - X: 70000000
         Y: -184375008
     - - X: -100000000
         Y: -270000000
@@ -7266,6 +7246,14 @@ CompositeCollider2D:
         Y: -210000000
       - X: 160000000
         Y: -260000000
+      - X: 150000000
+        Y: -260000000
+      - X: 150000000
+        Y: -270000000
+      - X: 140000000
+        Y: -270000000
+      - X: 140000000
+        Y: -260000000
       - X: 100000000
         Y: -260000000
       - X: 100000000
@@ -7289,6 +7277,14 @@ CompositeCollider2D:
       - X: -70000000
         Y: -220000000
       - X: -70000000
+        Y: -260000000
+      - X: -110000000
+        Y: -260000000
+      - X: -110000000
+        Y: -270000000
+      - X: -120000000
+        Y: -270000000
+      - X: -120000000
         Y: -260000000
       - X: -130000000
         Y: -260000000
@@ -7366,20 +7362,6 @@ CompositeCollider2D:
       - {x: -6.9999704, y: -2.4375}
       - {x: -6, y: -2.4375293}
       - {x: -5.999971, y: -3}
-    - - {x: 12.99997, y: -20.437502}
-      - {x: 12.99997, y: -20}
-      - {x: 12, y: -19.999971}
-      - {x: 12.00003, y: -5}
-      - {x: 17, y: -4.999971}
-      - {x: 16.999971, y: 2}
-      - {x: 14, y: 1.9999708}
-      - {x: 14.000029, y: 1.5625}
-      - {x: 15, y: 1.5624707}
-      - {x: 15.000029, y: 1}
-      - {x: 16, y: 0.9999706}
-      - {x: 15.999971, y: -4}
-      - {x: 11, y: -4.000029}
-      - {x: 11.00003, y: -20.437502}
     - - {x: -8.00003, y: -20.437502}
       - {x: -8.00003, y: -4}
       - {x: -13, y: -3.9999704}
@@ -7394,6 +7376,20 @@ CompositeCollider2D:
       - {x: -9.00003, y: -20}
       - {x: -10, y: -20.000029}
       - {x: -9.99997, y: -20.437502}
+    - - {x: 12.99997, y: -20.437502}
+      - {x: 12.99997, y: -20}
+      - {x: 12, y: -19.999971}
+      - {x: 12.00003, y: -5}
+      - {x: 17, y: -4.999971}
+      - {x: 16.999971, y: 2}
+      - {x: 14, y: 1.9999708}
+      - {x: 14.000029, y: 1.5625}
+      - {x: 15, y: 1.5624707}
+      - {x: 15.000029, y: 1}
+      - {x: 16, y: 0.9999706}
+      - {x: 15.999971, y: -4}
+      - {x: 11, y: -4.000029}
+      - {x: 11.00003, y: -20.437502}
     - - {x: 6.9999704, y: -6.4375}
       - {x: 6.9999704, y: -5}
       - {x: 6, y: -5.000029}
@@ -7410,14 +7406,14 @@ CompositeCollider2D:
       - {x: -3.0000293, y: -11}
       - {x: -4, y: -11.00003}
       - {x: -3.999971, y: -12.4375}
-    - - {x: 6.9999704, y: -18.437502}
-      - {x: 6.9999704, y: -17}
-      - {x: 6, y: -17.000029}
-      - {x: 6.000029, y: -18.437502}
     - - {x: -3.0000293, y: -18.437502}
       - {x: -3.0000293, y: -17}
       - {x: -4, y: -17.000029}
       - {x: -3.999971, y: -18.437502}
+    - - {x: 6.9999704, y: -18.437502}
+      - {x: 6.9999704, y: -17}
+      - {x: 6, y: -17.000029}
+      - {x: 6.000029, y: -18.437502}
     - - {x: -10.00003, y: -28}
       - {x: -9.99997, y: -27}
       - {x: -6, y: -26.999971}
@@ -7444,6 +7440,10 @@ CompositeCollider2D:
       - {x: 15.000029, y: -21}
       - {x: 16, y: -21.000029}
       - {x: 15.999971, y: -26}
+      - {x: 15, y: -26.000029}
+      - {x: 14.999971, y: -27}
+      - {x: 14, y: -26.999971}
+      - {x: 13.999971, y: -26}
       - {x: 10, y: -25.999971}
       - {x: 9.99997, y: -22}
       - {x: 4, y: -22.000029}
@@ -7456,6 +7456,10 @@ CompositeCollider2D:
       - {x: -1.0000293, y: -22}
       - {x: -7, y: -22.000029}
       - {x: -7.0000296, y: -26}
+      - {x: -11, y: -26.000029}
+      - {x: -11.00003, y: -27}
+      - {x: -12, y: -26.999971}
+      - {x: -12.00003, y: -26}
       - {x: -13, y: -25.999971}
       - {x: -12.99997, y: -21}
       - {x: -12, y: -20.999971}
@@ -8795,9 +8799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b557245476a2a104bbba7cc743760e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  nomeCena: SalaTrono
-  nomeLocal: Sala do Trono
-  posicaoInicial: {x: -0.5, y: -21}
+  nomeCena: Calabouso1
+  nomeLocal: "Calabou\xE7os"
+  posicaoInicial: {x: 6.5, y: 9.5}
 --- !u!61 &2002060631
 BoxCollider2D:
   m_ObjectHideFlags: 0

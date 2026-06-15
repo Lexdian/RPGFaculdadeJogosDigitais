@@ -1,5 +1,6 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 // Enums para categorizar as regras da habilidade
 public enum TipoAlvo { Unico, Grupo}
@@ -20,7 +21,7 @@ public class SkillSO : ScriptableObject
     public TipoDano tipoDano;
     public Prioridade prioridade;
     public bool podeSerUsadaEmMortos;
-    public List<StatusEffectSO> efeitosExtras;
+    public List<Action<BattleEntity>> efeitosExtras = new List<Action<BattleEntity>>();
 
     [Header("Custos e Valores")]
     public int custoMana;
@@ -65,11 +66,37 @@ public class SkillSO : ScriptableObject
         novaSkill.prioridade = Prioridade.Inimigos;
 
         // Inicializações padrão para evitar NullReference comuns
-        novaSkill.efeitosExtras = new List<StatusEffectSO>();
+        novaSkill.efeitosExtras = new List<Action<BattleEntity>>();
         novaSkill.chanceAcerto = 1f;
         novaSkill.gatilhoAnimacao = "CastSkill";
 
         novaSkill.prefabEfeitoVisual = prefabEfeitoVisual;
+
+        return novaSkill;
+    }
+
+    public static SkillSO CriarItem(ItemSO item)
+    {
+        SkillSO novaSkill = ScriptableObject.CreateInstance<SkillSO>();
+        novaSkill.skillName = item.itemName;
+        novaSkill.custoMana = 0;
+        novaSkill.poderBase = 0;
+        novaSkill.turnosParaExecutar = 1;
+        novaSkill.turnosRecuperacao = 1;
+        novaSkill.alvo = TipoAlvo.Unico;
+        novaSkill.categoria = CategoriaHabilidade.Suporte;
+        novaSkill.tipoDano = TipoDano.Normal;
+        novaSkill.prioridade = Prioridade.Aliados;
+        novaSkill.chanceAcerto = 1f;
+        novaSkill.gatilhoAnimacao = "CastSkill";
+        novaSkill.prefabEfeitoVisual = null;
+
+        novaSkill.efeitosExtras = new List<Action<BattleEntity>>();
+
+        if (item is ConsumableItemSO consumivel)
+        {
+            novaSkill.efeitosExtras.Add(alvo => consumivel.Aplicar(alvo));
+        }
 
         return novaSkill;
     }
