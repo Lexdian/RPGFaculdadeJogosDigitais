@@ -19,10 +19,10 @@ MonoBehaviour:
   isVoador: 0
   vida: 30
   mana: 50
-  ataqueFisico: 8
-  ataqueMagico: 5
+  ataqueFisico: 25
+  ataqueMagico: 20
   defesaFisica: 5
-  defesaMagica: 0
+  defesaMagica: 5
   velocidade: 10
   precisao: 5
   evasao: 0

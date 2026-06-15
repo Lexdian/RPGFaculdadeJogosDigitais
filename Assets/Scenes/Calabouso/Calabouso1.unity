@@ -4563,17 +4563,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleArea
   enemyGroups:
   - colunaFrente:
-    - {fileID: 11400000, guid: 196ab7b87aa0bd547992bc27c051d9fc, type: 2}
-    - {fileID: 11400000, guid: 196ab7b87aa0bd547992bc27c051d9fc, type: 2}
+    - {fileID: 11400000, guid: f72356927767e1c43ac4f29f10221255, type: 2}
+    - {fileID: 11400000, guid: f72356927767e1c43ac4f29f10221255, type: 2}
     colunaMeio:
-    - {fileID: 11400000, guid: 89d4c6ec5e5890b47af89514596f2dc2, type: 2}
-    - {fileID: 11400000, guid: 89d4c6ec5e5890b47af89514596f2dc2, type: 2}
+    - {fileID: 11400000, guid: 1f4be35c8eb3e9341bf2ce8c99881229, type: 2}
+    - {fileID: 11400000, guid: 1f4be35c8eb3e9341bf2ce8c99881229, type: 2}
     colunaTras: []
     rarity: 1
   - colunaFrente:
-    - {fileID: 11400000, guid: 196ab7b87aa0bd547992bc27c051d9fc, type: 2}
+    - {fileID: 11400000, guid: f72356927767e1c43ac4f29f10221255, type: 2}
     colunaMeio:
-    - {fileID: 11400000, guid: 89d4c6ec5e5890b47af89514596f2dc2, type: 2}
+    - {fileID: 11400000, guid: 1f4be35c8eb3e9341bf2ce8c99881229, type: 2}
     colunaTras: []
     rarity: 1
   EncounterChance: 10

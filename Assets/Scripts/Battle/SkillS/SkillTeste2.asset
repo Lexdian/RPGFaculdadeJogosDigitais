@@ -19,7 +19,6 @@ MonoBehaviour:
   tipoDano: 1
   prioridade: 1
   podeSerUsadaEmMortos: 0
-  efeitosExtras: []
   custoMana: 2
   poderBase: 15
   chanceAcerto: 1

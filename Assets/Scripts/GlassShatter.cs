@@ -1,21 +1,21 @@
 using System.Collections;
 using UnityEngine;
-using DG.Tweening; // <--- Certifique-se de que o DOTween está importado aqui
+using DG.Tweening; // <--- Certifique-se de que o DOTween estï¿½ importado aqui
 
 public class GlassShatter : MonoBehaviour
 {
     public GameObject wholeGlass;
     public Rigidbody[] shatteredPieces;
 
-    [Header("Configurações do Efeito Pulsar (Vidro Inteiro)")]
+    [Header("Configuraï¿½ï¿½es do Efeito Pulsar (Vidro Inteiro)")]
     [Tooltip("A cor que o vidro vai piscar antes de quebrar")]
     public Color corDoPulso = Color.red;
     [Tooltip("O multiplicador de tamanho no pico do pulso (ex: 1.1f aumenta em 10%)")]
     public float intensidadePulsoEscala = 1.2f;
-    [Tooltip("Duração total para o vidro ir e voltar uma vez")]
+    [Tooltip("Duraï¿½ï¿½o total para o vidro ir e voltar uma vez")]
     public float duracaoDoPulso = 0.5f;
 
-    [Header("Configurações da Explosão (Fragmentos)")]
+    [Header("Configuraï¿½ï¿½es da Explosï¿½o (Fragmentos)")]
     public float shatterForce = 10f;
     public float shatterRadius = 5f;
     public float upwardsModifier = 0.5f;
@@ -43,7 +43,7 @@ public class GlassShatter : MonoBehaviour
     {
         if (novaTextura == null)
         {
-            Debug.LogError("[GlassShatter] A textura passada é nula!");
+            Debug.LogError("[GlassShatter] A textura passada ï¿½ nula!");
             return;
         }
 
@@ -60,10 +60,10 @@ public class GlassShatter : MonoBehaviour
         {
             if (piece == null) continue;
 
-            MeshRenderer rendererPedaço = piece.GetComponent<MeshRenderer>();
-            if (rendererPedaço != null)
+            MeshRenderer rendererPedao = piece.GetComponent<MeshRenderer>();
+            if (rendererPedao != null)
             {
-                ConfigurarMaterial(rendererPedaço.material, novaTextura);
+                ConfigurarMaterial(rendererPedao.material, novaTextura);
             }
         }
 
@@ -87,7 +87,7 @@ public class GlassShatter : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         // ====================================================================
-        // STEP 1: ANIMAÇÃO DE PULSO E COR NO VIDRO INTEIRO (WHOLEGLASS)
+        // STEP 1: ANIMAï¿½ï¿½O DE PULSO E COR NO VIDRO INTEIRO (WHOLEGLASS)
         // ====================================================================
         if (wholeGlass != null)
         {
@@ -111,7 +111,7 @@ public class GlassShatter : MonoBehaviour
 
             seqPreparo.OnComplete(() => fimDoPreparo = true);
 
-            // Aguarda o término das duas piscadas/pulsos antes de quebrar de fato
+            // Aguarda o tï¿½rmino das duas piscadas/pulsos antes de quebrar de fato
             yield return new WaitUntil(() => fimDoPreparo);
 
             // Esconde o vidro inteiro
@@ -120,7 +120,7 @@ public class GlassShatter : MonoBehaviour
         }
 
         // ====================================================================
-        // STEP 2: ATIVA OS FRAGMENTOS E APLICA A EXPLOSÃO
+        // STEP 2: ATIVA OS FRAGMENTOS E APLICA A EXPLOSï¿½O
         // ====================================================================
         foreach (Rigidbody piece in shatteredPieces)
         {
@@ -131,7 +131,7 @@ public class GlassShatter : MonoBehaviour
             piece.AddExplosionForce(shatterForce, hitPoint, shatterRadius, upwardsModifier);
         }
 
-        // Aguarda os pedaços caírem (2.5 segundos)
+        // Aguarda os pedaï¿½os caï¿½rem (2.5 segundos)
         yield return new WaitForSeconds(2.5f);
 
         // ====================================================================
