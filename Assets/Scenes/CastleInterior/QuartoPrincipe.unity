@@ -3107,6 +3107,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1244122961217311599, guid: 92cb67c59f8c5b24a8c939e7b8bfdd10, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8785960310419759145, guid: ab423d4d8a0b3ac44bb0ad8c6fb54a8f, type: 3}
     - target: {fileID: 3083091102923921491, guid: 92cb67c59f8c5b24a8c939e7b8bfdd10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.4795685
@@ -3167,6 +3171,19 @@ PrefabInstance:
       propertyPath: Esquerda
       value: 
       objectReference: {fileID: 5950335479335051710, guid: ab423d4d8a0b3ac44bb0ad8c6fb54a8f, type: 3}
+    - target: {fileID: 4058524045343842628, guid: 92cb67c59f8c5b24a8c939e7b8bfdd10, type: 3}
+      propertyPath: dialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058524045343842628, guid: 92cb67c59f8c5b24a8c939e7b8bfdd10, type: 3}
+      propertyPath: 'dialog.Array.data[0]'
+      value: Ainda bem que vcs chegaram, precisamos fugir daqui.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058524045343842628, guid: 92cb67c59f8c5b24a8c939e7b8bfdd10, type: 3}
+      propertyPath: 'dialog.Array.data[1]'
+      value: "Tem uma passagem nos calabou\xE7os, dentro da terceira cela, a chave
+        fica nos fundos do calabou\xE7o."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
